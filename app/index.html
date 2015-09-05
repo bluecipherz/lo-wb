@@ -12,70 +12,48 @@
     <!-- endbower -->
     <!-- endbuild -->
     <!-- build:css(.tmp) styles/main.css -->
-    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/Bluegrid/Bluegrid.css">
     <link rel="stylesheet" href="styles/core.css">
+    <link rel="stylesheet" href="styles/index.css">
+    <link rel="stylesheet" href="styles/main.css">
     <!-- endbuild -->
-  </head>
-  <body ng-app="loWbApp">
+	</head>
+	<body ng-app="todoappApp">
     <!--[if lte IE 8]>
       <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
 
     <!-- Add your site or application content here -->
-    <div class="">
-      <div class="navbar navbar-inverse navbar-fixed-top nav-cust" role="navigation">
-        <div class="container">
-		
-		<!--
-          <div class="navbar-header">
+    <div class="blueNav cust-header b-p-fix">
+		<div class="bgrid navH -bg-s-360 -bg-s-360-o">
+			<ul class="bl-ul bg-text-c">
+				<li class="active -bg-s-80"><a href="#/">HOME</a></li>
+				<li class="-bg-s-80"><a ng-href="#/exams">EXAMS</a></li>
+				<li class="-bg-s-100"><a ng-href="#/courses">COURSES</a></li>
+				<li class="-bg-s-100"><a ng-href="#/funzone">FUNZONE</a></li>
+			</ul>
+		</div>
+        <div id="powerProgress"></div>
+    </div>
 
-		  
-            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#js-navbar-collapse">
-              <span class="sr-only">Toggle navigation</span>
-              <span class="icon-bar"></span>
-              <span class="icon-bar"></span>
-              <span class="icon-bar"></span>
-            </button>
-			
-            <a class="navbar-brand" href="#/">loWb</a>
-          </div>
-			-->
-          <div class="collapse navbar-collapse" id="js-navbar-collapse">
+    <div class=" ">
+		<div ng-view=""></div>
+    </div>
+    <div class="cust-footer b-p-rel b-layer-2">
+        <div class="boxx">
+            <div class="cf-sec-1">
+                Linkon education
+            </div>
+            <div class="cf-sec-2">
 
-            <ul class="nav navbar-nav">
-              <li class="active"><a href="#/">HOME</a></li>
-              <li><a ng-href="#/exams">EXAMS</a></li>
-              <li><a ng-href="#/courses">COURSES</a></li>
-              <li><a ng-href="#/funzone">FUNZONE</a></li>
-            </ul>
-          </div>
+            </div>
         </div>
-      </div>
-	  <div class="fakeNav">
-	  </div>
+        <div class="cf-sec-3">
+            <div class="boxx">
+                Linkonedu.com
+            </div>
+        </div>
     </div>
-
-    <div class="container">
-    <div ng-view=""></div>
-    </div>
-
-    <div class="cuts-footer cust-z-10">
-		<div class="container">
-			<div class="fs1">
-			
-			</div>
-			<div class="fs2">
-			
-			</div>
-		</div>
-		<div class="fs3">
-			<div class="container">
-			
-			</div>
-		</div>
-    </div>
-
-
     <!-- Google Analytics: change UA-XXXXX-X to be your site's ID -->
      <script>
        !function(A,n,g,u,l,a,r){A.GoogleAnalyticsObject=l,A[l]=A[l]||function(){
@@ -103,8 +81,12 @@
 
         <!-- build:js({.tmp,app}) scripts/scripts.js -->
         <script src="scripts/app.js"></script>
+        <script src="styles/Bluegrid/Bluegrid.js"></script>
         <script src="scripts/controllers/main.js"></script>
         <script src="scripts/controllers/about.js"></script>
+        <script src="scripts/controllers/myroute.js"></script>
+        <script src="scripts/controllers/project.js"></script>
+        <script src="scripts/services/powerprogress.js"></script>
         <script src="scripts/controllers/exams.js"></script>
         <script src="scripts/controllers/courses.js"></script>
         <script src="scripts/controllers/funzone.js"></script>

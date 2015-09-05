@@ -1,22 +1,43 @@
-<div class="home-top-fixed">
-	<div class="container">
-		<div class="home-top">
-			<div class="hs1">
-				Linkonedu
-			</div>
-			<div class="hs2">
-				TIRED OF SEARCHING THE RIGHT COURSE/EXAM/SCOLARSHIP</br>
-				DETAILS? DONTBE ANYMORE LINKONEDU BRINGS</br>
-				YOU JUST NEED FEW SECONDS TO READ IT
-			</div>
-			<div class="hs3">
-				<input type="text" placeholder="Enter course or exam here"/>
-			</div>
-		</div>
-	</div>
-</div>	
-<div class="container">	
-	<div class="home-mid cust-z-10">
-		
-	</div>
+<div class="home-top b-layer-1">
+    <div class="boxx">
+        <div class="ht-sec-1">
+            Linkonedu
+        </div>
+        <div class="ht-sec-2 bg-text-c">
+            <div>
+                TIRED OF <span class="strong">SEARCHING</span> THE RIGHT COURSE/EXAM/SCHOLARSHIP DETAILS?
+                <span class="strong">DONT BE</span> ANYMORE <span class="strong">LINKONEDU</span> BRINGS
+            </div>
+            <div class="diff">
+                <span>YOU JUST NEED <span class="strong">FEW</span> SECONDS TO <span class="strong">READ</span> IT</span>
+            </div>
+        </div>
+        <div class="ht-sec-3">
+            <div class="bgrid -bg-s-560 -bg-s-560-o ">
+                <input type="text" name="search" placeholder="Enter Course or Exam here" class="bg-reset bgrid -bg-s-100-w " />
+                <button name="searchBtn" class="bg-reset-m -bg-s-100" >SEARCH</button>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="home-mid b-layer-2 b-p-rel ">
+    <div class="boxx">
+        <div class="bgrid -bg-s-640 -bg-s-640-o ">
+            <div class="hm-box bg-text-c"  ng-repeat="item in items">
+                <div class="sec1">
+                    <div class="bgrid -bg-s-100 -bg-s-100-o img">
+
+                    </div>
+                </div>
+                <a ng-href="#/">
+                    <div class="sec2">
+                        {{ item.title }}
+                    </div>
+                    <div class="sec3">
+                        {{ item.desc }}
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
 </div>

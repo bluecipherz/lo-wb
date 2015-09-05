@@ -2,12 +2,12 @@
 
 /**
  * @ngdoc function
- * @name loWbApp.controller:FunzoneCtrl
+ * @name todoappApp.controller:FunzoneCtrl
  * @description
  * # FunzoneCtrl
- * Controller of the loWbApp
+ * Controller of the todoappApp
  */
-angular.module('loWbApp')
+angular.module('todoappApp')
   .controller('FunzoneCtrl', function () {
     this.awesomeThings = [
       'HTML5 Boilerplate',

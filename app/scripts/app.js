@@ -2,20 +2,15 @@
 
 /**
  * @ngdoc overview
- * @name loWbApp
+ * @name todoappApp
  * @description
- * # loWbApp
+ * # todoappApp
  *
  * Main module of the application.
  */
 angular
-  .module('loWbApp', [
-    'ngAnimate',
-    'ngCookies',
-    'ngResource',
-    'ngRoute',
-    'ngSanitize',
-    'ngTouch'
+  .module('todoappApp', [
+    'ngRoute'
   ])
   .config(function ($routeProvider) {
     $routeProvider
@@ -28,6 +23,16 @@ angular
         templateUrl: 'views/about.html',
         controller: 'AboutCtrl',
         controllerAs: 'about'
+      })
+      .when('/myroute', {
+        templateUrl: 'views/myroute.html',
+        controller: 'MyrouteCtrl',
+        controllerAs: 'myroute'
+      })
+      .when('/project', {
+        templateUrl: 'views/project.html',
+        controller: 'ProjectCtrl',
+        controllerAs: 'project'
       })
       .when('/exams', {
         templateUrl: 'views/exams.html',
@@ -47,4 +52,13 @@ angular
       .otherwise({
         redirectTo: '/'
       });
+  })
+  .run(function($rootScope, powerProgress) {
+	  $rootScope.$on('$routeChangeStart', function() {
+		powerProgress.loadProgress();
+	  });
+
+	  $rootScope.$on('$routeChangeSuccess', function() {
+	  
+	  });
   });

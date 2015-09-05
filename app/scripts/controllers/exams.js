@@ -2,12 +2,12 @@
 
 /**
  * @ngdoc function
- * @name loWbApp.controller:ExamsCtrl
+ * @name todoappApp.controller:ExamsCtrl
  * @description
  * # ExamsCtrl
- * Controller of the loWbApp
+ * Controller of the todoappApp
  */
-angular.module('loWbApp')
+angular.module('todoappApp')
   .controller('ExamsCtrl', function () {
     this.awesomeThings = [
       'HTML5 Boilerplate',

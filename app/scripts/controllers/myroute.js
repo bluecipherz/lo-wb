@@ -2,13 +2,13 @@
 
 /**
  * @ngdoc function
- * @name todoappApp.controller:CoursesCtrl
+ * @name todoappApp.controller:MyrouteCtrl
  * @description
- * # CoursesCtrl
+ * # MyrouteCtrl
  * Controller of the todoappApp
  */
 angular.module('todoappApp')
-  .controller('CoursesCtrl', function () {
+  .controller('MyrouteCtrl', function () {
     this.awesomeThings = [
       'HTML5 Boilerplate',
       'AngularJS',

@@ -12,7 +12,7 @@ angular
   .module('todoappApp', [
     'ngRoute'
   ])
-  .config(function ($routeProvider) {
+  .config(function ($routeProvider, $locationProvider) {
     $routeProvider
       .when('/', {
         templateUrl: 'views/main.html',
@@ -52,6 +52,10 @@ angular
       .otherwise({
         redirectTo: '/'
       });
+      // enable html5Mode for pushstate ('#'-less URLs)
+      if(window.history && window.history.pushState){
+          $locationProvider.html5Mode(false);
+      }
   })
   .run(function($rootScope, powerProgress) {
 	  $rootScope.$on('$routeChangeStart', function() {
@@ -61,4 +65,21 @@ angular
 	  $rootScope.$on('$routeChangeSuccess', function() {
 	  
 	  });
-  });
+  }).directive("scroll", ['$location','$window', function(location,$window){
+        return function($scope, element, attrs) {
+            angular.element($window).bind("scroll", function() {
+                if (location.path() =='/' ) {
+                    if (this.pageYOffset >= 450) {
+                        $scope.addHeader = true;
+                    } else {
+                        $scope.addHeader = false;
+                    }
+                }else{
+                    $scope.addHeader = true;
+                }
+                $scope.$apply();
+            });
+        };
+    }]).run(function($rootScope, $location) {
+        $rootScope.location = $location;
+    });

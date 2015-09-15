@@ -1,10 +1,13 @@
 
 .bgrid{
-	display:block;
-	float:left;
+    display:block;
+    float:left;
 }
-
-
+.dis-in{ display:inline-block;  }
+.dis-bl{ display:block;  }
+.dis-none{ display:none;  }
+.float-r{ float:right; }
+.float-l{ float:left; }
 
 /*
 ____________________________________________________________________________________________________________________________________________
@@ -22,52 +25,52 @@ small, strike, strong, sub, sup, tt, var,
 dl, dt, dd, ol, ul, li,
 fieldset, form, label, legend,
 table, caption, tbody, tfoot, thead, tr, th, td {
-	margin: 0;
-	padding: 0;
-	border: 0;
-	outline: 0;
-	font-weight: inherit;
-	font-style: inherit;
-	font-size: 100%;
-	font-family: inherit;
-	vertical-align: baseline;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    outline: 0;
+    font-weight: inherit;
+    font-style: inherit;
+    font-size: 100%;
+    font-family: inherit;
+    vertical-align: baseline;
 }
 /* remember to define focus styles! */
 :focus {
-	outline: 0;
+    outline: 0;
 }
 body {
-	line-height: 1;
-	color: black;
-	background: white;
-	font-family: Geneva,Tahoma,Verdana,sans-serif;
+    line-height: 1;
+    color: black;
+    background: white;
+    font-family: Geneva,Tahoma,Verdana,sans-serif;
 }
 ol, ul {
-	list-style: none;
+    list-style: none;
 }
 /* tables still need 'cellspacing="0"' in the markup */
 table {
-	border-collapse: separate;
-	border-spacing: 0;
+    border-collapse: separate;
+    border-spacing: 0;
 }
 caption, th, td {
-	text-align: left;
-	font-weight: normal;
+    text-align: left;
+    font-weight: normal;
 }
 blockquote:before, blockquote:after,
 q:before, q:after {
-	content: "";
+    content: "";
 }
 blockquote, q {
-	quotes: "" "";
+    quotes: "" "";
 }
 
 #page td {
-   padding:0; margin:0;
+    padding:0; margin:0;
 }
 
 #page {
-   border-collapse: collapse;
+    border-collapse: collapse;
 }
 a,a:focus,a:visited,a:link{color:#3e98cc; text-decoration:none;}
 a:active{color:#005382; text-decoration:none;}
@@ -167,6 +170,94 @@ ________________________________________________________________________________
 .-bg-s-1600{width:1600px;}
 
 
+.-bg-s-5-off   {margin-left:5px;}
+.-bg-s-10-off {margin-left:10px;}
+.-bg-s-20-off {margin-left:20px;}
+.-bg-s-30-off {margin-left:30px;}
+.-bg-s-40-off {margin-left:40px;}
+.-bg-s-50-off {margin-left:50px;}
+.-bg-s-60-off {margin-left:60px;}
+.-bg-s-70-off {margin-left:70px;}
+.-bg-s-80-off {margin-left:80px;}
+.-bg-s-90-off {margin-left:90px;}
+.-bg-s-100-off{margin-left:100px;}
+.-bg-s-120-off{margin-left:120px;}
+.-bg-s-140-off{margin-left:140px;}
+.-bg-s-160-off{margin-left:160px;}
+.-bg-s-180-off{margin-left:180px;}
+.-bg-s-200-off{margin-left:200px;}
+.-bg-s-220-off{margin-left:220px;}
+.-bg-s-240-off{margin-left:240px;}
+.-bg-s-260-off{margin-left:260px;}
+.-bg-s-280-off{margin-left:280px;}
+.-bg-s-300-off{margin-left:300px;}
+.-bg-s-320-off{margin-left:320px;}
+.-bg-s-340-off{margin-left:340px;}
+.-bg-s-360-off{margin-left:360px;}
+.-bg-s-380-off{margin-left:380px;}
+.-bg-s-400-off{margin-left:400px;}
+.-bg-s-420-off{margin-left:420px;}
+.-bg-s-440-off{margin-left:440px;}
+.-bg-s-460-off{margin-left:460px;}
+.-bg-s-480-off{margin-left:480px;}
+.-bg-s-500-off{margin-left:500px;}
+.-bg-s-520-off{margin-left:520px;}
+.-bg-s-540-off{margin-left:540px;}
+.-bg-s-560-off{margin-left:560px;}
+.-bg-s-580-off{margin-left:580px;}
+.-bg-s-600-off{margin-left:600px;}
+.-bg-s-620-off{margin-left:620px;}
+.-bg-s-640-off{margin-left:640px;}
+.-bg-s-660-off{margin-left:660px;}
+.-bg-s-680-off{margin-left:680px;}
+.-bg-s-700-off{margin-left:700px;}
+.-bg-s-720-off{margin-left:720px;}
+.-bg-s-740-off{margin-left:740px;}
+.-bg-s-760-off{margin-left:760px;}
+.-bg-s-780-off{margin-left:780px;}
+.-bg-s-800-off{margin-left:800px;}
+.-bg-s-820-off{margin-left:820px;}
+.-bg-s-840-off{margin-left:840px;}
+.-bg-s-860-off{margin-left:860px;}
+.-bg-s-880-off{margin-left:880px;}
+.-bg-s-900-off{margin-left:900px;}
+.-bg-s-920-off{margin-left:920px;}
+.-bg-s-940-off{margin-left:940px;}
+.-bg-s-960-off{margin-left:960px;}
+.-bg-s-980-off{margin-left:980px;}
+.-bg-s-1000{margin-left:1000px;}
+.-bg-s-1020{margin-left:1020px;}
+.-bg-s-1040{margin-left:1040px;}
+.-bg-s-1060{margin-left:1060px;}
+.-bg-s-1080{margin-left:1080px;}
+.-bg-s-1100{margin-left:1100px;}
+.-bg-s-1120{margin-left:1120px;}
+.-bg-s-1140{margin-left:1140px;}
+.-bg-s-1160{margin-left:1160px;}
+.-bg-s-1180{margin-left:1180px;}
+.-bg-s-1200{margin-left:1200px;}
+.-bg-s-1220{margin-left:1220px;}
+.-bg-s-1240{margin-left:1240px;}
+.-bg-s-1260{margin-left:1260px;}
+.-bg-s-1280{margin-left:1280px;}
+.-bg-s-1300{margin-left:1300px;}
+.-bg-s-1320{margin-left:1320px;}
+.-bg-s-1340{margin-left:1340px;}
+.-bg-s-1360{margin-left:1360px;}
+.-bg-s-1380{margin-left:1380px;}
+.-bg-s-1400{margin-left:1400px;}
+.-bg-s-1420{margin-left:1420px;}
+.-bg-s-1440{margin-left:1440px;}
+.-bg-s-1460{margin-left:1460px;}
+.-bg-s-1480{margin-left:1480px;}
+.-bg-s-1500{margin-left:1500px;}
+.-bg-s-1520{margin-left:1520px;}
+.-bg-s-1540{margin-left:1540px;}
+.-bg-s-1560{margin-left:1560px;}
+.-bg-s-1580{margin-left:1580px;}
+.-bg-s-1600{margin-left:1600px;}
+
+
 .-bg-s-5-o{ margin-left:calc( ( 100% - 5px ) / 2 ); }
 .-bg-s-10-o{ margin-left:calc( ( 100% - 10px ) / 2 ); }
 .-bg-s-20-o{ margin-left:calc( ( 100% - 20px ) / 2 ); }
@@ -253,6 +344,8 @@ ________________________________________________________________________________
 .-bg-s-1560-o{ margin-left:calc( ( 100% - 1560px ) / 2 ); }
 .-bg-s-1580-o{ margin-left:calc( ( 100% - 1580px ) / 2 ); }
 .-bg-s-1600-o{ margin-left:calc( ( 100% - 1600px ) / 2 ); }
+
+
 
 
 .-bg-s-5-w{ width:calc( 100% - 5px ); }
@@ -343,6 +436,17 @@ ________________________________________________________________________________
 .-bg-s-1600-w{ width:calc( 100% - 1600px ); }
 
 
+.-bg-d-10{ width:10%; }
+.-bg-d-20{ width:20%; }
+.-bg-d-30{ width:30%; }
+.-bg-d-40{ width:40%; }
+.-bg-d-50{ width:50%; }
+.-bg-d-60{ width:60%; }
+.-bg-d-70{ width:70%; }
+.-bg-d-80{ width:80%; }
+.-bg-d-90{ width:90%; }
+.-bg-d-100{ width:100%; }
+
 /*
 ____________________________________________________________________________________________________________________________________________
 |																																			|
@@ -352,22 +456,38 @@ ________________________________________________________________________________
 
 .blueNav{
     position:absolute;
-	display:block;
-	float:left;
-	background:#000;
-	width:100%;
-	min-height:30px;
-	margin-bottom:0px;
+    display:block;
+    float:left;
+    background:#000;
+    width:100%;
+    min-height:30px;
+    margin-bottom:0px;
     z-index:30;
     top:0;
     left:0;
 }
 .blueNav .navH{
-	display:block;
-	float:left;
-	height:100%;
+    display:block;
+    float:left;
+    height:100%;
 }
-
+.bn-group > div{
+    position: relative;
+}
+.bn-group > div:after{
+    content: "";
+    display: block;
+    float: left;
+    position:absolute;
+    height:40px;
+    width: 2px;
+    top: 5px;
+    left: -2px;
+    background: #444;
+}
+.bn-group > div:nth-last-child(1):after{
+    display:none;
+}
 /*
 ____________________________________________________________________________________________________________________________________________
 |																																			|
@@ -446,14 +566,14 @@ ________________________________________________________________________________
  */
 
 .bl-ul{
-	display:block;
-	float:left;
-	height:100%;
+    display:block;
+    float:left;
+    height:100%;
 }
 .bl-ul > li,.bl-ul > li > a{
-	display:inline-block;
-	float:left;
-	height:100%;
+    display:inline-block;
+    float:left;
+    height:100%;
 }
 .bl-ul > li > a{
     width:100%;
@@ -473,16 +593,16 @@ ________________________________________________________________________________
 */
 
 #powerProgress{
-	displaY:block;
-	float:left;
-	position:absolute;
-	left:0px;
-	bottom:-4px;
-	height:4px;
-	width:0;
-	background:#006ba2;
-	z-index:20;
-	transition:width 1s;
+    displaY:block;
+    float:left;
+    position:absolute;
+    left:0px;
+    bottom:-4px;
+    height:4px;
+    width:0;
+    background:#006ba2;
+    z-index:20;
+    transition:width 1s;
 }
 
 .bg-text-c *,.bg-text-c {text-align:center; }

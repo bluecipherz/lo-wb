@@ -1,1 +1,19 @@
-<p>This is the courses view.</p>
+<div class="boxx pageOuter">
+    <!--Left side Box-->
+    <div class="page-midOuter">
+        <div class="page-mid" ng-repeat="data in courseData">
+            <div class="sec-1">
+                <div class="top">
+                    <img src="{{ data.img }}">
+                </div>
+                <div class="mid">{{ data.title }}</div>
+                <div class="bottom">{{ data.desc }}</div>
+            </div>
+            <div class="sec-2"></div>
+        </div>
+    </div>
+    <!--page index and other info-->
+    <div class="page-left">
+        This is page left
+    </div>
+</div>

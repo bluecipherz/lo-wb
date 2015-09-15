@@ -3,6 +3,7 @@
   <head>
     <meta charset="utf-8">
     <title></title>
+    <base href="/">
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width">
     <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
@@ -16,44 +17,31 @@
     <link rel="stylesheet" href="styles/core.css">
     <link rel="stylesheet" href="styles/index.css">
     <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/course.css">
     <!-- endbuild -->
 	</head>
-	<body ng-app="todoappApp">
+	<body ng-app="todoappApp" scroll >
     <!--[if lte IE 8]>
       <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
 
     <!-- Add your site or application content here -->
-    <div class="blueNav cust-header b-p-fix">
+    <div class="blueNav b-p-fix cust-header " ng-controller="headerController" ng-class="{ hShow: addHeader}">
 		<div class="bgrid navH -bg-s-360 -bg-s-360-o">
 			<ul class="bl-ul bg-text-c">
-				<li class="active -bg-s-80"><a href="#/">HOME</a></li>
-				<li class="-bg-s-80"><a ng-href="#/exams">EXAMS</a></li>
-				<li class="-bg-s-100"><a ng-href="#/courses">COURSES</a></li>
-				<li class="-bg-s-100"><a ng-href="#/funzone">FUNZONE</a></li>
+				<li ng-click="checkHeader()" class="active -bg-s-80"><a href="/">HOME</a></li>
+				<li ng-click="checkHeader()"  class="-bg-s-80"><a ng-href="/exams">EXAMS</a></li>
+				<li ng-click="checkHeader()"  class="-bg-s-100"><a ng-href="/courses">COURSES</a></li>
+				<li ng-click="checkHeader()"  class="-bg-s-100"><a ng-href="/funzone">FUNZONE</a></li>
 			</ul>
 		</div>
         <div id="powerProgress"></div>
     </div>
 
-    <div class=" ">
-		<div ng-view=""></div>
+    <div class="ngView">
+		<div ng-view=""  autoscroll="true"></div>
     </div>
-    <div class="cust-footer b-p-rel b-layer-2">
-        <div class="boxx">
-            <div class="cf-sec-1">
-                Linkon education
-            </div>
-            <div class="cf-sec-2">
-
-            </div>
-        </div>
-        <div class="cf-sec-3">
-            <div class="boxx">
-                Linkonedu.com
-            </div>
-        </div>
-    </div>
+    <div class="cust-footer b-p-rel b-layer-2"  ng-include src="'views/partials/structures/footer.html'" ></div>
     <!-- Google Analytics: change UA-XXXXX-X to be your site's ID -->
      <script>
        !function(A,n,g,u,l,a,r){A.GoogleAnalyticsObject=l,A[l]=A[l]||function(){

@@ -1,3 +1,14 @@
+
+@font-face {
+    font-family: courseCaps;
+    src: url(../fonts/courseCaps.ttf);
+}
+@font-face {
+    font-family: course;
+    src: url(../fonts/course.ttf);
+}
+
+/*==========================================================================================*/
 .browsehappy {
   margin: 0.2em 0;
   background: #ccc;

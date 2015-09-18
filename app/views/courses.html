@@ -1,19 +1,43 @@
-<div class="boxx pageOuter">
-    <!--Left side Box-->
-    <div class="page-midOuter">
-        <div class="page-mid" ng-repeat="data in courseData">
-            <div class="sec-1">
-                <div class="top">
-                    <img src="{{ data.img }}">
+<div class="greyBG">
+    <div class="boxx whiteBG pageOuter">
+        <!--Left side Box-->
+        <div class="page-midOuter">
+            <div class="page-mid" ng-repeat="data in courseData">
+                <div class="sec-1"  ng-class="{ 'wide': wideView }" >
+                    <div class="top">
+                        <img src="{{ data.img }}">
+                    </div>
+                    <div class="mid">{{ data.title }}</div>
+                    <div class="bottom">{{ data.desc }}</div>
                 </div>
-                <div class="mid">{{ data.title }}</div>
-                <div class="bottom">{{ data.desc }}</div>
+                <div ng-if="data.type == 'parent'" class="sec-2" ng-class="{ 'wide': wideView }">
+                    <div class="child" ng-class="{ 'semiView': wideView , 'semi': ! wideView }  " ng-repeat="children in data.children " >
+                        <div class="head"> {{ children.title }} </div>
+                        <div class="tail">
+                            <table>
+                                <tr>
+                                    <td>Duration</td>
+                                    <td><span class="dur{{ children.duration }}"></span> </td>
+                                </tr>
+                                <tr>
+                                    <td>Cost</td>
+                                    <td><span class="cost{{ children.cost }}"></span> </td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                <div class="moreBtnOuter">
+                    <span class="moreBtn"  ng-click="wideView = ! wideView" >
+                        <span  ng-class="{ 'hidden': wideView }" >More...</span>
+                        <span  ng-class="{ 'hidden': !wideView }" >Less...</span>
+                    </span>
+                </div>
             </div>
-            <div class="sec-2"></div>
         </div>
-    </div>
-    <!--page index and other info-->
-    <div class="page-left">
-        This is page left
+        <!--page index and other info-->
+        <div class="page-left">
+
+        </div>
     </div>
 </div>

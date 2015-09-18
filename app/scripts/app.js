@@ -54,7 +54,7 @@ angular
       });
       // enable html5Mode for pushstate ('#'-less URLs)
       if(window.history && window.history.pushState){
-          $locationProvider.html5Mode(false);
+          $locationProvider.html5Mode(true);
       }
   })
   .run(function($rootScope, powerProgress) {
@@ -73,6 +73,9 @@ angular
                         $scope.addHeader = true;
                     } else {
                         $scope.addHeader = false;
+                        var op = 1 - ((this.pageYOffset)/450 );
+                        var zoom = 1 - (((this.pageYOffset)/450 ) / 5);
+                        $('.home-top-inner').css({'opacity' : op , '-webkit-transform': 'scale('+zoom+')' ,'-moz-transform': 'scale('+zoom+')'});
                     }
                 }else{
                     $scope.addHeader = true;

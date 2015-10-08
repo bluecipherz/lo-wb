@@ -53,9 +53,9 @@ angular
         redirectTo: '/'
       });
       // enable html5Mode for pushstate ('#'-less URLs)
-      if(window.history && window.history.pushState){
-          $locationProvider.html5Mode(true);
-      }
+      // if(window.history && window.history.pushState){
+      //     $locationProvider.html5Mode(true);
+      // }
   })
   .run(function($rootScope, powerProgress) {
 	  $rootScope.$on('$routeChangeStart', function() {

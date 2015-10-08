@@ -9,7 +9,8 @@
  */
 angular.module('todoappApp')
   .controller('CoursesCtrl', function ($scope) {
-        $scope.courseData =
+        var vm = this;
+        vm.courseData =
             [{'title':'What To Do After Completing 10th', 'desc':'Commerce is a field of adventure, Accounting is the major profession in this area, They can try every fields and they are the most highly paid  people ', 'img':'images/home/home1.png','type':'parent',
                 'children':[{'title':'Study Various Deploma Course','duration':'2','cost':'3','type':'endNode'},
                     {'title':'Study Various Deploma Course','duration':'2','cost':'3','type':'endNode'},

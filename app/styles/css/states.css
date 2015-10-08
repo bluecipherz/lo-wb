@@ -1,0 +1,49 @@
+.cfs2-1 > div:nth-child(2) > div > a:nth-child(1):hover {
+  background: #627eb7;
+  background-image: url("../../images/icons/fb-50.png");
+  background-size: 30px 30px;
+  background-position: 0px 30px;
+  cursor: pointer; }
+
+.cfs2-1 > div:nth-child(2) > div > a:nth-child(2):hover {
+  background: #7cd2f9;
+  background-image: url("../../images/icons/twitter-50.png");
+  background-size: 30px 30px;
+  background-position: 0px 30px;
+  cursor: pointer; }
+
+.cfs2-1 > div:nth-child(2) > div > a:nth-child(3):hover {
+  background: #ef7c71;
+  background-image: url("../../images/icons/gplus-50.png");
+  background-size: 30px 30px;
+  background-position: 0px 30px;
+  cursor: pointer; }
+
+.cfs2-1 > div:nth-child(2) > div > a:nth-child(4):hover {
+  background: #f0554e;
+  background-image: url("../../images/icons/fb-50.png");
+  background-size: 30px 30px;
+  background-position: 0px 30px;
+  cursor: pointer; }
+
+.cust-footer a, .cust-footer a:focus, .cust-footer a:active {
+  font-size: 90%;
+  color: #888; }
+
+.cust-footer a:hover {
+  color: #ccc;
+  cursor: pointer; }
+
+.cfs2-2 form button:hover {
+  background: #9fd457; }
+
+.cfs2-2 form button:active {
+  background: #84b147; }
+
+.home-mid .hm-box a:hover .sec3 {
+  color: #236a8f; }
+
+.home-mid .hm-box a:hover .sec2 {
+  color: #3895c5; }
+
+/*# sourceMappingURL=states.css.map */

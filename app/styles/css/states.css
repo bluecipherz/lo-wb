@@ -46,4 +46,21 @@
 .home-mid .hm-box a:hover .sec2 {
   color: #3895c5; }
 
+/* Colors */
+/* images */
+.pageOuter .page-mid .sector .childCart .child .mid .iconSet .active, .pageOuter .page-mid .sector .restChildCart .child .mid .iconSet .active {
+  -webkit-transform: scale(1);
+  -moz-transform: scale(1);
+  -o-transform: scale(1);
+  transform: scale(1); }
+.pageOuter .page-mid .sector .childCart .child:nth-child(1),
+.pageOuter .page-mid .sector .childCart .child:nth-child(2), .pageOuter .page-mid .sector .restChildCart .child:nth-child(1),
+.pageOuter .page-mid .sector .restChildCart .child:nth-child(2) {
+  border-top: none; }
+.pageOuter .page-mid .sector .childCart .child:hover, .pageOuter .page-mid .sector .childCart .moreBtn:hover, .pageOuter .page-mid .sector .restChildCart .child:hover, .pageOuter .page-mid .sector .restChildCart .moreBtn:hover {
+  cursor: pointer;
+  background: rgba(102, 203, 225, 0.2); }
+.pageOuter .page-mid .sector .childCart .moreBtn:hover, .pageOuter .page-mid .sector .restChildCart .moreBtn:hover {
+  background: rgba(102, 203, 225, 0.4); }
+
 /*# sourceMappingURL=states.css.map */

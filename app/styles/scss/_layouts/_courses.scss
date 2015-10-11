@@ -1,4 +1,5 @@
 @import '../_base/variables'; 
+@import '../_functions/baseFunctions'; 
 
 $pageWidth:1000px;
 $asideWidth :220;
@@ -10,6 +11,7 @@ $sectorHeight : 360;
 	float:left;
 	position:relative;
 	min-height:1600px;
+	line-height:120%;
 	.page-left{
 		display:block;
 		float:left;
@@ -38,56 +40,159 @@ $sectorHeight : 360;
 			margin:20px;
 			min-height:20px;
 
-			border-bottom:3px solid #444;
-			.main{
+			border-bottom:2px solid #444; 
+			.topSection , .bottomSection{ 
 				display:block;
 				float:left;
-				width:32%;  
-				margin-left: 0;
-				position:absolute;
-				top:0px;
-				bottom:0px;
-				left:0px;
-
-				padding:0px 0; 
-				background:red;
-				.rows{
+				width:100% ;
+				position:relative; 
+				min-height:20px;
+				.main{
 					display:block;
 					float:left;
-					height:calc(100% / 3 );
-					width:100%; 
-					.img{ 
-						width:120px;
-						height:120px;
-						margin:0 auto; 
-						img{
-							max-width:100%;
-							max-height:100%;
-							min-height:100%; 
+					width:32%;  
+					margin-left: 0;
+					position:absolute;
+					top:0px;
+					bottom:0px;
+					left:0px;
+
+					padding:0px 0;  
+					.top,.mid,.bottom{
+						display:block;
+						float:left;
+						width:100%; 
+						.img{ 
+							width:120px;
+							height:120px;
+							margin:0 auto; 
+							img{
+								max-width:100%;
+								max-height:100%;
+								min-height:100%; 
+							}
+						}
+					}
+					.top{ 
+						height:calc(100% / 3 );
+					}
+					.mid{
+						font-family:GOTHIC;
+						font-size:160%;  
+						padding:5px 0;
+						line-height:130%;
+					}
+					.bottom{ 
+						font-size:90%; 
+						padding:5px 0;
+						color:#555;
+					}
+				} 
+				.childCart,.restChildCart{
+					display:table;
+					float:left;
+					position:relative;
+					margin-left:32%;
+					width:68%;
+				} 
+				.childCart{
+					.child:nth-child(1),
+					.child:nth-child(2)
+					{border-top:none;} 
+				} 
+				.restChildCart{ 
+					display:table;
+					margin-left:0%;
+					width:100%;
+					max-height:0px;
+					@include transition(0.4s);
+					overflow:hidden;
+					.child{
+						display:table-cell;
+						float:left;
+						width:calc( ( 100% / 3 ) - 5px );
+						margin-left: 10px;
+
+						max-height:0px;
+						opacity:0;
+						border:none;
+						@include transition2(max-height 0.5s,opacity 0.5s,border-top 0.9s , margin-top 0.5s);
+						overflow:hidden;
+						margin-top:-20px;
+					}
+					.child:nth-child(3n + 1){margin-left:0; width:calc( ( 100% / 3) - 10px); } 
+					.showChild{  
+						max-height:300px;
+						opacity:1;
+						border-top:2px solid #aaa;
+						margin-top:0px;
+					}
+					.child:nth-child(1),
+					.child:nth-child(2)
+					{border-top:2px solid #aaa;} 
+				}   
+				.child,.moreBtn{
+					display:table-cell;
+					float:left;
+					width:calc( 50% - 10px );
+					margin-left: 10px; 
+
+					padding:10px 0; 
+					height:120px;  
+					border-top:2px solid #aaa;
+					.head,.mid,.foot{
+						display:block;
+						float:left;
+						width:100%;
+					}
+					.head{
+						height:calc(100% - 50px);
+						font-size:110%;}
+					.mid{
+						display:block;
+						height:40px;
+						line-height:20px; 
+						tr{
+							height:20px;
+							margin:0px;
+							padding:0px;
+						}
+						td{  
+							height:20px;
+							line-height:20px;
+							font-size:90%;
+							color:#444;
+							margin:0px;  
+							padding:0px;
+						}
+						.iconSet{  
+							div{ @include transform(scale(0)); 
+								@include transition(0.3s);}
+						    div:nth-child(2){ 
+								@include transition-delay(0.2s);
+						    }
+						    div:nth-child(3){ 
+								@include transition-delay(0.4s);
+						    }
+						    div:nth-child(4){ 
+								@include transition-delay(0.6s);
+						    }
+						    div:nth-child(5){ 
+								@include transition-delay(0.8s);
+						    }
 						}
 					}
 				}
-			} 
-			.childCart{
-				display:block;
-				float:left;
-				position:relative;
-				margin-left:32%;
-				width:68%;
-				.child{
-					display:block;
-					float:left;
-					width:48%;
-					margin-left: 2%; 
-
-					padding:10px 0; 
-					min-height:120px;  
-					border-top:3px solid #aaa;
+				.moreBtn{
+					background:rgba($themeColorR,$themeColorG,$themeColorB,0.3);
+					line-height:100px;
+					text-align:center;
+					font-family:GOTHICB;
+					font-size:140%;
+					color:#fff;
 				}
-				.child:nth-child(1),
-				.child:nth-child(2)
-				{border-top:none;}
 			}
 		}
+		.sector:nth-last-child(1){border-bottom:none;}
 	}
-}
+} 

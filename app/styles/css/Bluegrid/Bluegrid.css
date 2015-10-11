@@ -611,7 +611,13 @@ ________________________________________________________________________________
 .bg-reset-m{margin:0px;  }
 .bg-reset-p{ padding:0px;}
 
-
+.clearfix:after {
+  content: "";
+  display: table;
+  clear: both;
+}
 
 .greyBG{background:#eee;}
 .whiteBG{background:#fff;}
+
+

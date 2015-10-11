@@ -21,18 +21,33 @@ body{
 
 @font-face {
     font-family: TiredOfSearching;
-    src: url(../fonts/Tired_of_serching .ttf);
+    src: url(../../fonts/Tired_of_serching.ttf);
 }
 
 @font-face {
     font-family: AYearWithoutRain;
-    src: url(../fonts/AYearWithoutRain .ttf);
+    src: url(../..fonts/AYearWithoutRain.ttf);
 }
 
 
 @font-face {
-    font-family: AYearWithoutRain;
-    src: url(../fonts/AYearWithoutRain .ttf);
+    font-family: GOTHIC;
+    src: url(../../fonts/GOTHIC.ttf); 
+}
+
+@font-face {
+    font-family: GOTHICI;
+    src: url(../../fonts/GOTHICI.ttf); 
+}
+
+@font-face {
+    font-family: GOTHICB;
+    src: url(../../fonts/GOTHICB.ttf); 
+}
+
+@font-face {
+    font-family: GOTHICBI;
+    src: url(../../fonts/GOTHICBI.ttf); 
 }
 
 
@@ -45,6 +60,7 @@ body{
 }
 
 body {
+  font-family: GOTHIC; 
   padding: 0;
 }
 

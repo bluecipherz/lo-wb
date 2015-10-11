@@ -1,0 +1,53 @@
+@import '../_base/variables'; 
+@import '../_functions/baseFunctions'; 
+
+$pageWidth:1000px;
+$asideWidth :220;
+
+$sectorHeight : 360;
+
+.pageOuter{   
+	.page-left{ 
+	}
+	.page-mid{ 
+		.sector{ 
+			.main{  
+				.top{   
+				}
+				.mid{ 
+				}
+				.bottom{  
+				}
+			} 
+			.childCart,.restChildCart{ 
+				.child{  
+					.head{ }
+					.mid{ 
+						.iconSet{
+							.active{ 
+								@include transform(scale(1)); 
+							}
+						}
+					}
+				}
+				.child:nth-child(1),
+				.child:nth-child(2)
+				{border-top:none;} 
+				.child:hover,.moreBtn:hover{
+					cursor:pointer;
+					background:rgba($themeColorR,$themeColorG,$themeColorB,0.2);
+					.mid{
+						.iconSet{
+							.active{ 
+
+							}
+						}
+					}
+				}
+				.moreBtn:hover{
+					background:rgba($themeColorR,$themeColorG,$themeColorB,0.4);
+				}
+			}
+		} 
+	}
+} 

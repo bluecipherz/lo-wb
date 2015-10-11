@@ -7,20 +7,73 @@
         <!--page index and other info-->
         <div class="page-mid">
             <div class="sector" ng-repeat="data in courses.courseData" >
-                <div class="main">
-                    <div class="rows">
-                        <div class="img">
-                            <img src="{{data.img}}">
+                <div class="topSection">
+                    <div class="main">
+                        <div class="top">
+                            <div class="img">
+                                <img src="{{data.img}}">
+                            </div>
+                        </div>
+                        <div class="mid">{{ data.title }}</div>
+                        <div class="bottom">{{ data.desc }}</div>
+                    </div>
+                    <div class="childCart">  
+                        <div class="child " ng-repeat="child in data.children.slice(0,5)"> 
+                            <div class="head"> 
+                                {{ child.title}}
+                            </div>  
+                            <div class="mid"> 
+                                <table>
+                                    <tr>
+                                        <td > <div >Duration :  </div></td>
+                                        <td class="iconSet"> 
+                                            <div ng-class="{'active': courses.pageAct}" ng-repeat="i in courses.getNumber( child.duration ) track by $index" class="star-checked"></div> 
+                                            <div ng-class="{'active': courses.pageAct}" ng-repeat="i in courses.getNumber( 5 - child.duration ) track by $index" class="star-unchecked"></div> 
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td> Cost(Aprox) :  </td>
+                                        <td class="iconSet"> 
+                                            <div ng-class="{'active': courses.pageAct}" ng-repeat="i in courses.getNumber( child.cost ) track by $index" class="star-checked"></div> 
+                                            <div ng-class="{'active': courses.pageAct}" ng-repeat="i in courses.getNumber( 5 - child.cost ) track by $index" class="star-unchecked"></div> 
+                                        </td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </div>
+                        <div class="moreBtn" ng-click="data.showRestChild = ! data.showRestChild"> 
+                            <span ng-class="{'hidden': data.showRestChild}">SEE MORE +</span> 
+                            <span ng-class="{'hidden': !data.showRestChild}">SEE LESS -</span> 
+                        </div>
+                    </div>   
+                </div>   
+                <div class="bottomSection" >
+                    <div class="restChildCart" > 
+                        <div class="child " ng-repeat="child in data.children.slice(5,100)" ng-class="{'showChild': data.showRestChild}"> 
+                            <div class="head"> 
+                                {{ child.title}}
+                            </div>  
+                            <div class="mid"> 
+                                <table>
+                                    <tr>
+                                        <td> <div >Duration :  </div></td>
+                                        <td class="iconSet"> 
+                                            <div ng-class="{'active': data.showRestChild}" ng-repeat="i in courses.getNumber( child.duration ) track by $index" class="star-checked"></div> 
+                                            <div ng-class="{'active': data.showRestChild}" ng-repeat="i in courses.getNumber( 5 - child.duration ) track by $index" class="star-unchecked"></div> 
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td> Cost(Aprox) :  </td>
+                                        <td class="iconSet"> 
+                                            <div ng-class="{'active': data.showRestChild}" ng-repeat="i in courses.getNumber( child.cost ) track by $index" class="star-checked"></div> 
+                                            <div ng-class="{'active': data.showRestChild}" ng-repeat="i in courses.getNumber( 5 - child.cost ) track by $index" class="star-unchecked"></div> 
+                                        </td>
+                                    </tr>
+                                </table>
+                            </div>
                         </div>
                     </div>
-                    <div>{{ data.title }}</div>
-                    <div>{{ data.desc }}</div>
-                </div>
-                <div class="childCart">
-                    <div class="child" ng-repeat="child in data.children">
-                        
-                    </div>
-                </div>    
+                </div> 
             </div>
         </div>
     </div>

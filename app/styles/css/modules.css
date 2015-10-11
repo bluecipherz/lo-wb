@@ -95,6 +95,29 @@
   line-height: 120%;
   padding: 0 10px; }
 
+/* ICONS */
+.star-checked {
+  display: block;
+  float: left;
+  background: url("../../images/icons/star_checked.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  width: 20px;
+  height: 20px;
+  padding: 0px;
+  margin: 0px; }
+
+.star-unchecked {
+  display: block;
+  float: left;
+  background: url("../../images/icons/star_unchecked.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  width: 20px;
+  height: 20px;
+  padding: 0px;
+  margin: 0px; }
+
 /* Colors */
 /* images */
 .home-top-inner {

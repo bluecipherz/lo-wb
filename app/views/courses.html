@@ -1,12 +1,12 @@
-<div class="greyBG page-full">
-    <div class="bgrid -bg-s-1000 -bg-s-1000-o whiteBG pageOuter" >
+<div class="greyBG bgrid page-full"  style="width:100%;   ">
+    <div class="bgrid -bg-s-1000 -bg-s-1000-o whiteBG pageOuter">
         <!--Left side Box-->
         <div class="page-left">
              
         </div>
         <!--page index and other info-->
         <div class="page-mid">
-            <div class="sector" ng-repeat="data in courses.courseData">
+            <div class="sector" ng-repeat="data in courses.courseData" >
                 <div class="main">
                     <div class="rows">
                         <div class="img">
@@ -16,9 +16,11 @@
                     <div>{{ data.title }}</div>
                     <div>{{ data.desc }}</div>
                 </div>
-                <div class="child" ng-repeat="child in data.children">
-                    
-                </div>
+                <div class="childCart">
+                    <div class="child" ng-repeat="child in data.children">
+                        
+                    </div>
+                </div>    
             </div>
         </div>
     </div>

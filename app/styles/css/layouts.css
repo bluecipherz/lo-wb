@@ -161,36 +161,50 @@
       display: block;
       float: left;
       width: calc(100% - 40px);
+      position: relative;
       margin: 20px;
       min-height: 20px;
       border-bottom: 3px solid #444; }
-      .pageOuter .page-mid .sector .main, .pageOuter .page-mid .sector .child {
+      .pageOuter .page-mid .sector .main {
         display: block;
         float: left;
         width: 32%;
-        margin-left: 2%;
-        height: 360px;
-        padding: 10px 0; }
-        .pageOuter .page-mid .sector .main .rows, .pageOuter .page-mid .sector .child .rows {
+        margin-left: 0;
+        position: absolute;
+        top: 0px;
+        bottom: 0px;
+        left: 0px;
+        padding: 0px 0;
+        background: red; }
+        .pageOuter .page-mid .sector .main .rows {
           display: block;
           float: left;
           height: calc(100% / 3 );
           width: 100%; }
-          .pageOuter .page-mid .sector .main .rows .img, .pageOuter .page-mid .sector .child .rows .img {
+          .pageOuter .page-mid .sector .main .rows .img {
             width: 120px;
             height: 120px;
             margin: 0 auto; }
-            .pageOuter .page-mid .sector .main .rows .img img, .pageOuter .page-mid .sector .child .rows .img img {
+            .pageOuter .page-mid .sector .main .rows .img img {
               max-width: 100%;
               max-height: 100%;
               min-height: 100%; }
-      .pageOuter .page-mid .sector .main {
-        margin-left: 0; }
-      .pageOuter .page-mid .sector .child {
-        height: 120px;
-        border-top: 3px solid #aaa; }
-      .pageOuter .page-mid .sector .child:nth-child(2),
-      .pageOuter .page-mid .sector .child:nth-child(3) {
-        border-top: none; }
+      .pageOuter .page-mid .sector .childCart {
+        display: block;
+        float: left;
+        position: relative;
+        margin-left: 32%;
+        width: 68%; }
+        .pageOuter .page-mid .sector .childCart .child {
+          display: block;
+          float: left;
+          width: 48%;
+          margin-left: 2%;
+          padding: 10px 0;
+          min-height: 120px;
+          border-top: 3px solid #aaa; }
+        .pageOuter .page-mid .sector .childCart .child:nth-child(1),
+        .pageOuter .page-mid .sector .childCart .child:nth-child(2) {
+          border-top: none; }
 
 /*# sourceMappingURL=layouts.css.map */

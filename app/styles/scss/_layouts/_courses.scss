@@ -34,17 +34,23 @@ $sectorHeight : 360;
 			display:block;
 			float:left;
 			width:calc(100% - 40px);
+			position:relative;
 			margin:20px;
 			min-height:20px;
 
 			border-bottom:3px solid #444;
-			.main,.child{
+			.main{
 				display:block;
 				float:left;
-				width:32%;
-				margin-left: 2%;
-				height:360px;
-				padding:10px 0;
+				width:32%;  
+				margin-left: 0;
+				position:absolute;
+				top:0px;
+				bottom:0px;
+				left:0px;
+
+				padding:0px 0; 
+				background:red;
 				.rows{
 					display:block;
 					float:left;
@@ -61,17 +67,27 @@ $sectorHeight : 360;
 						}
 					}
 				}
+			} 
+			.childCart{
+				display:block;
+				float:left;
+				position:relative;
+				margin-left:32%;
+				width:68%;
+				.child{
+					display:block;
+					float:left;
+					width:48%;
+					margin-left: 2%; 
+
+					padding:10px 0; 
+					min-height:120px;  
+					border-top:3px solid #aaa;
+				}
+				.child:nth-child(1),
+				.child:nth-child(2)
+				{border-top:none;}
 			}
-			.main{
-				margin-left: 0;
-			}
-			.child{
-				height:120px;  
-				border-top:3px solid #aaa;
-			}
-			.child:nth-child(2),
-			.child:nth-child(3)
-			{border-top:none;}
 		}
 	}
 }

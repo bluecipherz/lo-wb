@@ -9,8 +9,9 @@
  * Main module of the application.
  */
 angular
-  .module('todoappApp', [
-    'ngRoute'
+  .module('loWbApp', [
+    'ngRoute',
+    'ngResource'
   ])
   .config(function ($routeProvider, $locationProvider) {
     $routeProvider

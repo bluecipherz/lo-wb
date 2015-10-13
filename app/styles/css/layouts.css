@@ -151,6 +151,44 @@
     left: 0px;
     bottom: 0px;
     background: #66cbff; }
+    .pageOuter .page-left .top {
+      display: block;
+      float: left;
+      width: 100%;
+      padding: 40px 0 0 20px;
+      color: #fff; }
+    .pageOuter .page-left .cont {
+      display: block;
+      float: left;
+      width: 100%;
+      font-size: 86%; }
+      .pageOuter .page-left .cont .sector {
+        display: block;
+        float: left;
+        width: 100%; }
+      .pageOuter .page-left .cont .parent, .pageOuter .page-left .cont .child, .pageOuter .page-left .cont .endNode {
+        display: block;
+        float: left;
+        width: 100%; }
+      .pageOuter .page-left .cont .parent, .pageOuter .page-left .cont .endNode {
+        height: 27px;
+        line-height: 27px;
+        padding-left: 10px; }
+      .pageOuter .page-left .cont .parent:hover, .pageOuter .page-left .cont .endNode:hover {
+        cursor: pointer;
+        background: rgba(255, 255, 255, 0.1); }
+      .pageOuter .page-left .cont .child {
+        display: none;
+        color: #fff;
+        padding-left: 10px; }
+        .pageOuter .page-left .cont .child .active > .parent {
+          /* state */
+          border-left: 2px solid #000; }
+      .pageOuter .page-left .cont .active > .parent {
+        font-family: GOTHICB;
+        background: rgba(225, 225, 225, 0.3); }
+      .pageOuter .page-left .cont .active > .child {
+        display: block; }
   .pageOuter .page-mid {
     display: block;
     float: left;

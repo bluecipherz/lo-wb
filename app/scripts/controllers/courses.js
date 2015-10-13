@@ -7,9 +7,62 @@
  * # CoursesCtrl
  * Controller of the todoappApp
  */
-angular.module('todoappApp')
-  .controller('CoursesCtrl', function ($scope,$interval) {
+angular.module('loWbApp')
+  .controller('CoursesCtrl', function ($scope,$interval,$resource,$filter) {
         var vm = this;
+
+        this.selected = 2;
+
+        this.selectItem = function(item) {
+            console.log(item);
+            vm.selected = item;
+            vm.niceFilter = {parent:item,id:item};
+        }
+
+        this.isSelected = function(item) {
+            return item == vm.selected;
+        }
+
+        this.niceFilter = {
+            parent:null
+        }
+
+        vm.courseList = [];
+
+        $resource('data/courses.json').query().$promise.then(function(results) {
+            var tempArray = [];
+            var highestLevel = Math.max.apply(Math,results.map(function(o){return o.level;}));
+            // angular.forEach(results, function(value) {
+            //     if(value.parent === null) {
+            //         vm.courseList.push(value);
+            //     } else {
+            //         var parent = vm.courseList.filter(function(course) {
+            //             return course.id === value.parent;
+            //         })[0];
+            //         parent.children.push(value);
+            //     }
+            // });
+            for(var i=highestLevel;i>0;i--) {
+                if(i==highestLevel) {
+                    var parArr = results.filter(function(o) {
+                        return o.level == i;
+                    });   
+                } else {
+                    var parArr = tempArray;
+                }
+                var chiArr = results.filter(function(o) {
+                    return o.level == i-0;
+                });
+                angular.forEach(parArr, function(o) {
+                    o['children'] = chiArr.filter(function(child) {
+                        child.parent == o.id;
+                    });
+                });
+                tempArray = parArr;
+            }
+            // vm.courseList = results;
+        });
+
         vm.courseData =
             [{'title':'What To Do After Completing 10th', 'desc':'Commerce is a field of adventure, Accounting is the major profession in this area, They can try every fields and they are the most highly paid  people ', 'img':'images/home/home1.png','type':'parent',
                 'children':[{'title':'Study Various Deploma Course','duration':2,'cost':3,'type':'endNode'},

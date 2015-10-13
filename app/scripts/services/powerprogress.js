@@ -7,7 +7,7 @@
  * # powerProgress
  * Service in the todoappApp.
  */
-angular.module('todoappApp')
+angular.module('loWbApp')
   .service('powerProgress', function () {
         var timex;
     this.loadProgress = function() {

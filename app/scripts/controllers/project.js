@@ -7,7 +7,7 @@
  * # ProjectCtrl
  * Controller of the todoappApp
  */
-angular.module('todoappApp')
+angular.module('loWbApp')
   .controller('ProjectCtrl', function () {
     this.awesomeThings = [
       'HTML5 Boilerplate',

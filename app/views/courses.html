@@ -2,7 +2,12 @@
     <div class="bgrid -bg-s-1000 -bg-s-1000-o whiteBG pageOuter">
         <!--Left side Box-->
         <div class="page-left">
-             
+            <div class="top">
+                Navigation
+            </div> 
+            <div class="cont">
+                <nested-menu ng-repeat="course in courses.courseList"></nested-menu> 
+            </div>
         </div>
         <!--page index and other info-->
         <div class="page-mid">

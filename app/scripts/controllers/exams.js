@@ -7,7 +7,7 @@
  * # ExamsCtrl
  * Controller of the todoappApp
  */
-angular.module('todoappApp')
+angular.module('loWbApp')
   .controller('ExamsCtrl', function () {
     this.awesomeThings = [
       'HTML5 Boilerplate',

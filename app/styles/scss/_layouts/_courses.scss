@@ -23,6 +23,56 @@ $sectorHeight : 360;
 		bottom:0px;	
 
 		background:$themeColor;
+		.top{
+			display:block;
+			float:left; 
+			width:100%;
+
+			padding:40px 0 0 20px;
+			color:#fff;
+		}
+		.cont{
+			display:block;
+			float:left;
+			width:100%;
+
+			font-size:86%;
+			.sector{
+				display:block;
+				float:left;
+				width:100%; 
+			}
+			.parent,.child,.endNode{
+				display:block;
+				float:left; 
+				width:100%; 
+			}
+			.parent,.endNode{  
+				height:27px;  
+
+				line-height:27px; 
+				padding-left:10px;
+			} 
+			.parent:hover,.endNode:hover{   
+				cursor:pointer;
+				background:rgba(255,255,255,0.1);
+			} 
+			.child{
+				display:none;
+				color:#fff; 
+				padding-left:10px;
+				.active > .parent{/* state */
+					border-left:2px solid #000;
+				}
+			}
+			.active > .parent{
+				font-family:GOTHICB;
+				background:rgba(225,225,225,0.3); 
+			}
+			.active > .child{
+				display:block;
+			} 
+		}
 	}
 	.page-mid{
 		display:block;

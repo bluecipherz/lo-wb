@@ -32,5 +32,5 @@
       {"id":27,"name":"higher secondary","parent":25,"level":5},
       {"id":28,"name":"Indian army","parent":25,"level":5},
       {"id":29,"name":"Police force","parent":25,"level":5},
-      {"id":30,"name":"Vecational course","parent":25,"level":5},
+      {"id":30,"name":"Vecational course","parent":25,"level":5}
 ]

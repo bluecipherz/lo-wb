@@ -60,30 +60,30 @@ angular
   })
   .run(function($rootScope, powerProgress) {
 	  $rootScope.$on('$routeChangeStart', function() {
-		powerProgress.loadProgress();
+		  powerProgress.loadProgress();
 	  });
 
 	  $rootScope.$on('$routeChangeSuccess', function() {
 	  
 	  });
   }).directive("scroll", ['$location','$window', function(location,$window){
-        return function($scope, element, attrs) {
-            angular.element($window).bind("scroll", function() {
-                if (location.path() =='/' ) {
-                    if (this.pageYOffset >= 450) {
-                        $scope.addHeader = true;
-                    } else {
-                        $scope.addHeader = false;
-                        var op = 1 - ((this.pageYOffset)/450 );
-                        var zoom = 1 - (((this.pageYOffset)/450 ) / 5);
-                        $('.home-top-inner').css({'opacity' : op , '-webkit-transform': 'scale('+zoom+')' ,'-moz-transform': 'scale('+zoom+')'});
-                    }
-                }else{
-                    $scope.addHeader = true;
-                }
-                $scope.$apply();
-            });
-        };
-    }]).run(function($rootScope, $location) {
-        $rootScope.location = $location;
-    });
+    return function($scope, element, attrs) {
+      angular.element($window).bind("scroll", function() {
+        if (location.path() =='/' ) {
+          if (this.pageYOffset >= 450) {
+            $scope.addHeader = true;
+          } else {
+            $scope.addHeader = false;
+            var op = 1 - ((this.pageYOffset)/450 );
+            var zoom = 1 - (((this.pageYOffset)/450 ) / 5);
+            $('.home-top-inner').css({'opacity' : op , '-webkit-transform': 'scale('+zoom+')' ,'-moz-transform': 'scale('+zoom+')'});
+          }
+        }else{
+          $scope.addHeader = true;
+        }
+        $scope.$apply();
+      });
+    };
+  }]).run(function($rootScope, $location) {
+    $rootScope.location = $location;
+  });

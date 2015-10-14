@@ -1,0 +1,37 @@
+[
+      {"name":"1 What to do after 10th","id":"1","parent_id":null,"lft":"1","rgt":"60","depth":"0","created_at":"2015-10-13 18:29:19","updated_at":"2015-10-13 18:29:21","children":[
+            {"name":"Diploma","id":"2","parent_id":"1","lft":"2","rgt":"3","depth":"1","created_at":"2015-10-13 18:29:19","updated_at":"2015-10-13 18:29:20","children":[]},
+            {"name":"higher secondary","id":"3","parent_id":"1","lft":"4","rgt":"5","depth":"1","created_at":"2015-10-13 18:29:20","updated_at":"2015-10-13 18:29:20","children":[]},
+            {"name":"Indian army","id":"4","parent_id":"1","lft":"6","rgt":"7","depth":"1","created_at":"2015-10-13 18:29:20","updated_at":"2015-10-13 18:29:20","children":[]},
+            {"name":"Police force","id":"5","parent_id":"1","lft":"8","rgt":"9","depth":"1","created_at":"2015-10-13 18:29:20","updated_at":"2015-10-13 18:29:20","children":[]},
+            {"name":"Vecational course","id":"6","parent_id":"1","lft":"10","rgt":"11","depth":"1","created_at":"2015-10-13 18:29:20","updated_at":"2015-10-13 18:29:20","children":[]},
+            {"name":"2 What to do after 10th","id":"7","parent_id":"1","lft":"12","rgt":"59","depth":"1","created_at":"2015-10-13 18:29:20","updated_at":"2015-10-13 18:29:21","children":[
+                  {"name":"Diploma","id":"8","parent_id":"7","lft":"13","rgt":"14","depth":"2","created_at":"2015-10-13 18:29:20","updated_at":"2015-10-13 18:29:20","children":[]},
+                  {"name":"higher secondary","id":"9","parent_id":"7","lft":"15","rgt":"16","depth":"2","created_at":"2015-10-13 18:29:20","updated_at":"2015-10-13 18:29:20","children":[]},
+                  {"name":"Indian army","id":"10","parent_id":"7","lft":"17","rgt":"18","depth":"2","created_at":"2015-10-13 18:29:20","updated_at":"2015-10-13 18:29:20","children":[]},
+                  {"name":"Police force","id":"11","parent_id":"7","lft":"19","rgt":"20","depth":"2","created_at":"2015-10-13 18:29:20","updated_at":"2015-10-13 18:29:20","children":[]},
+                  {"name":"Vecational course","id":"12","parent_id":"7","lft":"21","rgt":"22","depth":"2","created_at":"2015-10-13 18:29:20","updated_at":"2015-10-13 18:29:20","children":[]},
+                  {"name":"3 What to do after 10th","id":"13","parent_id":"7","lft":"23","rgt":"58","depth":"2","created_at":"2015-10-13 18:29:20","updated_at":"2015-10-13 18:29:21","children":[
+                        {"name":"Diploma","id":"14","parent_id":"13","lft":"24","rgt":"25","depth":"3","created_at":"2015-10-13 18:29:20","updated_at":"2015-10-13 18:29:20","children":[]},
+                        {"name":"higher secondary","id":"15","parent_id":"13","lft":"26","rgt":"27","depth":"3","created_at":"2015-10-13 18:29:20","updated_at":"2015-10-13 18:29:20","children":[]},
+                        {"name":"Indian army","id":"16","parent_id":"13","lft":"28","rgt":"29","depth":"3","created_at":"2015-10-13 18:29:20","updated_at":"2015-10-13 18:29:20","children":[]},
+                        {"name":"Police force","id":"17","parent_id":"13","lft":"30","rgt":"31","depth":"3","created_at":"2015-10-13 18:29:20","updated_at":"2015-10-13 18:29:20","children":[]},
+                        {"name":"Vecational course","id":"18","parent_id":"13","lft":"32","rgt":"33","depth":"3","created_at":"2015-10-13 18:29:20","updated_at":"2015-10-13 18:29:20","children":[]},
+                        {"name":"4 What to do after 10th","id":"19","parent_id":"13","lft":"34","rgt":"57","depth":"3","created_at":"2015-10-13 18:29:20","updated_at":"2015-10-13 18:29:21","children":[
+                              {"name":"Diploma","id":"20","parent_id":"19","lft":"35","rgt":"36","depth":"4","created_at":"2015-10-13 18:29:20","updated_at":"2015-10-13 18:29:20","children":[]},
+                              {"name":"higher secondary","id":"21","parent_id":"19","lft":"37","rgt":"38","depth":"4","created_at":"2015-10-13 18:29:20","updated_at":"2015-10-13 18:29:20","children":[]},
+                              {"name":"Indian army","id":"22","parent_id":"19","lft":"39","rgt":"40","depth":"4","created_at":"2015-10-13 18:29:20","updated_at":"2015-10-13 18:29:20","children":[]},
+                              {"name":"Police force","id":"23","parent_id":"19","lft":"41","rgt":"42","depth":"4","created_at":"2015-10-13 18:29:20","updated_at":"2015-10-13 18:29:20","children":[]},
+                              {"name":"Vecational course","id":"24","parent_id":"19","lft":"43","rgt":"44","depth":"4","created_at":"2015-10-13 18:29:20","updated_at":"2015-10-13 18:29:21","children":[]},
+                              {"name":"5 What to do after 10th","id":"25","parent_id":"19","lft":"45","rgt":"56","depth":"4","created_at":"2015-10-13 18:29:21","updated_at":"2015-10-13 18:29:21","children":[
+                                    {"name":"Diploma","id":"26","parent_id":"25","lft":"46","rgt":"47","depth":"5","created_at":"2015-10-13 18:29:21","updated_at":"2015-10-13 18:29:21","children":[]},
+                                    {"name":"higher secondary","id":"27","parent_id":"25","lft":"48","rgt":"49","depth":"5","created_at":"2015-10-13 18:29:21","updated_at":"2015-10-13 18:29:21","children":[]},
+                                    {"name":"Indian army","id":"28","parent_id":"25","lft":"50","rgt":"51","depth":"5","created_at":"2015-10-13 18:29:21","updated_at":"2015-10-13 18:29:21","children":[]},
+                                    {"name":"Police force","id":"29","parent_id":"25","lft":"52","rgt":"53","depth":"5","created_at":"2015-10-13 18:29:21","updated_at":"2015-10-13 18:29:21","children":[]},
+                                    {"name":"Vecational course","id":"30","parent_id":"25","lft":"54","rgt":"55","depth":"5","created_at":"2015-10-13 18:29:21","updated_at":"2015-10-13 18:29:21","children":[]}
+                              ]}
+                        ]}
+                  ]}
+            ]}
+      ]}
+]

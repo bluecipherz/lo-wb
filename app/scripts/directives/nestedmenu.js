@@ -15,8 +15,9 @@ angular.module('loWbApp')
       link: function postLink(scope, element, attrs) {
         if(angular.isArray(scope.course.children)) {
         	// console.log(scope.course.name + ' has children');
-          element.find('.child').append('<nested-menu ng-repeat="course in course.children"></nested-menu>');
-          $compile(element.contents())(scope);
+          var el = angular.element('<nested-menu ng-repeat="course in course.children"></nested-menu>');
+          $compile(el)(scope);
+          element.find('.child').append(el);
         }
       }
     };

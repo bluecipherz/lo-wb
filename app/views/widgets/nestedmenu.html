@@ -1,7 +1,6 @@
 
-<div class="sector active" ng-click="courses.selectItem(course.id)">
-<!-- ng-class="{'active':courses.isSelected(course.id)}" -->
-    <div class="parent ">{{ course.name }}</div> 
+<div class="sector" ng-class="{'active':courses.isSelected(course.id)}">
+    <div class="parent" ng-click="courses.selectItem(course.id)">{{ course.name }}</div> 
     <div class="child">
     </div>
 </div>

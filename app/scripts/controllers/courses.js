@@ -11,7 +11,7 @@ angular.module('loWbApp')
   .controller('CoursesCtrl', function ($scope,$interval,nestedSet) {
         var vm = this;
 
-        this.selected = [];
+        this.selected = []; // tree view heirarchy selected elements
 
         vm.courseList = nestedSet.getNestedSet();
 
@@ -20,23 +20,15 @@ angular.module('loWbApp')
         })
 
         this.selectItem = function(id) {
-            console.log('selecting')
-            var path = nestedSet.find(id).getPath().map(function(node) {
-                return Number(node);
-            });
             var depth = nestedSet.find(id).get().depth;
-            console.log('depth ' + depth)
-            while(vm.selected.length > depth) {
+            while(vm.selected.length > depth) { // deselect necessary items
                 vm.selected.pop();
-                console.log('popped ' + vm.selected.length)
             }
-            vm.selected.push(id);
+            vm.selected.push(id); // select clicked item
         }
 
         this.isSelected = function(id) {
             return vm.selected.indexOf(id) > -1;
-            // if(vm.selected === id) return true;
-            // return nestedSet.find(vm.selected).getPath().indexOf(id) > -1;
         }
 
         vm.courseData = [

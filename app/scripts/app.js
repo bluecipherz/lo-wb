@@ -10,11 +10,10 @@
  */
 angular
   .module('loWbApp', [
-    'ngRoute',
     'ngResource',
     'ui.router',
   ])
-  .config(function ($routeProvider, $locationProvider,$stateProvider,$urlRouterProvider) {
+  .config(function ($locationProvider,$stateProvider,$urlRouterProvider) {
       $urlRouterProvider.otherwise('/'); 
  
       $stateProvider
@@ -42,10 +41,7 @@ angular
           controller: 'MainCtrl',
           controllerAs: 'funzone'
         }) 
-      // enable html5Mode for pushstate ('#'-less URLs)
-      // if(window.history && window.history.pushState){
-      //     $locationProvider.html5Mode(true);
-      // }
+        
   })
   .run(function($rootScope, powerProgress) {
 	  $rootScope.$on('$routeChangeStart', function() {

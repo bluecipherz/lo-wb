@@ -44,6 +44,10 @@ angular
         
   })
   .run(function($rootScope, powerProgress) {
+    var bwidth = $(window).width();
+    var zoom = ((bwidth - 19) / 1200 );
+    console.log(zoom);
+    $('body').css({'zoom':zoom})
 	  $rootScope.$on('$routeChangeStart', function() {
 		  powerProgress.loadProgress();
 	  });

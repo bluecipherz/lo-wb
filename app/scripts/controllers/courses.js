@@ -8,8 +8,11 @@
  * Controller of the todoappApp
  */
 angular.module('loWbApp')
-  .controller('CoursesCtrl', function ($scope,$interval,nestedSet) {
+  .controller('CoursesCtrl', function ($scope,$interval,nestedSet, $stateParams,$rootScope, $state) {
         var vm = this;
+        $rootScope.$state = $state;
+        $rootScope.$stateParams = $stateParams; 
+
 
         this.selected = []; // tree view heirarchy selected elements
 
@@ -96,4 +99,5 @@ angular.module('loWbApp')
         }
 
         $interval(function(){ vm.pageAct = true; },200);
+        
     });

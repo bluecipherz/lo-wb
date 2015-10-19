@@ -5,7 +5,7 @@
 .hShow {
   margin-top: 0px; }
 
-.ngView {
+.ngViewDiv {
   margin-top: 60px;
   min-height: 400px; }
 
@@ -202,14 +202,14 @@
       width: calc(100% - 40px);
       position: relative;
       margin: 20px;
-      min-height: 20px;
+      min-height: 0px;
       border-bottom: 2px solid #444; }
       .pageOuter .page-mid .sector .topSection, .pageOuter .page-mid .sector .bottomSection {
         display: block;
         float: left;
         width: 100%;
         position: relative;
-        min-height: 20px; }
+        min-height: 0px; }
         .pageOuter .page-mid .sector .topSection .main, .pageOuter .page-mid .sector .bottomSection .main {
           display: block;
           float: left;
@@ -295,7 +295,7 @@
           width: calc( 50% - 10px );
           margin-left: 10px;
           padding: 10px 0;
-          height: 120px;
+          height: 125px;
           border-top: 2px solid #aaa; }
           .pageOuter .page-mid .sector .topSection .child .head, .pageOuter .page-mid .sector .topSection .child .mid, .pageOuter .page-mid .sector .topSection .child .foot, .pageOuter .page-mid .sector .topSection .moreBtn .head, .pageOuter .page-mid .sector .topSection .moreBtn .mid, .pageOuter .page-mid .sector .topSection .moreBtn .foot, .pageOuter .page-mid .sector .bottomSection .child .head, .pageOuter .page-mid .sector .bottomSection .child .mid, .pageOuter .page-mid .sector .bottomSection .child .foot, .pageOuter .page-mid .sector .bottomSection .moreBtn .head, .pageOuter .page-mid .sector .bottomSection .moreBtn .mid, .pageOuter .page-mid .sector .bottomSection .moreBtn .foot {
             display: block;
@@ -348,9 +348,27 @@
               -moz-transition-delay: 0.8s;
               -o-transition-delay: 0.8s;
               transition-delay: 0.8s; }
+          .pageOuter .page-mid .sector .topSection .child .headF, .pageOuter .page-mid .sector .topSection .moreBtn .headF, .pageOuter .page-mid .sector .bottomSection .child .headF, .pageOuter .page-mid .sector .bottomSection .moreBtn .headF {
+            padding-bottom: 3px;
+            font-size: 110%; }
+          .pageOuter .page-mid .sector .topSection .child .BottomImg, .pageOuter .page-mid .sector .topSection .moreBtn .BottomImg, .pageOuter .page-mid .sector .bottomSection .child .BottomImg, .pageOuter .page-mid .sector .bottomSection .moreBtn .BottomImg {
+            display: block;
+            float: left;
+            background: #ddd;
+            width: 100px;
+            height: 70px;
+            overflow: hidden;
+            margin-right: 5px; }
+            .pageOuter .page-mid .sector .topSection .child .BottomImg img, .pageOuter .page-mid .sector .topSection .moreBtn .BottomImg img, .pageOuter .page-mid .sector .bottomSection .child .BottomImg img, .pageOuter .page-mid .sector .bottomSection .moreBtn .BottomImg img {
+              max-width: 100%;
+              min-width: 100%; }
+          .pageOuter .page-mid .sector .topSection .child .overH6, .pageOuter .page-mid .sector .topSection .moreBtn .overH6, .pageOuter .page-mid .sector .bottomSection .child .overH6, .pageOuter .page-mid .sector .bottomSection .moreBtn .overH6 {
+            display: block;
+            float: right;
+            width: calc(100% - 105px); }
         .pageOuter .page-mid .sector .topSection .moreBtn, .pageOuter .page-mid .sector .bottomSection .moreBtn {
           background: rgba(102, 203, 225, 0.3);
-          line-height: 100px;
+          line-height: 105px;
           text-align: center;
           font-family: GOTHICB;
           font-size: 140%;

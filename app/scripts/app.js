@@ -25,9 +25,9 @@ angular
         })
         .state('exams', {
           url: '/exams',
-          templateUrl: 'views/exams.html',
+          templateUrl: 'views/courses.html',
           controller: 'ExamsCtrl',
-          controllerAs: 'exams'
+          controllerAs: 'courses'
         })
         .state('courses', {
           url: '/courses',
@@ -37,9 +37,9 @@ angular
         })
         .state('funzone', {
           url: '/funzone',
-          templateUrl: 'views/funzone.html',
-          controller: 'MainCtrl',
-          controllerAs: 'funzone'
+          templateUrl: 'views/courses.html',
+          controller: 'FunzoneCtrl',
+          controllerAs: 'courses'
         }) 
         
   })

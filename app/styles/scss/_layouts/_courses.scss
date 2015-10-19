@@ -88,7 +88,7 @@ $sectorHeight : 360;
 			width:calc(100% - 40px);
 			position:relative;
 			margin:20px;
-			min-height:20px;
+			min-height:0px;
 
 			border-bottom:2px solid #444; 
 			.topSection , .bottomSection{ 
@@ -96,7 +96,7 @@ $sectorHeight : 360;
 				float:left;
 				width:100% ;
 				position:relative; 
-				min-height:20px;
+				min-height:0px;
 				.main{
 					display:block;
 					float:left;
@@ -188,7 +188,7 @@ $sectorHeight : 360;
 					margin-left: 10px; 
 
 					padding:10px 0; 
-					height:120px;  
+					height:125px;  
 					border-top:2px solid #aaa;
 					.head,.mid,.foot{
 						display:block;
@@ -232,10 +232,31 @@ $sectorHeight : 360;
 						    }
 						}
 					}
+					.headF{
+						padding-bottom:3px;
+						font-size:110%;}
+					.BottomImg{
+						display:block;
+						float:left;
+						background:#ddd;
+						width:100px;
+						height:70px;
+						overflow:hidden;
+						margin-right:5px;
+						img{
+							max-width:100%; 
+							min-width:100%; 
+						}
+					}
+					.overH6{
+						display:block;
+						float:right;
+						width:calc(100% - 105px);
+					}
 				}
 				.moreBtn{
 					background:rgba($themeColorR,$themeColorG,$themeColorB,0.3);
-					line-height:100px;
+					line-height:105px;
 					text-align:center;
 					font-family:GOTHICB;
 					font-size:140%;

@@ -1,5 +1,5 @@
 <div class="greyBG bgrid page-full"  style="width:100%;   ">
-    <div class="bgrid -bg-s-1000 -bg-s-1000-o whiteBG pageOuter">
+    <div class="bgrid -bg-s-1200 -bg-s-1200-o whiteBG pageOuter">
         <!--Left side Box-->
         <div class="page-left">
             <div class="top">
@@ -24,58 +24,91 @@
                     </div>
                     <div class="childCart">  
                         <div class="child " ng-repeat="child in data.children.slice(0,5)"> 
-                            <div class="head"> 
+                            <div class="head" ng-if="$state.current.name == 'courses' || $state.current.name == 'exams'"> 
                                 {{ child.title}}
                             </div>  
-                            <div class="mid"> 
-                                <table>
+
+                            <div class="mid" ng-if="$state.current.name == 'courses' || $state.current.name == 'exams'">  
+                                <table  > 
                                     <tr>
-                                        <td > <div >Duration :  </div></td>
+                                        <td ng-if="$state.current.name == 'courses'" > <div >Duration :  </div></td> <!-- course -->
+                                        <td ng-if="$state.current.name == 'exams'" > <div >ExamThing :  </div></td> <!-- exams -->
                                         <td class="iconSet"> 
                                             <div ng-class="{'active': courses.pageAct}" ng-repeat="i in courses.getNumber( child.duration ) track by $index" class="star-checked"></div> 
                                             <div ng-class="{'active': courses.pageAct}" ng-repeat="i in courses.getNumber( 5 - child.duration ) track by $index" class="star-unchecked"></div> 
                                         </td>
                                     </tr>
                                     <tr>
-                                        <td> Cost(Aprox) :  </td>
+                                        <td ng-if="$state.current.name == 'courses'" > Cost(Aprox) :  </td><!-- course -->
+                                        <td ng-if="$state.current.name == 'exams'" > Exam :  </td><!-- exams -->
                                         <td class="iconSet"> 
                                             <div ng-class="{'active': courses.pageAct}" ng-repeat="i in courses.getNumber( child.cost ) track by $index" class="star-checked"></div> 
                                             <div ng-class="{'active': courses.pageAct}" ng-repeat="i in courses.getNumber( 5 - child.cost ) track by $index" class="star-unchecked"></div> 
                                         </td>
                                     </tr>
                                 </table>
+                            </div>  
+
+                            <div class="b-grid headF" ng-if="$state.current.name == 'funzone'"> 
+                                {{ child.title}}
+                            </div>   
+                            <div class="b-grid" ng-if="$state.current.name == 'funzone'">
+                                <span ng-if=" child.title.length <= 28 "  > 
+                                    {{  child.description | limitTo: 120 }}{{child.description.length > 120 ? '...' : ''}} 
+                                </span>
+                                <span ng-if=" child.title.length > 28 " class='overH6'> 
+                                    {{  child.description | limitTo: 80 }}{{child.description.length > 80 ? '...' : ''}} 
+                                </span>
+                                <div class="BottomImg">
+                                    <img src="{{ child.img }}">
+                                </div>
                             </div>
+
                         </div>
                         <div class="moreBtn" ng-click="data.showRestChild = ! data.showRestChild"> 
-                            <span ng-class="{'hidden': data.showRestChild}">SEE MORE +</span> 
-                            <span ng-class="{'hidden': !data.showRestChild}">SEE LESS -</span> 
+                            <span ng-class="{'hidden': data.showRestChild}">SHOW MORE +</span> 
+                            <span ng-class="{'hidden': !data.showRestChild}">SHOW LESS -</span> 
                         </div>
                     </div>   
                 </div>   
                 <div class="bottomSection" >
                     <div class="restChildCart" > 
                         <div class="child " ng-repeat="child in data.children.slice(5,100)" ng-class="{'showChild': data.showRestChild}"> 
-                            <div class="head"> 
+                            <div class="head" ng-if="$state.current.name == 'courses' || $state.current.name == 'exams'"> 
                                 {{ child.title}}
                             </div>  
-                            <div class="mid"> 
-                                <table>
+
+                            <div class="mid" ng-if="$state.current.name == 'courses' || $state.current.name == 'exams'">  
+                                <table  > 
                                     <tr>
-                                        <td> <div >Duration :  </div></td>
+                                        <td ng-if="$state.current.name == 'courses'" > <div >Duration :  </div></td> <!-- course -->
+                                        <td ng-if="$state.current.name == 'exams'" > <div >ExamThing :  </div></td> <!-- exams -->
                                         <td class="iconSet"> 
-                                            <div ng-class="{'active': data.showRestChild}" ng-repeat="i in courses.getNumber( child.duration ) track by $index" class="star-checked"></div> 
-                                            <div ng-class="{'active': data.showRestChild}" ng-repeat="i in courses.getNumber( 5 - child.duration ) track by $index" class="star-unchecked"></div> 
+                                            <div ng-class="{'active': courses.pageAct}" ng-repeat="i in courses.getNumber( child.duration ) track by $index" class="star-checked"></div> 
+                                            <div ng-class="{'active': courses.pageAct}" ng-repeat="i in courses.getNumber( 5 - child.duration ) track by $index" class="star-unchecked"></div> 
                                         </td>
                                     </tr>
                                     <tr>
-                                        <td> Cost(Aprox) :  </td>
+                                        <td ng-if="$state.current.name == 'courses'" > Cost(Aprox) :  </td><!-- course -->
+                                        <td ng-if="$state.current.name == 'exams'" > Exam :  </td><!-- exams -->
                                         <td class="iconSet"> 
-                                            <div ng-class="{'active': data.showRestChild}" ng-repeat="i in courses.getNumber( child.cost ) track by $index" class="star-checked"></div> 
-                                            <div ng-class="{'active': data.showRestChild}" ng-repeat="i in courses.getNumber( 5 - child.cost ) track by $index" class="star-unchecked"></div> 
+                                            <div ng-class="{'active': courses.pageAct}" ng-repeat="i in courses.getNumber( child.cost ) track by $index" class="star-checked"></div> 
+                                            <div ng-class="{'active': courses.pageAct}" ng-repeat="i in courses.getNumber( 5 - child.cost ) track by $index" class="star-unchecked"></div> 
                                         </td>
                                     </tr>
                                 </table>
+                            </div>  
+
+                            <div class="b-grid headF" ng-if="$state.current.name == 'funzone'"> 
+                                {{ child.title}}
+                            </div>   
+                            <div class="b-grid" ng-if="$state.current.name == 'funzone'">
+                                <span class="b-grid">{{ child.description }}</span>
+                                <div class="BottomImg">
+                                    <img src="{{ child.img }}">
+                                </div>
                             </div>
+                            
                         </div>
                     </div>
                 </div> 

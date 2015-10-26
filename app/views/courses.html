@@ -1,4 +1,4 @@
-<div class="greyBG bgrid page-full"  style="width:100%;   ">
+<div class="greyBG bgrid page-full"  style="width:100%;">
     <div class="bgrid -bg-s-1200 -bg-s-1200-o whiteBG pageOuter">
         <!--Left side Box-->
         <div class="page-left">
@@ -12,6 +12,7 @@
         <!--page index and other info-->
         <div class="page-mid">
             <div class="sector" ng-repeat="data in courses.courseData" >
+
                 <div class="topSection">
                     <div class="main">
                         <div class="top">
@@ -29,7 +30,8 @@
                             </div>  
 
                             <div class="mid" ng-if="$state.current.name == 'courses' || $state.current.name == 'exams'">  
-                                <table  > 
+
+                                <table ng-if="child.type == 'endNode'" > 
                                     <tr>
                                         <td ng-if="$state.current.name == 'courses'" > <div >Duration :  </div></td> <!-- course -->
                                         <td ng-if="$state.current.name == 'exams'" > <div >ExamThing :  </div></td> <!-- exams -->
@@ -47,6 +49,15 @@
                                         </td>
                                     </tr>
                                 </table>
+
+                                <div class="subParent" ng-if="child.type == 'parent'">
+                                    <div class="subImage">
+                                        <img src="{{ child.imgLink }}">
+                                    </div>
+                                    <div class="desc">
+                                        Around <span class="c-blue">{{ child.childCount }} Options </span>available in this catogory. Click to see more
+                                    </div>
+                                </div>
                             </div>  
 
                             <div class="b-grid headF" ng-if="$state.current.name == 'funzone'"> 
@@ -71,15 +82,17 @@
                         </div>
                     </div>   
                 </div>   
+
                 <div class="bottomSection" >
                     <div class="restChildCart" > 
                         <div class="child " ng-repeat="child in data.children.slice(5,100)" ng-class="{'showChild': data.showRestChild}"> 
                             <div class="head" ng-if="$state.current.name == 'courses' || $state.current.name == 'exams'"> 
-                                {{ child.title}}
+                                {{ child.title }}
                             </div>  
 
                             <div class="mid" ng-if="$state.current.name == 'courses' || $state.current.name == 'exams'">  
-                                <table  > 
+                               
+                                <table ng-if="child.type == 'endNode'" > 
                                     <tr>
                                         <td ng-if="$state.current.name == 'courses'" > <div >Duration :  </div></td> <!-- course -->
                                         <td ng-if="$state.current.name == 'exams'" > <div >ExamThing :  </div></td> <!-- exams -->
@@ -97,6 +110,15 @@
                                         </td>
                                     </tr>
                                 </table>
+
+                                <div class="subParent" ng-if="child.type == 'parent'">
+                                    <div class="subImage">
+                                        <img src="{{ child.imgLink }}">
+                                    </div>
+                                    <div class="desc">
+                                        Around <span class="c-blue">{{ child.childCount }} Options </span>available in this catogory. Click to see more
+                                    </div>
+                                </div>
                             </div>  
 
                             <div class="b-grid headF" ng-if="$state.current.name == 'funzone'"> 

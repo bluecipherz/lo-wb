@@ -1,5 +1,6 @@
 /* Colors */
 /* images */
+/* Testing */
 body {
   min-width: 100%;
   min-height: 100%;
@@ -106,5 +107,55 @@ body {
   /* Remove the bottom border on the jumbotron for visual effect */
   .jumbotron {
     border-bottom: 0; } }
+.loader {
+  font-size: 20px;
+  margin: 150px auto;
+  width: 1em;
+  height: 1em;
+  border-radius: 50%;
+  position: relative;
+  text-indent: -9999em;
+  -webkit-animation: load4 1.3s infinite linear;
+  animation: load4 1.3s infinite linear;
+  -webkit-transform: translateZ(0);
+  -ms-transform: translateZ(0);
+  transform: translateZ(0); }
+
+@-webkit-keyframes load4 {
+  0%,
+  100% {
+    box-shadow: 0 -3em 0 0.2em #66cbff, 2em -2em 0 0em #66cbff, 3em 0 0 -1em #66cbff, 2em 2em 0 -1em #66cbff, 0 3em 0 -1em #66cbff, -2em 2em 0 -1em #66cbff, -3em 0 0 -1em #66cbff, -2em -2em 0 0 #66cbff; }
+  12.5% {
+    box-shadow: 0 -3em 0 0 #66cbff, 2em -2em 0 0.2em #66cbff, 3em 0 0 0 #66cbff, 2em 2em 0 -1em #66cbff, 0 3em 0 -1em #66cbff, -2em 2em 0 -1em #66cbff, -3em 0 0 -1em #66cbff, -2em -2em 0 -1em #66cbff; }
+  25% {
+    box-shadow: 0 -3em 0 -0.5em #66cbff, 2em -2em 0 0 #66cbff, 3em 0 0 0.2em #66cbff, 2em 2em 0 0 #66cbff, 0 3em 0 -1em #66cbff, -2em 2em 0 -1em #66cbff, -3em 0 0 -1em #66cbff, -2em -2em 0 -1em #66cbff; }
+  37.5% {
+    box-shadow: 0 -3em 0 -1em #66cbff, 2em -2em 0 -1em #66cbff, 3em 0em 0 0 #66cbff, 2em 2em 0 0.2em #66cbff, 0 3em 0 0em #66cbff, -2em 2em 0 -1em #66cbff, -3em 0em 0 -1em #66cbff, -2em -2em 0 -1em #66cbff; }
+  50% {
+    box-shadow: 0 -3em 0 -1em #66cbff, 2em -2em 0 -1em #66cbff, 3em 0 0 -1em #66cbff, 2em 2em 0 0em #66cbff, 0 3em 0 0.2em #66cbff, -2em 2em 0 0 #66cbff, -3em 0em 0 -1em #66cbff, -2em -2em 0 -1em #66cbff; }
+  62.5% {
+    box-shadow: 0 -3em 0 -1em #66cbff, 2em -2em 0 -1em #66cbff, 3em 0 0 -1em #66cbff, 2em 2em 0 -1em #66cbff, 0 3em 0 0 #66cbff, -2em 2em 0 0.2em #66cbff, -3em 0 0 0 #66cbff, -2em -2em 0 -1em #66cbff; }
+  75% {
+    box-shadow: 0em -3em 0 -1em #66cbff, 2em -2em 0 -1em #66cbff, 3em 0em 0 -1em #66cbff, 2em 2em 0 -1em #66cbff, 0 3em 0 -1em #66cbff, -2em 2em 0 0 #66cbff, -3em 0em 0 0.2em #66cbff, -2em -2em 0 0 #66cbff; }
+  87.5% {
+    box-shadow: 0em -3em 0 0 #66cbff, 2em -2em 0 -1em #66cbff, 3em 0 0 -1em #66cbff, 2em 2em 0 -1em #66cbff, 0 3em 0 -1em #66cbff, -2em 2em 0 0 #66cbff, -3em 0em 0 0 #66cbff, -2em -2em 0 0.2em #66cbff; } }
+@keyframes load4 {
+  0%,
+  100% {
+    box-shadow: 0 -3em 0 0.2em #66cbff, 2em -2em 0 0em #66cbff, 3em 0 0 -1em #66cbff, 2em 2em 0 -1em #66cbff, 0 3em 0 -1em #66cbff, -2em 2em 0 -1em #66cbff, -3em 0 0 -1em #66cbff, -2em -2em 0 0 #66cbff; }
+  12.5% {
+    box-shadow: 0 -3em 0 0 #66cbff, 2em -2em 0 0.2em #66cbff, 3em 0 0 0 #66cbff, 2em 2em 0 -1em #66cbff, 0 3em 0 -1em #66cbff, -2em 2em 0 -1em #66cbff, -3em 0 0 -1em #66cbff, -2em -2em 0 -1em #66cbff; }
+  25% {
+    box-shadow: 0 -3em 0 -0.5em #66cbff, 2em -2em 0 0 #66cbff, 3em 0 0 0.2em #66cbff, 2em 2em 0 0 #66cbff, 0 3em 0 -1em #66cbff, -2em 2em 0 -1em #66cbff, -3em 0 0 -1em #66cbff, -2em -2em 0 -1em #66cbff; }
+  37.5% {
+    box-shadow: 0 -3em 0 -1em #66cbff, 2em -2em 0 -1em #66cbff, 3em 0em 0 0 #66cbff, 2em 2em 0 0.2em #66cbff, 0 3em 0 0em #66cbff, -2em 2em 0 -1em #66cbff, -3em 0em 0 -1em #66cbff, -2em -2em 0 -1em #66cbff; }
+  50% {
+    box-shadow: 0 -3em 0 -1em #66cbff, 2em -2em 0 -1em #66cbff, 3em 0 0 -1em #66cbff, 2em 2em 0 0em #66cbff, 0 3em 0 0.2em #66cbff, -2em 2em 0 0 #66cbff, -3em 0em 0 -1em #66cbff, -2em -2em 0 -1em #66cbff; }
+  62.5% {
+    box-shadow: 0 -3em 0 -1em #66cbff, 2em -2em 0 -1em #66cbff, 3em 0 0 -1em #66cbff, 2em 2em 0 -1em #66cbff, 0 3em 0 0 #66cbff, -2em 2em 0 0.2em #66cbff, -3em 0 0 0 #66cbff, -2em -2em 0 -1em #66cbff; }
+  75% {
+    box-shadow: 0em -3em 0 -1em #66cbff, 2em -2em 0 -1em #66cbff, 3em 0em 0 -1em #66cbff, 2em 2em 0 -1em #66cbff, 0 3em 0 -1em #66cbff, -2em 2em 0 0 #66cbff, -3em 0em 0 0.2em #66cbff, -2em -2em 0 0 #66cbff; }
+  87.5% {
+    box-shadow: 0em -3em 0 0 #66cbff, 2em -2em 0 -1em #66cbff, 3em 0 0 -1em #66cbff, 2em 2em 0 -1em #66cbff, 0 3em 0 -1em #66cbff, -2em 2em 0 0 #66cbff, -3em 0em 0 0 #66cbff, -2em -2em 0 0.2em #66cbff; } }
 
 /*# sourceMappingURL=base.css.map */

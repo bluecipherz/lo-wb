@@ -1,1 +1,53 @@
-<p>This is the funzone view.</p>
+<div class="greyBG bgrid page-full"  style="width:100%;">
+    <div class="bgrid -bg-s-1200 -bg-s-1200-o whiteBG funzonePage">
+    	<div class="F-left"> 
+    		<div 
+    			class="navBlock nav-slide"  
+    			ng-repeat="data in funzone.funZoneNav"   
+    			ng-class="{'active':$index+1 == funzone.mainTab }" 
+    			ng-click="funzone.mainNavClick(data,$index)"
+    		>	
+    			{{data.name }}
+    		</div> 
+    	</div>
+    	<div class="F-mid" ng-class="{'padding-0':funzone.catType == 'endNode'}">
+    		<div class="F-mid-top"> 
+    			<div class="F-sector" > 
+		    		<div 
+		    			class="navBlock nav-slide" 
+    					ng-repeat="child in funzone.funZoneSubNav"
+		    			ng-class="{'active':$index+1 == funzone.subTab }" 
+		    			ng-click="funzone.subNavClick(child,$index)" 
+		    		>{{child.name}}</div> 
+    			</div>
+    		</div>
+    		<div class="F-mid-bottom ">
+    			<div class="F-heading" ng-if="!funzone.fetchingFeeds" >{{funzone.subTitle}}</div>
+    			<div class="loader" ng-if="funzone.fetchingFeeds"></div>
+    			<div class="F-newsBlock feed-slide" ng-repeat="feed in funzone.feeds " ng-class="{'-larg':$first && funzone.catType == 'endNode'}">
+    				<div class="img"> 
+    					<img src="{{feed.img}}">
+    				</div>
+    				<div class="cont">
+    					<div class="title">{{feed.name}}</div> 
+						<div class="date">{{feed.date}}</div>
+						<div class="desc">{{ feed.description  }} </div> 
+    				</div>
+    			</div>
+    		</div>
+    	</div>
+    	<div class="F-right">
+    		<div class="F-heading">Most Viewed</div>
+			<div class="F-newsBlock -vert feed-slide" ng-repeat="feed in funzone.mostViewed" >
+				<div class="img"> 
+					<img src="{{feed.img}}">
+				</div>
+				<div class="cont">
+					<div class="title">{{feed.name}}</div> 
+					<div class="date">{{feed.date}}</div>
+					<div class="desc">{{ feed.description }} </div> 
+				</div>
+			</div>
+    	</div> 
+    </div>
+</div>

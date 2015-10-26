@@ -9,6 +9,7 @@
  */
 angular.module('loWbApp')
   .controller('MainCtrl', function ($scope) {
+    $(window).scrollTop(0);
 	$scope.items = [{'title':'WHAT TO DO AFTER 10th', 'desc':'Commerce is a field of adventure, Accounting is the major profession in this area, They can try every fields and they are the most highly paid  people ', 'img':'images/home/home1.png'},
                     {'title':'WHAT TO DO AFTER 12th', 'desc':'In our India There are lots of scholarship providers Locally and national wise, many of the eligible students donot know the very fact', 'img':'images/home/home2.png'},
                     {'title':'COMMERCE', 'desc':'Dear CA CMA CS and other commerce Students we provide free video full series all topics all chapters are covered for CA CMA and CS', 'img':'images/home/home3.png'},

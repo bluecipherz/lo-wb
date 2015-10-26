@@ -136,3 +136,73 @@ body {
     border-bottom: 0;
   }
 }
+
+
+.loader {
+  font-size: 20px;
+  margin: 150px auto;
+  width: 1em;
+  height: 1em;
+  border-radius: 50%;
+  position: relative;
+  text-indent: -9999em;
+  -webkit-animation: load4 1.3s infinite linear;
+  animation: load4 1.3s infinite linear;
+  -webkit-transform: translateZ(0);
+  -ms-transform: translateZ(0);
+  transform: translateZ(0);
+}
+@-webkit-keyframes load4 {
+  0%,
+  100% {
+    box-shadow: 0 -3em 0 0.2em $themeColor, 2em -2em 0 0em $themeColor, 3em 0 0 -1em $themeColor, 2em 2em 0 -1em $themeColor, 0 3em 0 -1em $themeColor, -2em 2em 0 -1em $themeColor, -3em 0 0 -1em $themeColor, -2em -2em 0 0 $themeColor;
+  }
+  12.5% {
+    box-shadow: 0 -3em 0 0 $themeColor, 2em -2em 0 0.2em $themeColor, 3em 0 0 0 $themeColor, 2em 2em 0 -1em $themeColor, 0 3em 0 -1em $themeColor, -2em 2em 0 -1em $themeColor, -3em 0 0 -1em $themeColor, -2em -2em 0 -1em $themeColor;
+  }
+  25% {
+    box-shadow: 0 -3em 0 -0.5em $themeColor, 2em -2em 0 0 $themeColor, 3em 0 0 0.2em $themeColor, 2em 2em 0 0 $themeColor, 0 3em 0 -1em $themeColor, -2em 2em 0 -1em $themeColor, -3em 0 0 -1em $themeColor, -2em -2em 0 -1em $themeColor;
+  }
+  37.5% {
+    box-shadow: 0 -3em 0 -1em $themeColor, 2em -2em 0 -1em $themeColor, 3em 0em 0 0 $themeColor, 2em 2em 0 0.2em $themeColor, 0 3em 0 0em $themeColor, -2em 2em 0 -1em $themeColor, -3em 0em 0 -1em $themeColor, -2em -2em 0 -1em $themeColor;
+  }
+  50% {
+    box-shadow: 0 -3em 0 -1em $themeColor, 2em -2em 0 -1em $themeColor, 3em 0 0 -1em $themeColor, 2em 2em 0 0em $themeColor, 0 3em 0 0.2em $themeColor, -2em 2em 0 0 $themeColor, -3em 0em 0 -1em $themeColor, -2em -2em 0 -1em $themeColor;
+  }
+  62.5% {
+    box-shadow: 0 -3em 0 -1em $themeColor, 2em -2em 0 -1em $themeColor, 3em 0 0 -1em $themeColor, 2em 2em 0 -1em $themeColor, 0 3em 0 0 $themeColor, -2em 2em 0 0.2em $themeColor, -3em 0 0 0 $themeColor, -2em -2em 0 -1em $themeColor;
+  }
+  75% {
+    box-shadow: 0em -3em 0 -1em $themeColor, 2em -2em 0 -1em $themeColor, 3em 0em 0 -1em $themeColor, 2em 2em 0 -1em $themeColor, 0 3em 0 -1em $themeColor, -2em 2em 0 0 $themeColor, -3em 0em 0 0.2em $themeColor, -2em -2em 0 0 $themeColor;
+  }
+  87.5% {
+    box-shadow: 0em -3em 0 0 $themeColor, 2em -2em 0 -1em $themeColor, 3em 0 0 -1em $themeColor, 2em 2em 0 -1em $themeColor, 0 3em 0 -1em $themeColor, -2em 2em 0 0 $themeColor, -3em 0em 0 0 $themeColor, -2em -2em 0 0.2em $themeColor;
+  }
+}
+@keyframes load4 {
+  0%,
+  100% {
+    box-shadow: 0 -3em 0 0.2em $themeColor, 2em -2em 0 0em $themeColor, 3em 0 0 -1em $themeColor, 2em 2em 0 -1em $themeColor, 0 3em 0 -1em $themeColor, -2em 2em 0 -1em $themeColor, -3em 0 0 -1em $themeColor, -2em -2em 0 0 $themeColor;
+  }
+  12.5% {
+    box-shadow: 0 -3em 0 0 $themeColor, 2em -2em 0 0.2em $themeColor, 3em 0 0 0 $themeColor, 2em 2em 0 -1em $themeColor, 0 3em 0 -1em $themeColor, -2em 2em 0 -1em $themeColor, -3em 0 0 -1em $themeColor, -2em -2em 0 -1em $themeColor;
+  }
+  25% {
+    box-shadow: 0 -3em 0 -0.5em $themeColor, 2em -2em 0 0 $themeColor, 3em 0 0 0.2em $themeColor, 2em 2em 0 0 $themeColor, 0 3em 0 -1em $themeColor, -2em 2em 0 -1em $themeColor, -3em 0 0 -1em $themeColor, -2em -2em 0 -1em $themeColor;
+  }
+  37.5% {
+    box-shadow: 0 -3em 0 -1em $themeColor, 2em -2em 0 -1em $themeColor, 3em 0em 0 0 $themeColor, 2em 2em 0 0.2em $themeColor, 0 3em 0 0em $themeColor, -2em 2em 0 -1em $themeColor, -3em 0em 0 -1em $themeColor, -2em -2em 0 -1em $themeColor;
+  }
+  50% {
+    box-shadow: 0 -3em 0 -1em $themeColor, 2em -2em 0 -1em $themeColor, 3em 0 0 -1em $themeColor, 2em 2em 0 0em $themeColor, 0 3em 0 0.2em $themeColor, -2em 2em 0 0 $themeColor, -3em 0em 0 -1em $themeColor, -2em -2em 0 -1em $themeColor;
+  }
+  62.5% {
+    box-shadow: 0 -3em 0 -1em $themeColor, 2em -2em 0 -1em $themeColor, 3em 0 0 -1em $themeColor, 2em 2em 0 -1em $themeColor, 0 3em 0 0 $themeColor, -2em 2em 0 0.2em $themeColor, -3em 0 0 0 $themeColor, -2em -2em 0 -1em $themeColor;
+  }
+  75% {
+    box-shadow: 0em -3em 0 -1em $themeColor, 2em -2em 0 -1em $themeColor, 3em 0em 0 -1em $themeColor, 2em 2em 0 -1em $themeColor, 0 3em 0 -1em $themeColor, -2em 2em 0 0 $themeColor, -3em 0em 0 0.2em $themeColor, -2em -2em 0 0 $themeColor;
+  }
+  87.5% {
+    box-shadow: 0em -3em 0 0 $themeColor, 2em -2em 0 -1em $themeColor, 3em 0 0 -1em $themeColor, 2em 2em 0 -1em $themeColor, 0 3em 0 -1em $themeColor, -2em 2em 0 0 $themeColor, -3em 0em 0 0 $themeColor, -2em -2em 0 0.2em $themeColor;
+  }
+}

@@ -12,6 +12,7 @@ angular
   .module('loWbApp', [
     'ngResource',
     'ui.router',
+    'ngAnimate'
   ])
   .config(function ($locationProvider,$stateProvider,$urlRouterProvider) {
       $urlRouterProvider.otherwise('/'); 
@@ -37,21 +38,26 @@ angular
         })
         .state('funzone', {
           url: '/funzone',
-          templateUrl: 'views/courses.html',
+          templateUrl: 'views/funzone.html',
           controller: 'FunzoneCtrl',
-          controllerAs: 'courses'
+          controllerAs: 'funzone'
         }) 
         
   })
   .run(function($rootScope, powerProgress) {
-    var bwidth = $(window).width();
-    var zoom = ((bwidth - 19) / 1200 );
+
+    //Screen Zoom
+    var maxWidth = 1337;
+    var screenWidth = $(window).width();
+    if(screenWidth > maxWidth ) screenWidth = maxWidth;
+    var zoom = ((screenWidth - 19) / 1200 );
     console.log(zoom);
     $('body').css({'zoom':zoom})
+
+
 	  $rootScope.$on('$routeChangeStart', function() {
 		  powerProgress.loadProgress();
-	  });
-
+	  }); 
 	  $rootScope.$on('$routeChangeSuccess', function() {
 	  
 	  });

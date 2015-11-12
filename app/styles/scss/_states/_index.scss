@@ -1,32 +1,33 @@
-.cfs2-1 > div:nth-child(2) > div > a:nth-child(1):hover{
-    background:#627eb7; background-image: url('../../images/icons/fb-50.png'); background-size: 30px 30px;
-    background-position: 0px 30px;
-    cursor: pointer;
+@import '_functions/baseFunctions';
+@import '_base/variables';
+.cust-footer{ 
+    .foot-1{ 
+    	span{ 
+        	cursor:pointer;
+    	}
+    }
+    .foot-2{ 
+        .foot-2block:hover{ 
+        	cursor:pointer;
+        	color:$themeCPale_H;
+        }
+    }
+    .foot-3{ 
+        .foot-3block:hover{ 
+        	cursor:pointer;
+            img{  
+            	@include filter(brightness(120%));
+            }
+        }
+    }
+    .foot-4{  
+        .foot-4block{ 
+        	span:hover{
+        		cursor:pointer;
+        		color:rgba(255,255,255,.85);
+        	}
+        }
+    }
+    .foot-5{ 
+    }
 } 
-.cfs2-1 > div:nth-child(2) > div > a:nth-child(2):hover{
-    background:#7cd2f9; background-image: url('../../images/icons/twitter-50.png'); background-size: 30px 30px;
-    background-position: 0px 30px;
-    cursor: pointer;
-} 
-.cfs2-1 > div:nth-child(2) > div > a:nth-child(3):hover{
-    background:#ef7c71; background-image: url('../../images/icons/gplus-50.png'); background-size: 30px 30px;
-    background-position: 0px 30px;
-    cursor: pointer;
-} 
-.cfs2-1 > div:nth-child(2) > div > a:nth-child(4):hover{
-    background:#f0554e; background-image: url('../../images/icons/fb-50.png'); background-size: 30px 30px;
-    background-position: 0px 30px;
-    cursor: pointer;
-} 
-.cust-footer a,.cust-footer a:focus,.cust-footer a:active {
-     font-size: 90%;
-     color:#888;
- }
-
-.cust-footer a:hover {
-    color:#ccc;
-    cursor: pointer;
-}
- 
-.cfs2-2 form button:hover{ background: #9fd457; }
-.cfs2-2 form button:active{ background: #84b147; } 

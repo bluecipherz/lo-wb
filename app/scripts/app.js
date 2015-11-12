@@ -36,6 +36,17 @@ angular
           controller: 'CoursesCtrl',
           controllerAs: 'courses'
         })
+        .state('college', {
+          url: '/college',
+          templateUrl: 'views/college.html',
+          controller: 'CollegeCtrl',
+          controllerAs: 'college'
+        }) 
+
+
+
+
+        // This route is not the real site
         .state('funzone', {
           url: '/funzone',
           templateUrl: 'views/funzone.html',

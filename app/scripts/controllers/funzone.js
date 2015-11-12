@@ -32,7 +32,7 @@ angular.module('loWbApp')
             {name:'Articles',type:'parent',children:[
                 {name:'Faster hugo',cat_id:7},
                 {name:'Mashup Man',cat_id:8},
-                {name:'Kid Rock',cat_id:9},
+                {name:'Kid Rock',cat_id:15},
                 {name:'People Shifts',cat_id:10},
                 {name:'Red Alret',cat_id:11},
                 {name:'Beast inside',cat_id:12},

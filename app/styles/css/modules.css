@@ -73,7 +73,11 @@
 
 .ht-sec-1 {
   padding: 100px 50px 0px 15%;
-  font-size: 140%; }
+  font-size: 140%;
+  color: rgba(255, 255, 255, 0.7);
+  font-family: AYearWithoutRain; }
+  .ht-sec-1 .strong {
+    color: #fff; }
 
 .ht-sec-2 {
   font-size: 150%;
@@ -81,16 +85,30 @@
   font-weight: Bold;
   font-family: GOTHICB;
   color: rgba(255, 255, 255, 0.7);
-  padding: 0 50px; }
+  padding: 0 50px;
+  line-height: 120%; }
+  .ht-sec-2 .diff {
+    font-family: AYearWithoutRain;
+    font-weight: 100; }
 
 .ht-sec-2 .strong {
   color: #fff; }
 
 .ht-sec-3 > div > input, .ht-sec-3 > div > button {
+  display: block;
+  float: left;
   background: #66cbff;
   border: solid 1px #fff;
   border-radius: 0;
-  text-align: center; }
+  text-align: center;
+  font-family: GOTHICB;
+  font-size: 140%; }
+
+.ht-sec-3 > div > input {
+  font-family: AYearWithoutRain;
+  font-weight: 100;
+  font-size: 120%;
+  line-height: 50px; }
 
 ::-webkit-input-placeholder {
   /* WebKit, Blink, Edge */
@@ -117,9 +135,6 @@
 .ht-sec-3 > div > button {
   background: #98dcff;
   border-left: 0; }
-
-.ht-sec-3 > div > input {
-  padding: 0 20px 0 20px; }
 
 .home-mid {
   background: #fff;

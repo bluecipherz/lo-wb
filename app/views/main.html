@@ -1,7 +1,7 @@
 <div   class="home-top b-layer-1">
     <div class="boxx home-top-inner">
         <div class="ht-sec-1">
-            Linkonedu
+            Linkon<span class="strong">edu</span>
         </div>
         <div class="ht-sec-2 bg-text-c">
             <div>
@@ -9,13 +9,19 @@
                 <span class="strong">DONT BE</span> ANYMORE <span class="strong">LINKONEDU</span> BRINGS
             </div>
             <div class="diff">
-                <span>YOU JUST NEED <span class="strong">FEW</span> SECONDS TO <span class="strong">READ</span> IT</span>
+                <span>YOU JUST NEED <span class="strong">FEW SECONDS </span>TO <span class="strong">READ</span> IT</span>
             </div>
         </div>
         <div class="ht-sec-3">
-            <div class="bgrid -bg-s-560 -bg-s-560-o ">
-                <input type="text" name="search" placeholder="Enter Course or Exam here" class="bg-reset bgrid -bg-s-100-w " />
-                <button name="searchBtn" class="bg-reset-m -bg-s-100" >SEARCH</button>
+            <div class="bgrid -bg-s-560 -bg-s-560-o b-p-rel">
+                <input type="text" ng-model="hsInput" name="search" placeholder="{{main.searchPlaceHolder}}" class="bg-reset bgrid -bg-s-200-w " />
+                <button name="searchBtn" class="bg-reset-m -bg-s-60" ng-click="main.hs =! main.hs"> v </button>
+                <button name="searchBtn" class="bg-reset-m -bg-s-140" >Search</button>
+                <div class="homeSearchDrop" ng-show="main.hs">
+                    <div class="hs-drop-item" ng-click="main.searchPlaceHolder = 'Enter Course';main.hs = false;hsInput =''">Enter Course</div>
+                    <div class="hs-drop-item" ng-click="main.searchPlaceHolder = 'Enter Exams';main.hs = false;hsInput =''">Enter Exams</div>
+                    <div class="hs-drop-item" ng-click="main.searchPlaceHolder = 'Enter Collage';main.hs = false;hsInput =''">Enter Collage</div> 
+                </div>
             </div>
         </div>
     </div>

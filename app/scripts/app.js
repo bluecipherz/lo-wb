@@ -13,7 +13,7 @@ angular
     'ngResource',
     'ui.router',
     'ngAnimate'
-  ])
+  ]) 
   .config(function ($locationProvider,$stateProvider,$urlRouterProvider) { 
       
       $urlRouterProvider.otherwise('/'); 

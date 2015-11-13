@@ -10,7 +10,7 @@
 angular.module('loWbApp')
   .controller('MainCtrl', function ($scope) {
 
-
+    var vm = this;
     //homescreen height leveling
     homeScreen();
     $(window).resize(function(){
@@ -22,14 +22,15 @@ angular.module('loWbApp')
       console.log(viewPortHeight);
       console.log('this is shit : ' + $('.home-mid').css( 'margin-top'));
 
-      if($(window).width() > 900 && viewPortHeight > 550){
-        var fontSize =  (( viewPortHeight / 550 ) * 110 + 25)  ;
+      if($(window).width() > viewPortHeight && viewPortHeight > 550){
+        var fontSize =  (( viewPortHeight / 550 ) * 105 + 30)  ;
         $('.ht-sec-2').css({'font-size':fontSize + '%'}); 
+        $('.ht-sec-1').css({'font-size':fontSize + 20 + '%'}); 
         console.log(fontSize);
       }
     }
 
-
+    vm.searchPlaceHolder = 'Enter Course or Exam here';
 
     $(window).scrollTop(0);
 	$scope.items = [{'title':'WHAT TO DO AFTER 10th', 'desc':'Commerce is a field of adventure, Accounting is the major profession in this area, They can try every fields and they are the most highly paid  people ', 'img':'images/home/home1.png'},

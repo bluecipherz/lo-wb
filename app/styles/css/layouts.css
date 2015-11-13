@@ -179,9 +179,33 @@
 
 .ht-sec-3 {
   width: 100%; }
+  .ht-sec-3 .homeSearchDrop {
+    dislay: block;
+    float: left;
+    position: absolute;
+    top: 100%;
+    left: 0px;
+    width: 100%;
+    min-height: 100px;
+    background: rgba(255, 255, 255, 0.2);
+    border: solid 1px #fff;
+    border-top: 0; }
+    .ht-sec-3 .homeSearchDrop .hs-drop-item {
+      dislay: block;
+      float: left;
+      width: 100%;
+      line-height: 40px;
+      font-family: AYearWithoutRain;
+      font-size: 120%;
+      padding-left: 30px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.21);
+      color: rgba(255, 255, 255, 0.9); }
+    .ht-sec-3 .homeSearchDrop .hs-drop-item:hover {
+      cursor: pointer;
+      color: white; }
 
 .ht-sec-3 > div > input, .ht-sec-3 > div > button {
-  height: 50px; }
+  height: 55px; }
 
 .home-mid {
   width: 100%;

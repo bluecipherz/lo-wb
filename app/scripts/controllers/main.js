@@ -49,8 +49,8 @@ angular.module('loWbApp')
       vm.tasks = [
                   { title:'Main Pages',heading:1},
                   { title:'Home Page',heading:0,desk:1,tab:2,mob:2,func:2,backend:0,testing:0,bugs:0,completed:0},
-                  { title:'Course Page',heading:0,desk:2,tab:0,mob:0,func:0,backend:0,testing:0,bugs:0,completed:0},
-                  { title:'Exams Page',heading:0,desk:2,tab:0,mob:0,func:0,backend:0,testing:0,bugs:0,completed:0},
+                  { title:'Course Page',heading:0,desk:2,tab:2,mob:2,func:0,backend:0,testing:0,bugs:0,completed:0},
+                  { title:'Exams Page',heading:0,desk:2,tab:2,mob:2,func:0,backend:0,testing:0,bugs:0,completed:0},
                   { title:'Collage Page',heading:0,desk:0,tab:0,mob:0,func:0,backend:0,testing:0,bugs:0,completed:0},
                   { title:'Footer',heading:0,desk:1,tab:0,mob:0,func:0,backend:0,testing:0,bugs:0,completed:0},
                   
@@ -97,7 +97,7 @@ angular.module('loWbApp')
         if(value.testing == 1){completedTasks++}else if(value.testing == 2){inProgressTasks++} 
         if(value.completed == 1){completedTasks++}else if(value.completed == 2){inProgressTasks++}
       });
-      totalTasks*=7;
+      totalTasks*=6;
       vm.totalTasks = totalTasks;
       vm.completedTasks = completedTasks;
       vm.inProgressTasks = inProgressTasks;

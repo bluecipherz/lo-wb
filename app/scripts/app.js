@@ -14,7 +14,8 @@ angular
     'ui.router',
     'ngAnimate'
   ])
-  .config(function ($locationProvider,$stateProvider,$urlRouterProvider) {
+  .config(function ($locationProvider,$stateProvider,$urlRouterProvider) { 
+      
       $urlRouterProvider.otherwise('/'); 
  
       $stateProvider
@@ -35,7 +36,7 @@ angular
           templateUrl: 'views/courses.html',
           controller: 'CoursesCtrl',
           controllerAs: 'courses'
-        })
+        }) 
         .state('college', {
           url: '/college',
           templateUrl: 'views/college.html',
@@ -46,24 +47,153 @@ angular
 
 
 
+        // ---- HOME ----
+        .state('contactUs', {
+          url: '/contact_us',
+          templateUrl: 'views/home/contact_us.html',
+          controller: 'ContactUsCtrl',
+          controllerAs: 'contactUs'
+        })
+        .state('scolarship', {
+          url: '/scolarship',
+          templateUrl: 'views/home/scolarship.html',
+          controller: 'ScolarshipCtrl',
+          controllerAs: 'scolarship'
+        }) 
+        .state('studentHelp', {
+          url: '/student_help',
+          templateUrl: 'views/home/student_help.html',
+          controller: 'StudentHelpCtrl',
+          controllerAs: 'studentHelp'
+        })
+
+        // ---- COURSES ----
+        .state('courseDetails', {
+          url: '/course_details',
+          templateUrl: 'views/courses/course_details.html',
+          controller: 'CourseDetailsCtrl',
+          controllerAs: 'courseDetails'
+        })
+
+        // ---- EXAMS ----
+        .state('examDetails', {
+          url: '/exam_details',
+          templateUrl: 'views/exams/exam_details.html',
+          controller: 'ExamDetailsCtrl',
+          controllerAs: 'examDetails'
+        })
+
+        // ---- GENERAL ----
+        .state('saveAndCompare', {
+          url:'/save_and_compare', 
+          templateUrl: 'views/general/save_and_compare.html',
+          controller: 'SaveAndCompareCtrl',
+          controllerAs: 'saveAndCompare'
+        })
+        .state('searchFound', {
+          url: '/search_found',
+          templateUrl: 'views/general/search_found.html',
+          controller: 'SearchFoundCtrl',
+          controllerAs: 'searchFound'
+        })
+
+        // ---- FOOTER ----
+        .state('aboutUs', {
+          url: '/about_us',
+          templateUrl: 'views/footer/about_us.html',
+          controller: 'AboutUsCtrl',
+          controllerAs: 'aboutUs'
+        })
+        .state('comingSoon', {
+          url: '/coming_soon',
+          templateUrl: 'views/footer/coming_soon.html',
+          controller: 'ComingSoonCtrl',
+          controllerAs: 'comingSoon'
+        })
+        .state('disclamer', {
+          url: '/disclamer',
+          templateUrl: 'views/footer/disclamer.html',
+          controller: 'DisclamerCtrl',
+          controllerAs: 'disclamer'
+        })
+        .state('donate', {
+          url: '/donate',
+          templateUrl: 'views/footer/donate.html',
+          controller: 'DonateCtrl',
+          controllerAs: 'donate'
+        })
+        .state('feedback', {
+          url: '/feedback',
+          templateUrl: 'views/footer/feedback.html',
+          controller: 'FeedbackCtrl',
+          controllerAs: 'feedback'
+        })
+        .state('joinTheTeam', {
+          url: '/join_the_team',
+          templateUrl: 'views/footer/join_the_team.html',
+          controller: 'JoinTheTeamCtrl',
+          controllerAs: 'joinTheTeam'
+        })
+        .state('login', {
+          url: '/login',
+          templateUrl: 'views/footer/login.html',
+          controller: 'LoginCtrl',
+          controllerAs: 'login'
+        })
+        .state('sitemap', {
+          url: '/sitemap',
+          templateUrl: 'views/footer/sitemap.html',
+          controller: 'SitemapCtrl',
+          controllerAs: 'sitemap'
+        })
+
+        // ---- COLLEGE ----
+        .state('collegeList', {
+          url: '/college_list',
+          templateUrl: 'views/college/college_list.html',
+          controller: 'CollegeListCtrl',
+          controllerAs: 'collegeList'
+        })
+        .state('firstFilter', {
+          url: '/first_filter',
+          templateUrl: 'views/college/first_filter.html',
+          controller: 'FirstFilterCtrl',
+          controllerAs: 'firstFilter'
+        })
+        .state('collegeProfile', {
+          url: '/college_profile',
+          templateUrl: 'views/college/college_profile.html',
+          controller: 'CollegeProfileCtrl',
+          controllerAs: 'collegeProfile'
+        })
+
+
         // This route is not the real site
         .state('funzone', {
           url: '/funzone',
           templateUrl: 'views/funzone.html',
           controller: 'FunzoneCtrl',
           controllerAs: 'funzone'
+        })
+        .state('progress', {
+          url: '/progress',
+          templateUrl: 'views/progress.html',
+          controller: 'ProgressCtrl',
+          controllerAs: 'progress'
         }) 
         
   })
   .run(function($rootScope, powerProgress) {
 
     //Screen Zoom
+    var bodyZoom = false;
     var maxWidth = 1337;
-    var screenWidth = $(window).width();
-    if(screenWidth > maxWidth ) screenWidth = maxWidth;
-    var zoom = ((screenWidth - 19) / 1200 );
-    console.log(zoom);
-    $('body').css({'zoom':zoom})
+    if(bodyZoom){
+      var screenWidth = $(window).width();
+      if(screenWidth > maxWidth ) screenWidth = maxWidth;
+      var zoom = ((screenWidth - 19) / 1200 ); 
+      $('body').css({'zoom':zoom})
+    }
 
 
 	  $rootScope.$on('$routeChangeStart', function() {
@@ -75,13 +205,14 @@ angular
   }).directive("scroll", ['$location','$window', function(location,$window){
     return function($scope, element, attrs) {
       angular.element($window).bind("scroll", function() {
+        var sreenHeight = $(window).height()  ;
         if (location.path() =='/' ) {
-          if (this.pageYOffset >= 450) {
+          if (this.pageYOffset >= sreenHeight) {
             $scope.addHeader = true;
           } else {
             $scope.addHeader = false;
-            var op = 1 - ((this.pageYOffset)/450 );
-            var zoom = 1 - (((this.pageYOffset)/450 ) / 5);
+            var op = 1 - ((this.pageYOffset)/sreenHeight );
+            var zoom = 1 - (((this.pageYOffset)/sreenHeight ) / 5);
             $('.home-top-inner').css({'opacity' : op , '-webkit-transform': 'scale('+zoom+')' ,'-moz-transform': 'scale('+zoom+')'});
           }
         }else{

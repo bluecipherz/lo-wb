@@ -1,0 +1,73 @@
+<div class="boxx">
+	<div class="progressPage">
+		<table>
+			<tr>
+				<th class="pro-task">Task</th>
+				<th>Desktop</th>
+				<th>Tablet</th>
+				<th>Mobile</th>  
+				<th>Funtions</th>
+				<th>Backend</th>
+				<th>Testing</th>
+				<th>Bugs</th>
+				<th>Completed</th>
+			</tr>
+			<tr ng-repeat="data in progress.tasks">
+				<td ng-if="data.heading == true" class="pro-task pro-head">{{data.title}}</td>
+				<td ng-if="data.heading == false" class="pro-task">{{data.title}}</td>
+				<td>
+					<i class="fa fa-times cross" ng-if="data.desk == 0"></i>
+					<i class="fa fa-check tick" ng-if="data.desk == 1"></i>
+					<i class="fa fa-gear inPro" ng-if="data.desk == 2"></i>
+				</td>
+				<td>
+					<i class="fa fa-times cross" ng-if="data.tab == 0"></i>
+					<i class="fa fa-check tick" ng-if="data.tab == 1"></i>
+					<i class="fa fa-gear inPro" ng-if="data.tab == 2"></i>
+				</td> 
+				<td>
+					<i class="fa fa-times cross" ng-if="data.mob == 0"></i>
+					<i class="fa fa-check tick" ng-if="data.mob == 1"></i>
+					<i class="fa fa-gear inPro" ng-if="data.mob == 2"></i>
+				</td>
+				<td>
+					<i class="fa fa-times cross" ng-if="data.func == 0"></i>
+					<i class="fa fa-check tick" ng-if="data.func == 1"></i>
+					<i class="fa fa-gear inPro" ng-if="data.func == 2"></i>
+				</td>
+				<td>
+					<i class="fa fa-times cross" ng-if="data.backend == 0"></i>
+					<i class="fa fa-check tick" ng-if="data.backend == 1"></i>
+					<i class="fa fa-gear inPro" ng-if="data.backend == 2"></i>
+				</td>
+				<td>
+					<i class="fa fa-times cross" ng-if="data.testing == 0"></i>
+					<i class="fa fa-check tick" ng-if="data.testing == 1"></i>
+					<i class="fa fa-gear inPro" ng-if="data.testing == 2"></i>
+				</td>
+				<td>
+					<i class="fa fa-times cross" ng-if="data.bugs == 0"></i>
+					<i class="fa fa-check tick" ng-if="data.bugs == 1"></i>
+					<i class="fa fa-gear inPro" ng-if="data.bugs == 2"></i>
+				</td>
+				<td>
+					<i class="fa fa-times cross" ng-if="data.completed == 0"></i>
+					<i class="fa fa-check tick" ng-if="data.completed == 1"></i>
+					<i class="fa fa-gear inPro" ng-if="data.completed == 2"></i>
+				</td> 
+			</tr>
+		</table>
+		<div class="pro-bar"> 
+			<div class="pro-bar-comp" style="width:{{ progress.totalCompleted + '%' }}"></div>
+			<div class="pro-bar-inPro" style="width:{{ progress.totalInPro + '%' }}"></div>
+		</div>
+		<div class="pro-box pb-green">
+			Completed : {{ progress.totalCompleted + ' %' }}</br>
+			<span>( {{ progress.completedTasks}} / {{progress.totalTasks}} )</span>
+		</div>
+		<div class="pro-box pb-yellow">
+			Inprogress : {{ progress.totalInProgress + ' %' }}</br>
+			<span>( {{ progress.inProgressTasks}} / {{progress.totalTasks - progress.completedTasks}} )</span>
+		</div>
+	</div>
+</div>

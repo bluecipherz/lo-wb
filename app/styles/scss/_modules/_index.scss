@@ -5,7 +5,7 @@
 
 .cust-footer{
     font-family:GOTHICB;  
-    background:#000;
+    background:#101010;
     $border:rgba(255,255,255,0.3) 1px solid; 
     .foot-1{
         line-height:120px;
@@ -21,8 +21,7 @@
             text-align:center;
             font-size:110%;
             letter-spacing:.1em;
-            border-top:$border;
-            border-bottom:$border;
+            border:$border; 
         }
     }
     .foot-3{

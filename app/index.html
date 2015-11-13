@@ -6,6 +6,8 @@
     <base href="/">
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width">
+    
+    <link rel="stylesheet" href="bower_components/font-awesome/css/font-awesome.min.css" />
     <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
     <!-- build:css(.) styles/vendor.css -->
     <!-- bower:css -->
@@ -39,9 +41,8 @@
         <div id="powerProgress"></div>
     </div>
 
-    <div class="ngViewDiv">
-		<div ui-view ></div>
-    </div>
+	<div class="ngViewDiv" ui-view ></div>
+
     <div class="cust-footer b-p-rel b-layer-2"  ng-include src="'views/partials/structures/footer.html'" ></div>
     <!-- Google Analytics: change UA-XXXXX-X to be your site's ID -->
      <script>
@@ -72,16 +73,31 @@
         <!-- build:js({.tmp,app}) scripts/scripts.js -->
         <script src="scripts/app.js"></script>
         <script src="styles/css/Bluegrid/Bluegrid.js"></script>
-        <script src="scripts/controllers/main.js"></script>
-        <script src="scripts/controllers/about.js"></script>
-        <script src="scripts/controllers/myroute.js"></script>
-        <script src="scripts/controllers/project.js"></script>
+        <script src="scripts/controllers/main.js"></script>  
         <script src="scripts/services/powerprogress.js"></script>
         <script src="scripts/controllers/exams.js"></script>
         <script src="scripts/controllers/courses.js"></script>
         <script src="scripts/controllers/funzone.js"></script>
         <script src="scripts/directives/nestedmenu.js"></script>
-        <script src="scripts/services/nestedset.js"></script>
+        <script src="scripts/services/nestedset.js"></script> 
+        <script src="scripts/controllers/general/save_and_compare.js"></script>
+        <script src="scripts/controllers/general/search_found.js"></script>
+        <script src="scripts/controllers/home/scolarship.js"></script>
+        <script src="scripts/controllers/home/contact_us.js"></script>
+        <script src="scripts/controllers/home/student_help.js"></script>
+        <script src="scripts/controllers/courses/course_details.js"></script>
+        <script src="scripts/controllers/exams/exam_details.js"></script>
+        <script src="scripts/controllers/footer/about_us.js"></script>
+        <script src="scripts/controllers/footer/coming_soon.js"></script>
+        <script src="scripts/controllers/footer/disclamer.js"></script>
+        <script src="scripts/controllers/footer/donate.js"></script>
+        <script src="scripts/controllers/footer/feedback.js"></script>
+        <script src="scripts/controllers/footer/join_the_team.js"></script>
+        <script src="scripts/controllers/footer/login.js"></script>
+        <script src="scripts/controllers/footer/sitemap.js"></script>
+        <script src="scripts/controllers/college/college_list.js"></script>
+        <script src="scripts/controllers/college/first_filter.js"></script>
+        <script src="scripts/controllers/college/college_profile.js"></script>
         <!-- endbuild -->
 </body>
 </html>

@@ -63,11 +63,9 @@
         display:block;
         float:left;
         width:$fWidth;
-        margin:$fMargin;   
+        margin:$fMargin;  
+        text-align:center; 
         .foot-4block{
-            display:block;
-            float:left;
-            width:25%;   
             span{
                 cursor:default;
             }
@@ -189,4 +187,37 @@
     .pro-box.pb-yellow{
         background:$yellow;
     }
+}
+.respDoctor{
+    display:block;
+    position:fixed;
+    top:0px;
+    right:50px;
+    width:130px;
+    height:20px;
+    line-height:20px;
+    font-size:70%;
+    text-align:center;
+    z-index:10000;
+    .veiwP{
+        display:none;
+        color:#fff;
+        width:30px;
+        height:100%;
+        background:$red;
+        position:absolute;
+        right:0px;
+    }
+    .screenS{
+        display:block;
+        color:#fff;
+        width:100px;
+        height:100%;
+        background:#000;
+        position:absolute;
+        right:30px;
+    }
+}
+.respDoctor:hover{
+    .screenS,.veiwP{margin-top:-500px;}
 }

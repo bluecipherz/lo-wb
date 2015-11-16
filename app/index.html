@@ -6,7 +6,13 @@
     <base href="/">
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width">
-    
+
+    <!-- The Pinch masters | responsive shrek generators -->
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="HandheldFriendly" content="true">
+    <!-- The Pinch masters ends -->
+
     <link rel="stylesheet" href="bower_components/font-awesome/css/font-awesome.min.css" />
     <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
     <!-- build:css(.) styles/vendor.css -->
@@ -30,21 +36,43 @@
     <![endif]-->
 
     <!-- Add your site or application content here -->
-    <div class="blueNav b-p-fix cust-header " ng-controller="headerController" ng-class="{ hShow: addHeader}">
-		<div class="bgrid navH -bg-s-360 -bg-s-360-o">
-			<ul class="bl-ul bg-text-c">
-				<li ng-click="checkHeader()" class="active -bg-s-80"><a href="#/">HOME</a></li>
-				<li ng-click="checkHeader()"  class="-bg-s-80"><a ng-href="#/exams">EXAMS</a></li>
-				<li ng-click="checkHeader()"  class="-bg-s-100"><a ng-href="#/courses">COURSES</a></li>
-				<li ng-click="checkHeader()"  class="-bg-s-100"><a ng-href="#/college">COLLEGE</a></li>
-			</ul>
-		</div>
+    <div class="blueNav b-p-fix cust-header " ng-controller="headerController" ng-class="{ hShow: addHeader}"> 
+		<div class="bl-ul bg-text-c">
+            <span ng-click="checkHeader()" class="nav-HomeIcon"ng-class="{'active':$state.current.name == 'home'}"><a href="#/"><i class="fa fa-home"></i></a></span>
+
+            <span ng-click="checkHeader()" class="head mobNavDeact" ng-class="{'active':$state.current.name == 'exams'}"><a ng-href="#/exams">EXAMS </a></span>
+            <span ng-click="checkHeader()" class="head mobNavDeact" ng-class="{'active':$state.current.name == 'courses'}"><a ng-href="#/courses">COURSES</a></span>
+            <span ng-click="checkHeader()" class="head mobNavDeact" ng-class="{'active':$state.current.name == 'college'}"><a ng-href="#/college">COLLEGE</a></span>
+
+            <span ng-click="checkHeader()" class="head mobNavAct" ng-class="{'active':$state.current.name == 'exams'}"><a ng-href="#/exams"><i class="fa fa-graduation-cap"></i> </a></span>
+            <span ng-click="checkHeader()" class="head mobNavAct" ng-class="{'active':$state.current.name == 'courses'}"><a ng-href="#/courses"><i class="fa fa-th-large"></i></a></span>
+            <span ng-click="checkHeader()" class="head mobNavAct" ng-class="{'active':$state.current.name == 'college'}"><a ng-href="#/college"><i class="fa fa-institution"></i></a></span> 
+
+            <span ng-click="checkHeader()" class="nav-SearchBtn" ><a><i class="fa fa-search  "></i></a></span>
+            <!-- 
+			<li ng-click="checkHeader()" class="active -bg-s-80"><a href="#/"><i class="fa fa-home fa-2x"></i></a></li>
+			<li ng-click="checkHeader()"  class="-bg-s-80"><a ng-href="#/exams">EXAMS</a></li>
+			<li ng-click="checkHeader()"  class="-bg-s-100"><a ng-href="#/courses">COURSES</a></li>
+			<li ng-click="checkHeader()"  class="-bg-s-100"><a ng-href="#/college">COLLEGE</a></li>
+-->
+		</div> 
         <div id="powerProgress"></div>
     </div>
 
 	<div class="ngViewDiv" ui-view ></div>
 
     <div class="cust-footer b-p-rel b-layer-2"  ng-include src="'views/partials/structures/footer.html'" ></div>
+<!-- 
+    <div class="respDoctor" >
+        <div class="rd-M-S veiwP">M-S</div>
+        <div class="rd-M-M veiwP">M-M</div>
+        <div class="rd-M veiwP">M</div>
+        <div class="rd-TP veiwP">T-P</div>
+        <div class="rd-TL veiwP">T-L</div>
+        <div class="rd-D veiwP">D</div>
+        <div class="rd-EL veiwP">EL</div>
+        <div class="screenS">{{ scrX }} X {{ scrY }}</div>
+    </div> -->
     <!-- Google Analytics: change UA-XXXXX-X to be your site's ID -->
      <script>
        !function(A,n,g,u,l,a,r){A.GoogleAnalyticsObject=l,A[l]=A[l]||function(){

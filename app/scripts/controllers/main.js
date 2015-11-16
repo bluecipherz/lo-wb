@@ -8,9 +8,11 @@
  * Controller of the todoappApp
  */
 angular.module('loWbApp')
-  .controller('MainCtrl', function ($scope) {
+  .controller('MainCtrl', function ($rootScope,$scope) {
 
+    $(window).scrollTop(0);
     var vm = this;
+    vm.searchPlaceHolder = 'Enter Course or Exam here';
     //homescreen height leveling
     homeScreen();
     $(window).resize(function(){
@@ -18,19 +20,24 @@ angular.module('loWbApp')
     });
     function homeScreen(){
       var viewPortHeight = $(window).height(); 
-      $('.home-mid').css({'margin-top':viewPortHeight});
-      console.log(viewPortHeight);
-      console.log('this is shit : ' + $('.home-mid').css( 'margin-top'));
-
-      if($(window).width() > viewPortHeight && viewPortHeight > 550){
-        var fontSize =  (( viewPortHeight / 550 ) * 105 + 30)  ;
-        $('.ht-sec-2').css({'font-size':fontSize + '%'}); 
-        $('.ht-sec-1').css({'font-size':fontSize + 20 + '%'}); 
-        console.log(fontSize);
+      var viewPortWidth = $(window).width();  
+      if(viewPortWidth < 480){
+        vm.searchPlaceHolder ="Search Here"
+        vm.viewP_MM = true;
       }
+      if(viewPortWidth < $rootScope.minWidth){
+        viewPortHeight = viewPortHeight + viewPortHeight * ( $rootScope.sxZoom + 0.15);
+      }
+      $('.home-mid').css({'margin-top':viewPortHeight + 50}); 
+
+      // if(viewPortWidth > viewPortHeight && viewPortHeight > 550){
+      //   var fontSize =  (( viewPortHeight / 550 ) * 105 + 25)  ;
+      //   if(viewPortWidth < 820){ fontSize - 10 ;}
+      //   $('.ht-sec-2').css({'font-size':fontSize + '%'}); 
+      //   $('.ht-sec-1').css({'font-size':fontSize + 20 + '%'});  
+      // }
     }
 
-    vm.searchPlaceHolder = 'Enter Course or Exam here';
 
     $(window).scrollTop(0);
 	$scope.items = [{'title':'WHAT TO DO AFTER 10th', 'desc':'Commerce is a field of adventure, Accounting is the major profession in this area, They can try every fields and they are the most highly paid  people ', 'img':'images/home/home1.png'},
@@ -46,14 +53,16 @@ angular.module('loWbApp')
     }
   }])
   .controller('ProgressCtrl', function () { 
+
+      $(window).scrollTop(0);
       var vm = this;
       vm.tasks = [
                   { title:'Main Pages',heading:1},
-                  { title:'Home Page',heading:0,desk:1,tab:2,mob:2,func:2,backend:0,testing:0,bugs:0,completed:0},
+                  { title:'Home Page',heading:0,desk:1,tab:1,mob:1,func:0,backend:0,testing:0,bugs:0,completed:0},
                   { title:'Course Page',heading:0,desk:2,tab:2,mob:2,func:0,backend:0,testing:0,bugs:0,completed:0},
                   { title:'Exams Page',heading:0,desk:2,tab:2,mob:2,func:0,backend:0,testing:0,bugs:0,completed:0},
-                  { title:'Collage Page',heading:0,desk:0,tab:0,mob:0,func:0,backend:0,testing:0,bugs:0,completed:0},
-                  { title:'Footer',heading:0,desk:1,tab:0,mob:0,func:0,backend:0,testing:0,bugs:0,completed:0},
+                  { title:'Collage Page',heading:0,desk:2,tab:0,mob:0,func:0,backend:0,testing:0,bugs:0,completed:0},
+                  { title:'Footer',heading:0,desk:1,tab:1,mob:1,func:0,backend:0,testing:0,bugs:0,completed:0},
                   
                   { title:'Home',heading:1},
                   { title:'Contact us',heading:0,desk:0,tab:0,mob:0,func:0,backend:0,testing:0,bugs:0,completed:0},
@@ -104,7 +113,7 @@ angular.module('loWbApp')
       vm.inProgressTasks = inProgressTasks;
       vm.totalCompleted = completedTasks / totalTasks * 100 ;
       vm.totalCompleted = vm.totalCompleted.toFixed(2); 
-      vm.totalInProgress = ( inProgressTasks ) / totalTasks * 100 ; 
+      vm.totalInProgress = ( inProgressTasks ) / ( totalTasks - completedTasks )* 100 ; 
       vm.totalInProgress = vm.totalInProgress.toFixed(2); 
 
       vm.totalInPro = ( completedTasks + inProgressTasks ) / totalTasks * 100 ; 

@@ -479,6 +479,7 @@ ________________________________________________________________________________
     display:block;
     float:left;
     height:100%;
+    width:100%;
 }
 .bn-group > div{
     position: relative;
@@ -543,12 +544,31 @@ ________________________________________________________________________________
     margin-right: auto;
     margin-left: auto;
     clear: both;
-    min-width: 760px;
+    min-width: 180px;
+}
+
+@media (min-width: 240px) {
+    .boxx {
+        width: 220px;
+    }
+}
+
+
+@media (min-width: 320px) {
+    .boxx {
+        width: 300px;
+    }
+}
+
+@media (min-width: 480px) {
+    .boxx {
+        width: 460px;
+    }
 }
 
 @media (min-width: 768px) {
     .boxx {
-        width: 760px;
+        width: 740px;
     }
 }
 
@@ -578,11 +598,14 @@ ________________________________________________________________________________
     display:block;
     float:left;
     height:100%;
+    line-height:100%;
+    width:100%;
 }
 .bl-ul > li,.bl-ul > li > a{
     display:inline-block;
     float:left;
     height:100%;
+    line-height:100%;
 }
 .bl-ul > li > a{
     width:100%;

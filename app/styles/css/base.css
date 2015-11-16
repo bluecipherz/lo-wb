@@ -1,6 +1,7 @@
 /* Colors */
 /* images */
 /* Testing */
+/* Responsive */
 body {
   min-width: 100%;
   min-height: 100%;
@@ -26,10 +27,10 @@ body {
   src: url(../../fonts/GOTHIC.ttf); }
 @font-face {
   font-family: GOTHICI;
-  src: url(../../fonts/GOTHICI.ttf); }
+  src: url(../../fonts/MuseoSans_300.otf); }
 @font-face {
   font-family: GOTHICB;
-  src: url(../../fonts/GOTHICB.ttf); }
+  src: url(../../fonts/MuseoSans_900.otf); }
 @font-face {
   font-family: GOTHICBI;
   src: url(../../fonts/GOTHICBI.ttf); }

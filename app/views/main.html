@@ -1,34 +1,52 @@
 <div   class="home-top b-layer-1">
     <div class="boxx home-top-inner">
         <div class="ht-sec-1">
-            Linkon<span class="strong">edu</span>
+            <span class="v-mobile-1">Linkon<span class="strong">edu</span></span>
         </div>
         <div class="ht-sec-2 bg-text-c">
-            <div>
-                TIRED OF <span class="strong">SEARCHING</span> THE RIGHT COURSE/EXAM/SCHOLARSHIP </br> DETAILS?
-                <span class="strong">DONT BE</span> ANYMORE <span class="strong">LINKONEDU</span> BRINGS
+
+            <div class="ht-2-inner hide-Mob hide-TabL">
+                TIRED OF <span class="strong">SEARCHING</span> THE RIGHT <span class="hide-tabPort">COURSE/EXAM/SCHOLARSHIP </span></br> DETAILS?
+                <span class="hide-tabPort"><span class="strong">DONT BE</span> ANYMORE </span><span class="strong">LINKONEDU</span> BRINGS
             </div>
-            <div class="diff">
+            <div class="diff ht-2-inner hide-Mob hide-TabL">
                 <span>YOU JUST NEED <span class="strong">FEW SECONDS </span>TO <span class="strong">READ</span> IT</span>
+            </div>
+
+            <!-- Tablet Landscape -->
+            <div class="ht-2-inner hidden ht-2-tabL ht-2-tab-S">
+                TIRED OF <span class="strong">SEARCHING</span> THE RIGHT <span class="hide-tabPort">COURSE/EXAM/</br>SCHOLARSHIP </span> DETAILS? <span class="strong">LINKONEDU</span> BRINGS
+            </div>
+            <div class="diff ht-2-inner hidden ht-2-tabL ">
+                <span>YOU JUST NEED <span class="strong">FEW SECONDS </span>TO <span class="strong">READ</span> IT</span>
+            </div>
+
+            <!-- Tablet Landscape mobile -->
+            <div class="ht-2-inner ht-2-mob ht-2-mob-sH hidden ">
+                TIRED OF <span class="strong">SEARCHING</span></br>FOR DETAILS? <span class="strong">DONT BE, LINKONEDU</span> BRINGS
+            </div>
+            <div class="diff ht-2-inner ht-2-mob ht-2-mob-s hidden ">
+                <span><span class="strong">10 SECONDS </span>READING</span>
             </div>
         </div>
         <div class="ht-sec-3">
-            <div class="bgrid -bg-s-560 -bg-s-560-o b-p-rel">
-                <input type="text" ng-model="hsInput" name="search" placeholder="{{main.searchPlaceHolder}}" class="bg-reset bgrid -bg-s-200-w " />
-                <button name="searchBtn" class="bg-reset-m -bg-s-60" ng-click="main.hs =! main.hs"> v </button>
-                <button name="searchBtn" class="bg-reset-m -bg-s-140" >Search</button>
-                <div class="homeSearchDrop" ng-show="main.hs">
+            <div class="bgrid -bg-s-560 -bg-s-560-o hm-searchOuter b-p-rel">
+                <input type="text" ng-model="hsInput" name="search" placeholder="{{main.searchPlaceHolder}}" class="bg-reset bgrid -bg-s-240-w " />
+                <button name="searchBtn" class="bg-reset-m -bg-s-40 angleDown" ng-click="main.hs =! main.hs"> <i class="fa fa-angle-down"></i> </button>
+                <button name="searchBtn" class="bg-reset-m hide-tabPort -bg-s-200"> Search </button>
+                <div class="homeSearchDrop -bg-s-200-w " ng-show="main.hs">
                     <div class="hs-drop-item" ng-click="main.searchPlaceHolder = 'Enter Course';main.hs = false;hsInput =''">Enter Course</div>
                     <div class="hs-drop-item" ng-click="main.searchPlaceHolder = 'Enter Exams';main.hs = false;hsInput =''">Enter Exams</div>
                     <div class="hs-drop-item" ng-click="main.searchPlaceHolder = 'Enter Collage';main.hs = false;hsInput =''">Enter Collage</div> 
                 </div>
+                <button name="searchBtn" class="bg-reset-m Sbtn-tabPort show-tabPort"> Search </button> 
             </div>
         </div>
     </div>
 </div>
 <div class="home-mid b-layer-2 b-p-rel ">
     <div class="boxx">
-        <div class="bgrid -bg-s-640 -bg-s-640-o ">
+        <div class="bgrid hm-midOuter -bg-s-640 -bg-s-640-o ">
             <div class="hm-box bg-text-c"  ng-repeat="item in items">
                 <div class="sec1">
                     <div class="bgrid -bg-s-100 -bg-s-100-o img">

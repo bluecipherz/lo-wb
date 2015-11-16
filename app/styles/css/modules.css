@@ -1,6 +1,7 @@
 /* Colors */
 /* images */
 /* Testing */
+/* Responsive */
 .cust-header {
   transition: margin-top 0.5s; }
 
@@ -25,11 +26,29 @@
     border-bottom: rgba(255, 255, 255, 0.3) 1px solid;
     padding: 20px 15%; }
   .cust-footer .foot-4 {
-    padding: 20px 15% 0 15%; }
+    padding: 20px 20px 0 20px; }
     .cust-footer .foot-4 .foot-4block {
+      padding: 0 17px;
       text-align: center;
       color: rgba(255, 255, 255, 0.7);
-      font-family: GOTHIC; }
+      font-family: GOTHIC;
+      position: relative; }
+    .cust-footer .foot-4 .foot-4block::after {
+      content: ' ';
+      display: block;
+      float: left;
+      position: absolute;
+      right: -8px;
+      top: calc(50% - 2px);
+      width: 7px;
+      height: 7px;
+      background: #83a4b3;
+      -webkit-transform: rotate(45deg);
+      -moz-transform: rotate(45deg);
+      -o-transform: rotate(45deg);
+      transform: rotate(45deg); }
+    .cust-footer .foot-4 .foot-4block:nth-last-child(1)::after {
+      display: none; }
   .cust-footer .foot-5 {
     line-height: 120px;
     text-align: center;
@@ -64,6 +83,7 @@
 /* Colors */
 /* images */
 /* Testing */
+/* Responsive */
 .home-top-inner {
   transition: 0.5s; }
 
@@ -73,14 +93,14 @@
 
 .ht-sec-1 {
   padding: 100px 50px 0px 15%;
-  font-size: 140%;
+  font-size: 3vw;
   color: rgba(255, 255, 255, 0.7);
   font-family: AYearWithoutRain; }
   .ht-sec-1 .strong {
     color: #fff; }
 
 .ht-sec-2 {
-  font-size: 150%;
+  font-size: 2.5vw;
   letter-spacing: 0.1em;
   font-weight: Bold;
   font-family: GOTHICB;
@@ -104,11 +124,15 @@
   font-family: GOTHICB;
   font-size: 140%; }
 
+.ht-sec-3 > div > .angleDown {
+  background: #66cbff; }
+
 .ht-sec-3 > div > input {
   font-family: AYearWithoutRain;
   font-weight: 100;
   font-size: 120%;
-  line-height: 50px; }
+  line-height: 50px;
+  border-right: 0; }
 
 ::-webkit-input-placeholder {
   /* WebKit, Blink, Edge */

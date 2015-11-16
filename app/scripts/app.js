@@ -183,16 +183,30 @@ angular
         }) 
         
   })
-  .run(function($rootScope, powerProgress) {
+  .run(function($rootScope, powerProgress,$state) {
 
+     $rootScope.$state = $state; 
+    $rootScope.sxZoom = 1;
     //Screen Zoom
-    var bodyZoom = false;
-    var maxWidth = 1337;
+    var bodyZoom = true;
+    $rootScope.minWidth = 260;
     if(bodyZoom){
       var screenWidth = $(window).width();
-      if(screenWidth > maxWidth ) screenWidth = maxWidth;
-      var zoom = ((screenWidth - 19) / 1200 ); 
-      $('body').css({'zoom':zoom})
+      if(screenWidth < $rootScope.minWidth ) { 
+        var zoom = ((screenWidth - 19) / 260 ); 
+        $('body').css({'zoom':zoom})
+        $rootScope.sxZoom = 1 - zoom;
+        console.log('its running : '+ $rootScope.sxZoom); 
+      }
+    }
+
+    findSreenSize();
+    $(window).resize(function(){
+      findSreenSize(); 
+    });
+    function findSreenSize(){
+      $rootScope.scrX = $(window).innerWidth();
+      $rootScope.scrY = $(window).innerHeight();
     }
 
 

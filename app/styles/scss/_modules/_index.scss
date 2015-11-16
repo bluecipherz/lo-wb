@@ -2,7 +2,7 @@
 .cust-header{ 
     transition: margin-top 0.5s;
 }  
-
+@import '../_functions/baseFunctions'; 
 .cust-footer{
     font-family:GOTHICB;  
     background:#101010;
@@ -30,11 +30,28 @@
         padding:20px 15%;
     }
     .foot-4{
-        padding:20px 15% 0 15%;
+        padding:20px 20px 0 20px;
         .foot-4block{
+            padding:0 17px; 
             text-align:center;
             color:rgba(255,255,255,0.7);
             font-family:GOTHIC;
+            position:relative;
+        }
+        .foot-4block::after{
+            content:' ';
+            display:block;
+            float:left;
+            position:absolute;
+            right:-8px;
+            top:calc(50% - 2px);
+            width:7px;
+            height:7px;
+            background:$themeCPale;
+            @include transform(rotate(45deg));
+        }
+        .foot-4block:nth-last-child(1)::after{ 
+            display:none; 
         }
     }
     .foot-5{

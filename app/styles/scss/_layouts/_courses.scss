@@ -3,13 +3,17 @@ $pageWidth:1000px;
 $asideWidth :220;
 
 $sectorHeight : 360;
+$borderth : 1px;
+$borderCl : #aaa;
+$borderCl-sec : #888;
 
 .pageOuter{  
 	display:block;
 	float:left;
 	position:relative;
-	min-height:1600px;
+	min-height:200px;
 	line-height:120%;
+	width:100%;
 	.page-left{
 		display:block;
 		float:left;
@@ -24,8 +28,7 @@ $sectorHeight : 360;
 		.top{
 			display:block;
 			float:left; 
-			width:100%;
-
+			width:100%;  
 			padding:40px 0 0 20px;
 			color:#fff;
 		}
@@ -60,7 +63,7 @@ $sectorHeight : 360;
 				color:#fff; 
 				padding-left:10px;
 				.active > .parent{/* state */
-					border-left:2px solid #000;
+					border-left:_states solid #000;
 				}
 			}
 			.active > .parent{
@@ -87,8 +90,8 @@ $sectorHeight : 360;
 			position:relative;
 			margin:20px;
 			min-height:0px;
-
-			border-bottom:2px solid #444; 
+			padding-bottom:30px;
+			border-bottom: $borderth solid $borderCl-sec; 
 			.topSection , .bottomSection{ 
 				display:block;
 				float:left;
@@ -172,12 +175,12 @@ $sectorHeight : 360;
 					.showChild{  
 						max-height:300px;
 						opacity:1;
-						border-top:2px solid #aaa;
+						border-top:$borderth solid $borderCl;
 						margin-top:0px;
 					}
 					.child:nth-child(1),
 					.child:nth-child(2)
-					{border-top:2px solid #aaa;} 
+					{border-top:$borderth solid $borderCl;} 
 				}   
 				.child,.moreBtn{
 					display:table-cell;
@@ -188,7 +191,7 @@ $sectorHeight : 360;
 
 					padding:10px 0; 
 					height:125px;  
-					border-top:2px solid #aaa;
+					border-top:$borderth solid $borderCl;
 					.head,.mid,.foot{
 						display:block;
 						float:left;
@@ -267,7 +270,9 @@ $sectorHeight : 360;
 					.subParent{
 						display:block;
 						float:left;
-						position:relative;
+						position:absolute;
+						bottom:0px;
+						left:0px;
 						width:100%;
 						.subImage{
 							display:block;
@@ -283,6 +288,12 @@ $sectorHeight : 360;
 							}
 						}
 						.desc{
+							display:block;
+							float:left; 
+							width:calc(100% - 60px); 
+							font-size:80%;
+							line-height:120%;
+							padding-top:10px;
 							color:#aaa;
 							span{
 								color:$themeColor;
@@ -301,5 +312,6 @@ $sectorHeight : 360;
 			}
 		}
 		.sector:nth-last-child(1){border-bottom:none;}
+		
 	}
 } 

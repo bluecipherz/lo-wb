@@ -14,7 +14,8 @@ angular.module('loWbApp')
         $rootScope.$stateParams = $stateParams; 
         $(window).scrollTop(0);
 
-
+        vm.itemStarting = 0;
+        vm.itemCount = 2;
         this.selected = []; // tree view heirarchy selected elements
 
         vm.courseList = nestedSet.getNestedSet();
@@ -23,20 +24,42 @@ angular.module('loWbApp')
             vm.courseList = nestedSet.getNestedSet();
         })
 
-        this.selectItem = function(id) {
-            var depth = nestedSet.find(id).get().depth;
-            while(vm.selected.length > depth) { // deselect necessary items
-                vm.selected.pop();
-            }
-            vm.selected.push(id); // select clicked item
+        // this.selectItem = function(id) {
+        //     var depth = nestedSet.find(id).get().depth;
+        //     while(vm.selected.length > depth) { // deselect necessary items
+        //         vm.selected.pop();
+        //     }
+        //     vm.selected.push(id); // select clicked item
+        // }
+        vm.selectedItem = 0;
+
+        this.selectItem = function(id) { 
+            vm.selectedItem = id;
+            console.log(vm.selectedItem);
         }
 
         this.isSelected = function(id) {
             return vm.selected.indexOf(id) > -1;
         }
 
+        vm.paginate = function(data){
+            if(data == 0){
+                if( vm.itemStarting > 0){
+                    vm.itemStarting -= vm.itemCount;
+                    $(window).scrollTop(0); 
+                } 
+                console.log( " Left " + vm.itemStarting + " : "+ vm.itemCount);
+            }else{ 
+                if( vm.itemStarting + vm.itemCount <= vm.courseData.length){
+                    vm.itemStarting += vm.itemCount;
+                    $(window).scrollTop(0);
+                } 
+                console.log( " Right " + vm.itemStarting + " : "+ vm.itemCount);
+            }
+        }
+
         vm.courseData = [
-            {'title':'What To Do After Completing 10th', 'desc':'Commerce is a field of adventure, Accounting is the major profession in this area, They can try every fields and they are the most highly paid  people ', 'img':'images/home/home1.png','type':'parent',
+            {'title':'What To Do After 10th', 'desc':'Commerce is a field of adventure, Accounting is the major profession in this area, They can try every fields and they are the most highly paid  people ', 'img':'images/home/home1.png','type':'parent',
                 'children':[
                     {'title':'Study Various Deploma Course','duration':2,'cost':3,'type':'parent','imgLink':'images/home/home1.png','childCount':23},
                     {'title':'Study Various Deploma Course','duration':2,'cost':3,'type':'parent','imgLink':'images/home/home2.png','childCount':23},

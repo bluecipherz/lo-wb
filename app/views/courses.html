@@ -1,139 +1,150 @@
 <div class="greyBG bgrid page-full"  style="width:100%;">
-    <div class="bgrid -bg-s-1200 -bg-s-1200-o whiteBG pageOuter">
-        <!--Left side Box-->
-        <div class="page-left">
-            <div class="top">
-                Navigation
-            </div> 
-            <div class="cont">
-                <nested-menu ng-repeat="course in courses.courseList"></nested-menu>
-            </div>
-        </div>
-        <!--page index and other info-->
-        <div class="page-mid">
-            <div class="sector" ng-repeat="data in courses.courseData" >
-
-                <div class="topSection">
-                    <div class="main">
-                        <div class="top">
-                            <div class="img">
-                                <img src="{{data.img}}">
-                            </div>
-                        </div>
-                        <div class="mid">{{ data.title }}</div>
-                        <div class="bottom">{{ data.desc }}</div>
-                    </div>
-                    <div class="childCart">  
-                        <div class="child " ng-repeat="child in data.children.slice(0,5)"> 
-                            <div class="head" ng-if="$state.current.name == 'courses' || $state.current.name == 'exams'"> 
-                                {{ child.title}}
-                            </div>  
-
-                            <div class="mid" ng-if="$state.current.name == 'courses' || $state.current.name == 'exams'">  
-
-                                <table ng-if="child.type == 'endNode'" > 
-                                    <tr>
-                                        <td ng-if="$state.current.name == 'courses'" > <div >Duration :  </div></td> <!-- course -->
-                                        <td ng-if="$state.current.name == 'exams'" > <div >ExamThing :  </div></td> <!-- exams -->
-                                        <td class="iconSet"> 
-                                            <div ng-class="{'active': courses.pageAct}" ng-repeat="i in courses.getNumber( child.duration ) track by $index" class="star-checked"></div> 
-                                            <div ng-class="{'active': courses.pageAct}" ng-repeat="i in courses.getNumber( 5 - child.duration ) track by $index" class="star-unchecked"></div> 
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td ng-if="$state.current.name == 'courses'" > Cost(Aprox) :  </td><!-- course -->
-                                        <td ng-if="$state.current.name == 'exams'" > Exam :  </td><!-- exams -->
-                                        <td class="iconSet"> 
-                                            <div ng-class="{'active': courses.pageAct}" ng-repeat="i in courses.getNumber( child.cost ) track by $index" class="star-checked"></div> 
-                                            <div ng-class="{'active': courses.pageAct}" ng-repeat="i in courses.getNumber( 5 - child.cost ) track by $index" class="star-unchecked"></div> 
-                                        </td>
-                                    </tr>
-                                </table>
-
-                                <div class="subParent" ng-if="child.type == 'parent'">
-                                    <div class="subImage">
-                                        <img src="{{ child.imgLink }}">
-                                    </div>
-                                    <div class="desc">
-                                        Around <span class="c-blue">{{ child.childCount }} Options </span>available in this catogory. Click to see more
-                                    </div>
-                                </div>
-                            </div>  
-
-                            <div class="b-grid headF" ng-if="$state.current.name == 'funzone'"> 
-                                {{ child.title}}
-                            </div>   
-                            <div class="b-grid" ng-if="$state.current.name == 'funzone'">
-                                <span ng-if=" child.title.length <= 28 "  > 
-                                    {{  child.description | limitTo: 120 }}{{child.description.length > 120 ? '...' : ''}} 
-                                </span>
-                                <span ng-if=" child.title.length > 28 " class='overH6'> 
-                                    {{  child.description | limitTo: 80 }}{{child.description.length > 80 ? '...' : ''}} 
-                                </span>
-                                <div class="BottomImg">
-                                    <img src="{{ child.img }}">
-                                </div>
-                            </div>
-
-                        </div>
-                        <div class="moreBtn" ng-click="data.showRestChild = ! data.showRestChild"> 
-                            <span ng-class="{'hidden': data.showRestChild}">SHOW MORE +</span> 
-                            <span ng-class="{'hidden': !data.showRestChild}">SHOW LESS -</span> 
-                        </div>
-                    </div>   
-                </div>   
-
-                <div class="bottomSection" >
-                    <div class="restChildCart" > 
-                        <div class="child " ng-repeat="child in data.children.slice(5,100)" ng-class="{'showChild': data.showRestChild}"> 
-                            <div class="head" ng-if="$state.current.name == 'courses' || $state.current.name == 'exams'"> 
-                                {{ child.title }}
-                            </div>  
-
-                            <div class="mid" ng-if="$state.current.name == 'courses' || $state.current.name == 'exams'">  
-                               
-                                <table ng-if="child.type == 'endNode'" > 
-                                    <tr>
-                                        <td ng-if="$state.current.name == 'courses'" > <div >Duration :  </div></td> <!-- course -->
-                                        <td ng-if="$state.current.name == 'exams'" > <div >ExamThing :  </div></td> <!-- exams -->
-                                        <td class="iconSet"> 
-                                            <div ng-class="{'active': courses.pageAct}" ng-repeat="i in courses.getNumber( child.duration ) track by $index" class="star-checked"></div> 
-                                            <div ng-class="{'active': courses.pageAct}" ng-repeat="i in courses.getNumber( 5 - child.duration ) track by $index" class="star-unchecked"></div> 
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td ng-if="$state.current.name == 'courses'" > Cost(Aprox) :  </td><!-- course -->
-                                        <td ng-if="$state.current.name == 'exams'" > Exam :  </td><!-- exams -->
-                                        <td class="iconSet"> 
-                                            <div ng-class="{'active': courses.pageAct}" ng-repeat="i in courses.getNumber( child.cost ) track by $index" class="star-checked"></div> 
-                                            <div ng-class="{'active': courses.pageAct}" ng-repeat="i in courses.getNumber( 5 - child.cost ) track by $index" class="star-unchecked"></div> 
-                                        </td>
-                                    </tr>
-                                </table>
-
-                                <div class="subParent" ng-if="child.type == 'parent'">
-                                    <div class="subImage">
-                                        <img src="{{ child.imgLink }}">
-                                    </div>
-                                    <div class="desc">
-                                        Around <span class="c-blue">{{ child.childCount }} Options </span>available in this catogory. Click to see more
-                                    </div>
-                                </div>
-                            </div>  
-
-                            <div class="b-grid headF" ng-if="$state.current.name == 'funzone'"> 
-                                {{ child.title}}
-                            </div>   
-                            <div class="b-grid" ng-if="$state.current.name == 'funzone'">
-                                <span class="b-grid">{{ child.description }}</span>
-                                <div class="BottomImg">
-                                    <img src="{{ child.img }}">
-                                </div>
-                            </div>
-                            
-                        </div>
-                    </div>
+    <div class="boxx">
+        <div class="bgrid  whiteBG pageOuter">
+            <!--Left side Box-->
+            <div class="page-left">
+                <div class="top">
+                    Navigation
                 </div> 
+                <div class="cont">
+                    <div class="sector" ng-repeat="course in courses.courseData" ng-click="this.selectItem($index+1)" ng-class="{'active':$index+1 == courses.selectedItem}">
+                        <div class="parent " ng-click="courses.selectItem(course.id)">{{ course.title }}</div> 
+                        <div class="child " >asdasd
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--page index and other info-->
+            <div class="page-mid">
+                <div class="sector" ng-repeat="data in courses.courseData.slice(courses.itemStarting,courses.itemStarting + courses.itemCount)" >
+
+                    <div class="topSection">
+                        <div class="main">
+                            <div class="top">
+                                <div class="img">
+                                    <img src="{{data.img}}">
+                                </div>
+                            </div>
+                            <div class="mid">{{ data.title }}</div>
+                            <div class="bottom">{{ data.desc }}</div>
+                        </div>
+                        <div class="childCart">  
+                            <div class="child " ng-repeat="child in data.children.slice(0,5)"> 
+                                <div class="head" ng-if="$state.current.name == 'courses' || $state.current.name == 'exams'"> 
+                                    {{ child.title}}
+                                </div>  
+
+                                <div class="mid" ng-if="$state.current.name == 'courses' || $state.current.name == 'exams'">  
+
+                                    <table ng-if="child.type == 'endNode'" > 
+                                        <tr>
+                                            <td ng-if="$state.current.name == 'courses'" > <div >Duration :  </div></td> <!-- course -->
+                                            <td ng-if="$state.current.name == 'exams'" > <div >ExamThing :  </div></td> <!-- exams -->
+                                            <td class="iconSet"> 
+                                                <div ng-class="{'active': courses.pageAct}" ng-repeat="i in courses.getNumber( child.duration ) track by $index" class="star-checked"></div> 
+                                                <div ng-class="{'active': courses.pageAct}" ng-repeat="i in courses.getNumber( 5 - child.duration ) track by $index" class="star-unchecked"></div> 
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td ng-if="$state.current.name == 'courses'" > Cost(Aprox) :  </td><!-- course -->
+                                            <td ng-if="$state.current.name == 'exams'" > Exam :  </td><!-- exams -->
+                                            <td class="iconSet"> 
+                                                <div ng-class="{'active': courses.pageAct}" ng-repeat="i in courses.getNumber( child.cost ) track by $index" class="star-checked"></div> 
+                                                <div ng-class="{'active': courses.pageAct}" ng-repeat="i in courses.getNumber( 5 - child.cost ) track by $index" class="star-unchecked"></div> 
+                                            </td>
+                                        </tr>
+                                    </table>
+
+                                    <div class="subParent" ng-if="child.type == 'parent'">
+                                        <div class="subImage">
+                                            <img src="{{ child.imgLink }}">
+                                        </div>
+                                        <div class="desc">
+                                            Around <span class="c-blue">{{ child.childCount }} Options </span>available in this catogory. Click to see more
+                                        </div>
+                                    </div>
+                                </div>  
+
+                                <div class="b-grid headF" ng-if="$state.current.name == 'funzone'"> 
+                                    {{ child.title}}
+                                </div>   
+                                <div class="b-grid" ng-if="$state.current.name == 'funzone'">
+                                    <span ng-if=" child.title.length <= 28 "  > 
+                                        {{  child.description | limitTo: 120 }}{{child.description.length > 120 ? '...' : ''}} 
+                                    </span>
+                                    <span ng-if=" child.title.length > 28 " class='overH6'> 
+                                        {{  child.description | limitTo: 80 }}{{child.description.length > 80 ? '...' : ''}} 
+                                    </span>
+                                    <div class="BottomImg">
+                                        <img src="{{ child.img }}">
+                                    </div>
+                                </div>
+
+                            </div>
+                            <div class="moreBtn" ng-click="data.showRestChild = ! data.showRestChild"> 
+                                <span ng-class="{'hidden': data.showRestChild}">SHOW MORE +</span> 
+                                <span ng-class="{'hidden': !data.showRestChild}">SHOW LESS -</span> 
+                            </div>
+                        </div>   
+                    </div>   
+
+                    <div class="bottomSection" >
+                        <div class="restChildCart" > 
+                            <div class="child " ng-repeat="child in data.children.slice(5,100)" ng-class="{'showChild': data.showRestChild}"> 
+                                <div class="head" ng-if="$state.current.name == 'courses' || $state.current.name == 'exams'"> 
+                                    {{ child.title }}
+                                </div>  
+
+                                <div class="mid" ng-if="$state.current.name == 'courses' || $state.current.name == 'exams'">  
+                                   
+                                    <table ng-if="child.type == 'endNode'" > 
+                                        <tr>
+                                            <td ng-if="$state.current.name == 'courses'" > <div >Duration :  </div></td> <!-- course -->
+                                            <td ng-if="$state.current.name == 'exams'" > <div >ExamThing :  </div></td> <!-- exams -->
+                                            <td class="iconSet"> 
+                                                <div ng-class="{'active': courses.pageAct}" ng-repeat="i in courses.getNumber( child.duration ) track by $index" class="star-checked"></div> 
+                                                <div ng-class="{'active': courses.pageAct}" ng-repeat="i in courses.getNumber( 5 - child.duration ) track by $index" class="star-unchecked"></div> 
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td ng-if="$state.current.name == 'courses'" > Cost(Aprox) :  </td><!-- course -->
+                                            <td ng-if="$state.current.name == 'exams'" > Exam :  </td><!-- exams -->
+                                            <td class="iconSet"> 
+                                                <div ng-class="{'active': courses.pageAct}" ng-repeat="i in courses.getNumber( child.cost ) track by $index" class="star-checked"></div> 
+                                                <div ng-class="{'active': courses.pageAct}" ng-repeat="i in courses.getNumber( 5 - child.cost ) track by $index" class="star-unchecked"></div> 
+                                            </td>
+                                        </tr>
+                                    </table>
+
+                                    <div class="subParent" ng-if="child.type == 'parent'">
+                                        <div class="subImage">
+                                            <img src="{{ child.imgLink }}">
+                                        </div>
+                                        <div class="desc">
+                                            Around <span class="c-blue">{{ child.childCount }} Options </span>available in this catogory. Click to see more
+                                        </div>
+                                    </div>
+                                </div>  
+
+                                <div class="b-grid headF" ng-if="$state.current.name == 'funzone'"> 
+                                    {{ child.title}}
+                                </div>   
+                                <div class="b-grid" ng-if="$state.current.name == 'funzone'">
+                                    <span class="b-grid">{{ child.description }}</span>
+                                    <div class="BottomImg">
+                                        <img src="{{ child.img }}">
+                                    </div>
+                                </div>
+                                
+                            </div>
+                        </div>
+                    </div> 
+                </div>
+                <div class="paginator">
+                    <div class="leftBtn " ng-click="courses.paginate(0)" ng-class="{'leftDeact':courses.itemStarting <= 0}"> <i class="fa fa-chevron-left"></i> </div>
+                    <div class="mid"> VIEW MORE CATEGORY </div>
+                    <div class="rightBtn"  ng-click="courses.paginate(1)" ng-class="{'rightDeact':courses.itemStarting + courses.itemCount >= courses.courseData.length}"> <i class="fa fa-chevron-right"></i>  </div>
+                </div>
             </div>
         </div>
     </div>

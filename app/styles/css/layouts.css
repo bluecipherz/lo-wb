@@ -287,8 +287,9 @@
   display: block;
   float: left;
   position: relative;
-  min-height: 1600px;
-  line-height: 120%; }
+  min-height: 200px;
+  line-height: 120%;
+  width: 100%; }
   .pageOuter .page-left {
     display: block;
     float: left;
@@ -330,7 +331,7 @@
         padding-left: 10px; }
         .pageOuter .page-left .cont .child .active > .parent {
           /* state */
-          border-left: 2px solid #000; }
+          border-left: _states solid #000; }
       .pageOuter .page-left .cont .active > .parent {
         font-family: GOTHICB;
         background: rgba(225, 225, 225, 0.3); }
@@ -350,7 +351,8 @@
       position: relative;
       margin: 20px;
       min-height: 0px;
-      border-bottom: 2px solid #444; }
+      padding-bottom: 30px;
+      border-bottom: 1px solid #888; }
       .pageOuter .page-mid .sector .topSection, .pageOuter .page-mid .sector .bottomSection {
         display: block;
         float: left;
@@ -430,12 +432,12 @@
           .pageOuter .page-mid .sector .topSection .restChildCart .showChild, .pageOuter .page-mid .sector .bottomSection .restChildCart .showChild {
             max-height: 300px;
             opacity: 1;
-            border-top: 2px solid #aaa;
+            border-top: 1px solid #aaa;
             margin-top: 0px; }
           .pageOuter .page-mid .sector .topSection .restChildCart .child:nth-child(1),
           .pageOuter .page-mid .sector .topSection .restChildCart .child:nth-child(2), .pageOuter .page-mid .sector .bottomSection .restChildCart .child:nth-child(1),
           .pageOuter .page-mid .sector .bottomSection .restChildCart .child:nth-child(2) {
-            border-top: 2px solid #aaa; }
+            border-top: 1px solid #aaa; }
         .pageOuter .page-mid .sector .topSection .child, .pageOuter .page-mid .sector .topSection .moreBtn, .pageOuter .page-mid .sector .bottomSection .child, .pageOuter .page-mid .sector .bottomSection .moreBtn {
           display: table-cell;
           float: left;
@@ -444,7 +446,7 @@
           position: relative;
           padding: 10px 0;
           height: 125px;
-          border-top: 2px solid #aaa;
+          border-top: 1px solid #aaa;
           /* Parent */ }
           .pageOuter .page-mid .sector .topSection .child .head, .pageOuter .page-mid .sector .topSection .child .mid, .pageOuter .page-mid .sector .topSection .child .foot, .pageOuter .page-mid .sector .topSection .moreBtn .head, .pageOuter .page-mid .sector .topSection .moreBtn .mid, .pageOuter .page-mid .sector .topSection .moreBtn .foot, .pageOuter .page-mid .sector .bottomSection .child .head, .pageOuter .page-mid .sector .bottomSection .child .mid, .pageOuter .page-mid .sector .bottomSection .child .foot, .pageOuter .page-mid .sector .bottomSection .moreBtn .head, .pageOuter .page-mid .sector .bottomSection .moreBtn .mid, .pageOuter .page-mid .sector .bottomSection .moreBtn .foot {
             display: block;
@@ -526,7 +528,9 @@
           .pageOuter .page-mid .sector .topSection .child .subParent, .pageOuter .page-mid .sector .topSection .moreBtn .subParent, .pageOuter .page-mid .sector .bottomSection .child .subParent, .pageOuter .page-mid .sector .bottomSection .moreBtn .subParent {
             display: block;
             float: left;
-            position: relative;
+            position: absolute;
+            bottom: 0px;
+            left: 0px;
             width: 100%; }
             .pageOuter .page-mid .sector .topSection .child .subParent .subImage, .pageOuter .page-mid .sector .topSection .moreBtn .subParent .subImage, .pageOuter .page-mid .sector .bottomSection .child .subParent .subImage, .pageOuter .page-mid .sector .bottomSection .moreBtn .subParent .subImage {
               display: block;
@@ -540,6 +544,12 @@
                 max-height: 100%;
                 opacity: 0.5; }
             .pageOuter .page-mid .sector .topSection .child .subParent .desc, .pageOuter .page-mid .sector .topSection .moreBtn .subParent .desc, .pageOuter .page-mid .sector .bottomSection .child .subParent .desc, .pageOuter .page-mid .sector .bottomSection .moreBtn .subParent .desc {
+              display: block;
+              float: left;
+              width: calc(100% - 60px);
+              font-size: 80%;
+              line-height: 120%;
+              padding-top: 10px;
               color: #aaa; }
               .pageOuter .page-mid .sector .topSection .child .subParent .desc span, .pageOuter .page-mid .sector .topSection .moreBtn .subParent .desc span, .pageOuter .page-mid .sector .bottomSection .child .subParent .desc span, .pageOuter .page-mid .sector .bottomSection .moreBtn .subParent .desc span {
                 color: #66cbff; }

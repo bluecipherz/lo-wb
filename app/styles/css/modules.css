@@ -179,4 +179,76 @@
   line-height: 130%;
   overflow: hidden; }
 
+.pageOuter .page-mid .paginator {
+  display: block;
+  float: left;
+  width: 400px;
+  height: 50px;
+  line-height: 50px;
+  text-align: center;
+  margin: 10px calc(50% - 200px); }
+  .pageOuter .page-mid .paginator .leftBtn, .pageOuter .page-mid .paginator .rightBtn {
+    display: block;
+    float: left;
+    width: 50px;
+    height: 100%;
+    border: #66cbff solid 5px;
+    -moz-border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -ms-border-radius: 50%;
+    border-radius: 50%;
+    line-height: 40px;
+    font-size: 140%;
+    color: #66cbff;
+    position: relative; }
+    .pageOuter .page-mid .paginator .leftBtn i, .pageOuter .page-mid .paginator .rightBtn i {
+      position: absolute;
+      right: 14px;
+      top: 10px; }
+  .pageOuter .page-mid .paginator .rightBtn {
+    padding-left: 3px; }
+    .pageOuter .page-mid .paginator .rightBtn i {
+      position: absolute;
+      left: 14px;
+      top: 10px; }
+  .pageOuter .page-mid .paginator .mid {
+    display: block;
+    float: left;
+    width: calc(100% - 100px );
+    height: 100%;
+    font-family: GOTHICB;
+    font-size: 130%; }
+  .pageOuter .page-mid .paginator .leftBtn:hover {
+    cursor: pointer;
+    padding-right: 6px;
+    border: #66cbff solid 6px; }
+    .pageOuter .page-mid .paginator .leftBtn:hover i {
+      position: absolute;
+      right: 13px;
+      top: 9px; }
+  .pageOuter .page-mid .paginator .rightBtn:hover {
+    cursor: pointer;
+    padding-left: 11px;
+    border: #66cbff solid 6px; }
+    .pageOuter .page-mid .paginator .rightBtn:hover i {
+      position: absolute;
+      left: 13px;
+      top: 9px; }
+  .pageOuter .page-mid .paginator .leftDeact, .pageOuter .page-mid .paginator .rightDeact {
+    cursor: default;
+    color: #ccc;
+    border: #ccc solid 5px; }
+  .pageOuter .page-mid .paginator .leftDeact:hover {
+    cursor: default;
+    border: #ccc solid 5px; }
+    .pageOuter .page-mid .paginator .leftDeact:hover i {
+      right: 14px;
+      top: 10px; }
+  .pageOuter .page-mid .paginator .rightDeact:hover {
+    cursor: default;
+    border: #ccc solid 5px; }
+    .pageOuter .page-mid .paginator .rightDeact:hover i {
+      left: 14px !important;
+      top: 10px; }
+
 /*# sourceMappingURL=modules.css.map */

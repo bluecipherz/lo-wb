@@ -5,18 +5,26 @@
             <div class="page-left">
                 <div class="top">
                     Navigation
+                    <div class="snavBarDown"><span></span><span></span></div>
                 </div> 
                 <div class="cont">
-                    <div class="sector" ng-repeat="course in courses.courseData" ng-click="this.selectItem($index+1)" ng-class="{'active':$index+1 == courses.selectedItem}">
-                        <div class="parent " ng-click="courses.selectItem(course.id)">{{ course.title }}</div> 
-                        <div class="child " >asdasd
-                        </div>
+                    <div class="sector " ng-repeat="course in courses.courseLists" ng-class="{'active':$index == courses.navItem}">
+                        <div class="parent" ng-click="courses.selectItem($index)">{{ course.title }}</div>
+
+                        <div class="child"ng-repeat="child in course.children | filter:{'type':'parent'}" ng-click="courses.selectChild($index)" ng-class="{'active':$index == courses.itemChild}"  >
+                            {{ child.title }} <i class="fa fa-th-large"></i>
+                        </div>  
+
+                        <a class="child" ng-href="#/course_details" ng-repeat="child in course.children | filter:{'type':'endNode'}" >
+                            {{ child.title}} 
+                        </a> 
+
                     </div>
                 </div>
             </div>
             <!--page index and other info-->
             <div class="page-mid">
-                <div class="sector" ng-repeat="data in courses.courseData.slice(courses.itemStarting,courses.itemStarting + courses.itemCount)" >
+                <div class="sector"ng-repeat="data in courses.courseData.slice(courses.itemStarting,courses.itemStarting + courses.itemCount)" >
 
                     <div class="topSection">
                         <div class="main">
@@ -28,8 +36,8 @@
                             <div class="mid">{{ data.title }}</div>
                             <div class="bottom">{{ data.desc }}</div>
                         </div>
-                        <div class="childCart">  
-                            <div class="child " ng-repeat="child in data.children.slice(0,5)"> 
+                        <div class="childCart">   
+                            <div class="child" ng-init="courses.childItemInit(data.children.length,child)" ng-click="courses.childClick($index,child.type)" ng-repeat="child in data.children.slice(0,5)"> 
                                 <div class="head" ng-if="$state.current.name == 'courses' || $state.current.name == 'exams'"> 
                                     {{ child.title}}
                                 </div>  
@@ -81,7 +89,7 @@
                                 </div>
 
                             </div>
-                            <div class="moreBtn" ng-click="data.showRestChild = ! data.showRestChild"> 
+                            <div class="moreBtn" ng-if="data.children.length > 5" ng-click="data.showRestChild = ! data.showRestChild"> 
                                 <span ng-class="{'hidden': data.showRestChild}">SHOW MORE +</span> 
                                 <span ng-class="{'hidden': !data.showRestChild}">SHOW LESS -</span> 
                             </div>
@@ -90,13 +98,13 @@
 
                     <div class="bottomSection" >
                         <div class="restChildCart" > 
-                            <div class="child " ng-repeat="child in data.children.slice(5,100)" ng-class="{'showChild': data.showRestChild}"> 
+                            <div class="child " ng-init="courses.childItemInit(data.children.length,child)" ng-repeat="child in data.children.slice(5,100)" ng-class="{'showChild': data.showRestChild}">  
                                 <div class="head" ng-if="$state.current.name == 'courses' || $state.current.name == 'exams'"> 
-                                    {{ child.title }}
+                                    {{ child.title}}
                                 </div>  
 
                                 <div class="mid" ng-if="$state.current.name == 'courses' || $state.current.name == 'exams'">  
-                                   
+
                                     <table ng-if="child.type == 'endNode'" > 
                                         <tr>
                                             <td ng-if="$state.current.name == 'courses'" > <div >Duration :  </div></td> <!-- course -->
@@ -130,12 +138,17 @@
                                     {{ child.title}}
                                 </div>   
                                 <div class="b-grid" ng-if="$state.current.name == 'funzone'">
-                                    <span class="b-grid">{{ child.description }}</span>
+                                    <span ng-if=" child.title.length <= 28 "  > 
+                                        {{  child.description | limitTo: 120 }}{{child.description.length > 120 ? '...' : ''}} 
+                                    </span>
+                                    <span ng-if=" child.title.length > 28 " class='overH6'> 
+                                        {{  child.description | limitTo: 80 }}{{child.description.length > 80 ? '...' : ''}} 
+                                    </span>
                                     <div class="BottomImg">
                                         <img src="{{ child.img }}">
                                     </div>
                                 </div>
-                                
+
                             </div>
                         </div>
                     </div> 

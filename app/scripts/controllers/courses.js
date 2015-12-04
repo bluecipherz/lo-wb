@@ -12,9 +12,9 @@ angular.module('loWbApp')
         var vm = this;
         var firstLoad = false;
         $rootScope.showHeader = true;
+        $(window).scrollTop(0);
         $rootScope.$state = $state;
         $rootScope.$stateParams = $stateParams; 
-        $(window).scrollTop(0);
 
         vm.itemStarting = 0;
         vm.listlevel = 0;

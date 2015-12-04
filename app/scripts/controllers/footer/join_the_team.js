@@ -8,10 +8,7 @@
  * Controller of the loWbApp
  */
 angular.module('loWbApp')
-  .controller('JoinTheTeamCtrl', function () {
-    this.awesomeThings = [
-      'HTML5 Boilerplate',
-      'AngularJS',
-      'Karma'
-    ];
+  .controller('JoinTheTeamCtrl', function ($rootScope) {
+        $rootScope.showHeader = true;
+        $(window).scrollTop(0);
   });

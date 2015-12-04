@@ -1,13 +1,9 @@
 
+
 .bgrid{
     display:block;
     float:left;
 }
-.dis-in{ display:inline-block;  }
-.dis-bl{ display:block;  }
-.dis-none{ display:none;  }
-.float-r{ float:right; }
-.float-l{ float:left; }
 
 /*
 ____________________________________________________________________________________________________________________________________________
@@ -498,6 +494,30 @@ ________________________________________________________________________________
 .bn-group > div:nth-last-child(1):after{
     display:none;
 }
+
+.bl-ul{
+    display:block;
+    float:left;
+    height:100%;
+    line-height:100%;
+    width:100%;
+}
+.bl-ul > li,.bl-ul > li > a{
+    display:inline-block;
+    float:left;
+    height:100%;
+    line-height:100%;
+}
+.bl-ul > li > a{
+    width:100%;
+    line-height:50px;
+    color:#ccc;
+}
+.bl-ul > .active > a{
+    background:#444;
+    color:#eee;
+}
+
 /*
 ____________________________________________________________________________________________________________________________________________
 |																																			|
@@ -547,38 +567,38 @@ ________________________________________________________________________________
     min-width: 180px;
 }
 
-@media (min-width: 240px) {
+@media (min-width: 241px) {
     .boxx {
         width: 220px;
     }
 }
 
 
-@media (min-width: 320px) {
+@media (min-width: 321px) {
     .boxx {
         width: 300px;
     }
 }
 
-@media (min-width: 480px) {
+@media (min-width: 481px) {
     .boxx {
         width: 460px;
     }
 }
 
-@media (min-width: 768px) {
+@media (min-width: 769px) {
     .boxx {
         width: 740px;
     }
 }
 
-@media (min-width: 992px) {
+@media (min-width: 1061px) {
     .boxx {
-        width: 960px;
+        width: 1000px;
     }
 }
 
-@media (min-width: 1200px) {
+@media (min-width: 1281px) {
     .boxx {
         width: 1200px;
     }
@@ -590,32 +610,16 @@ ________________________________________________________________________________
     clear: both;
 }
 
+.dis-in{ display:inline-block;  }
+.dis-bl{ display:block;  }
+.dis-none{ display:none;  }
+.float-r{ float:right; }
+.float-l{ float:left; }
+
 /*
  * Lists
  */
 
-.bl-ul{
-    display:block;
-    float:left;
-    height:100%;
-    line-height:100%;
-    width:100%;
-}
-.bl-ul > li,.bl-ul > li > a{
-    display:inline-block;
-    float:left;
-    height:100%;
-    line-height:100%;
-}
-.bl-ul > li > a{
-    width:100%;
-    line-height:50px;
-    color:#ccc;
-}
-.bl-ul > .active > a{
-    background:#444;
-    color:#eee;
-}
 
 /*
 ____________________________________________________________________________________________________________________________________________
@@ -684,3 +688,11 @@ ________________________________________________________________________________
 .-bg-mar-hor-15 { margin:0 15px; }
 .-bg-mar-hor-20 { margin:0 20px; }
 .-bg-mar-hor-25 { margin:0 25px; }
+
+.-bg-m-b-10{ margin-bottom:10px;}
+.-bg-m-b-20{ margin-bottom:20px;}
+.-bg-m-b-30{ margin-bottom:30px;}
+
+
+.grayBG{background:#eef0ef;}
+.whiteBG{background:#fff;}

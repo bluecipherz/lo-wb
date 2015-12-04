@@ -1,8 +1,9 @@
 
-$pageWidth:1100px;
-$asideWidth :250px;
+$pageWidth:1000px;
+$asideWidth :280px;
 
 $sectorHeight : 360;
+
 $borderth : 1px;
 $borderCl : #aaa;
 $borderCl-sec : #888;
@@ -115,6 +116,56 @@ $borderCl-sec : #888;
 				border-left:1px solid #000;  
 			}
 		}
+		.notFound{
+			display:block;
+			float:left;
+			padding:50px 30px;
+			font-size:85%;
+			width:100%;
+
+		}
+		.ASsearchBar{
+			display:block;
+			float:left;
+			width:calc(100% - 40px);
+			margin:10px 20px;
+			input,button{
+				display:block;
+				float:left;
+				border:$borderth solid rgba(255,255,255,0.4);
+				width:60%;
+				background:$themeColor;
+				height:32px; 
+				color:#fff;
+				font-size:85%;
+				padding:0 10px;
+			}
+			button{ 
+				width:40%;
+				background:rgba(255,255,255,0.3); 
+				border-left:none;
+				font-family:GOTHICB;
+			}
+
+			input::-webkit-input-placeholder { /* WebKit, Blink, Edge */
+			    color:    rgba(110,110,110,0.5);
+			    text-align: center;  
+			}
+			input:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+			    color:    #888;
+			    opacity:  0.5;
+			    text-align: center; 
+			}
+			input::-moz-placeholder { /* Mozilla Firefox 19+ */
+			    color:    #888;
+			    opacity:  0.5;
+			    text-align: center; 
+			}
+			input:-ms-input-placeholder { /* Internet Explorer 10-11 */
+			    color:    rgba(110,110,110,0.5);
+			    text-align: center; 
+			}
+		}
 	}
 	.page-mid{
 		display:block;
@@ -201,8 +252,8 @@ $borderCl-sec : #888;
 					.child{
 						display:table-cell;
 						float:left;
-						width:calc( ( 100% / 3 ) - 5px );
-						margin-left: 10px;
+						width:calc( ( 100% / 3 ) - 20px );
+						margin-left: 32px;
 
 						max-height:0px;
 						opacity:0;
@@ -211,7 +262,7 @@ $borderCl-sec : #888;
 						overflow:hidden;
 						margin-top:-20px;
 					}
-					.child:nth-child(3n + 1){margin-left:0; width:calc( ( 100% / 3) - 10px); } 
+					.child:nth-child(3n + 1){margin-left:0; width:calc( ( 100% / 3) - 25px); } 
 					.showChild{  
 						max-height:300px;
 						opacity:1;
@@ -225,8 +276,8 @@ $borderCl-sec : #888;
 				.child,.moreBtn{
 					display:table-cell;
 					float:left;
-					width:calc( 50% - 10px );
-					margin-left: 10px; 
+					width:calc( 50% - 25px );
+					margin-left: 25px; 
 					position:relative;
 
 					padding:10px 0; 

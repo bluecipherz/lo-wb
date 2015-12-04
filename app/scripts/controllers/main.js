@@ -10,6 +10,9 @@
 angular.module('loWbApp')
   .controller('MainCtrl', function ($rootScope,$scope) {
 
+
+    $rootScope.showHeader = false; 
+
     $(window).scrollTop(0);
     var vm = this;
     vm.searchPlaceHolder = 'Enter Course or Exam here';
@@ -59,8 +62,8 @@ angular.module('loWbApp')
       vm.tasks = [
                   { title:'Main Pages',heading:1},
                   { title:'Home Page',heading:0,desk:1,tab:1,mob:1,func:0,backend:0,testing:0,bugs:0,completed:0},
-                  { title:'Course Page',heading:0,desk:2,tab:2,mob:2,func:0,backend:0,testing:0,bugs:0,completed:0},
-                  { title:'Exams Page',heading:0,desk:2,tab:2,mob:2,func:0,backend:0,testing:0,bugs:0,completed:0},
+                  { title:'Course Page',heading:0,desk:1,tab:1,mob:1,func:0,backend:0,testing:0,bugs:0,completed:0},
+                  { title:'Exams Page',heading:0,desk:1,tab:1,mob:1,func:0,backend:0,testing:0,bugs:0,completed:0},
                   { title:'Collage Page',heading:0,desk:2,tab:0,mob:0,func:0,backend:0,testing:0,bugs:0,completed:0},
                   { title:'Footer',heading:0,desk:1,tab:1,mob:1,func:0,backend:0,testing:0,bugs:0,completed:0},
                   
@@ -70,18 +73,17 @@ angular.module('loWbApp')
                   { title:'Student Help',heading:0,desk:0,tab:0,mob:0,func:0,backend:0,testing:0,bugs:0,completed:0},
                   
                   { title:'Courses',heading:1},
-                  { title:'Details with Subcategory',heading:0,desk:0,tab:0,mob:0,func:0,backend:0,testing:0,bugs:0,completed:0},
-                  { title:'Details ',heading:0,desk:0,tab:0,mob:0,func:0,backend:0,testing:0,bugs:0,completed:0},
+                  { title:'Details with Subcategory',heading:0,desk:1,tab:1,mob:1,func:0,backend:0,testing:0,bugs:0,completed:0},
+                  { title:'Details ',heading:0,desk:1,tab:1,mob:1,func:0,backend:0,testing:0,bugs:0,completed:0},
                   
                   { title:'Exams',heading:1},
-                  { title:'Details with Subcategory',heading:0,desk:0,tab:0,mob:0,func:0,backend:0,testing:0,bugs:0,completed:0},
-                  { title:'Details ',heading:0,desk:0,tab:0,mob:0,func:0,backend:0,testing:0,bugs:0,completed:0},
+                  { title:'Details with Subcategory',heading:0,desk:1,tab:1,mob:1,func:0,backend:0,testing:0,bugs:0,completed:0},
+                  { title:'Details ',heading:0,desk:1,tab:1,mob:1,func:0,backend:0,testing:0,bugs:0,completed:0},
                   
                   { title:'Footer',heading:1},
-                  { title:'About us',heading:0,desk:0,tab:0,mob:0,func:0,backend:0,testing:0,bugs:0,completed:0},
-                  { title:'Coming soon ',heading:0,desk:0,tab:0,mob:0,func:0,backend:0,testing:0,bugs:0,completed:0},
-                  { title:'Disclamer ',heading:0,desk:0,tab:0,mob:0,func:0,backend:0,testing:0,bugs:0,completed:0},
-                  { title:'Donate ',heading:0,desk:0,tab:0,mob:0,func:0,backend:0,testing:0,bugs:0,completed:0},
+                  { title:'About us',heading:0,desk:2,tab:2,mob:2,func:2,backend:0,testing:0,bugs:0,completed:0},
+                  { title:'Coming soon ',heading:0,desk:2,tab:2,mob:2,func:2,backend:0,testing:0,bugs:0,completed:0},
+                  { title:'Disclamer ',heading:0,desk:2,tab:2,mob:2,func:2,backend:0,testing:0,bugs:0,completed:0}, 
                   { title:'Feedback ',heading:0,desk:0,tab:0,mob:0,func:0,backend:0,testing:0,bugs:0,completed:0},
                   { title:'Join Our Team ',heading:0,desk:0,tab:0,mob:0,func:0,backend:0,testing:0,bugs:0,completed:0},
                   { title:'Login ',heading:0,desk:0,tab:0,mob:0,func:0,backend:0,testing:0,bugs:0,completed:0},
@@ -94,7 +96,7 @@ angular.module('loWbApp')
                   
       ];
       var totalTasks = 0;
-      var completedTasks = 0;
+      var completedTasks = 0; 
       var inProgressTasks = 0;
       angular.forEach(vm.tasks, function(value, key){
       if(value.heading == 0)
@@ -117,5 +119,8 @@ angular.module('loWbApp')
       vm.totalInProgress = vm.totalInProgress.toFixed(2); 
 
       vm.totalInPro = ( completedTasks + inProgressTasks ) / totalTasks * 100 ; 
-      vm.totalInPro =  vm.totalInPro.toFixed(2); 
+      vm.totalInPro =  vm.totalInPro.toFixed(2);
+
+      vm.totalDes = ( completedTasks ) / ( totalTasks / 6 * 3 ) * 100 ;  
+      vm.totalDes =  vm.totalDes.toFixed(2); 
   });

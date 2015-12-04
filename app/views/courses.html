@@ -1,4 +1,4 @@
-<div class="greyBG bgrid page-full"  style="width:100%;">
+<div class="grayBG bgrid coursePage page-full"  style="width:100%;">
     <div class="boxx">
         <div class="bgrid  whiteBG pageOuter">
             <!--Left side Box-->
@@ -8,19 +8,24 @@
                     <div class="snavBarDown"><span></span><span></span></div>
                 </div> 
                 <div class="cont">
-                    <div class="sector " ng-repeat="course in courses.courseLists" ng-class="{'active':$index == courses.navItem}">
-                        <div class="parent" ng-click="courses.selectItem($index)">{{ course.title }}</div>
+                    <div class="sector " ng-repeat="course in courses.courseLists | filter:ASsearch" ng-class="{'active':course.id == courses.navItem}">
+                        <div class="parent" ng-click="courses.selectItem(course.id); ">{{ course.title }}</div>
+                        <div class="bgrid -b-d-100" ng-repeat="child in course.children | filter:ASsearch">
+                            <div class="child" ng-if="child.type=='parent'"ng-click="courses.selectChild(child.parIndex)" ng-class="{'active':child.parIndex == courses.itemChild}"  >
+                                {{ child.title }} <i class="fa fa-th-large"></i>
+                            </div>  
 
-                        <div class="child"ng-repeat="child in course.children | filter:{'type':'parent'}" ng-click="courses.selectChild($index)" ng-class="{'active':$index == courses.itemChild}"  >
-                            {{ child.title }} <i class="fa fa-th-large"></i>
-                        </div>  
-
-                        <a class="child" ng-href="#/course_details" ng-repeat="child in course.children | filter:{'type':'endNode'}" >
-                            {{ child.title}} 
-                        </a> 
-
+                            <a class="child" ng-href="#/course_details/{{child.id}}" ng-if="child.type=='endNode'" >
+                                {{ child.title}} 
+                            </a> 
+                        </div>
                     </div>
                 </div>
+                <div class="notFound" ng-if="(courses.courseLists | filter:ASsearch).length < 1"> No result found for the search "{{ ASsearch }}"</div>
+                <div class="ASsearchBar">
+                    <input type="text" placeholder="Type here" ng-model="ASsearch"/>
+                    <button>SEARCH</button>
+                </div> 
             </div>
             <!--page index and other info-->
             <div class="page-mid">
@@ -37,7 +42,7 @@
                             <div class="bottom">{{ data.desc }}</div>
                         </div>
                         <div class="childCart">   
-                            <div class="child" ng-init="courses.childItemInit(data.children.length,child)" ng-click="courses.childClick($index,child.type)" ng-repeat="child in data.children.slice(0,5)"> 
+                            <div class="child" ng-click="courses.childClick(child.parIndex,child.type,$index)" ng-repeat="child in data.children.slice(0,courses.childCartCount)"> 
                                 <div class="head" ng-if="$state.current.name == 'courses' || $state.current.name == 'exams'"> 
                                     {{ child.title}}
                                 </div>  
@@ -98,7 +103,7 @@
 
                     <div class="bottomSection" >
                         <div class="restChildCart" > 
-                            <div class="child " ng-init="courses.childItemInit(data.children.length,child)" ng-repeat="child in data.children.slice(5,100)" ng-class="{'showChild': data.showRestChild}">  
+                            <div class="child " ng-click="courses.childClick(child.parIndex,child.type,$index)" ng-repeat="child in data.children.slice(courses.childCartCount,100)" ng-class="{'showChild': data.showRestChild}"> 
                                 <div class="head" ng-if="$state.current.name == 'courses' || $state.current.name == 'exams'"> 
                                     {{ child.title}}
                                 </div>  

@@ -1,1 +1,65 @@
-<p>This is the course_details view.</p>
+<div class="globeGrid grayBG" >
+	<div class="gg-headerSlider gg-mob-hide" ng-if="cDetails.cData.type == 'endNode'"> 
+		<div class="boxx dis-bl"> 
+			<div class="ggs-head">{{ cDetails.cData.mainHeading }}</div>
+			<div class="ggs-cont">
+				<div class="leftBtn " ng-click="cDetails.paginate(0)" ng-class="{'leftDeact': cDetails.collListPos <=0}"> <i class="fa fa-chevron-left"></i> </div>
+				
+				<div class="ggsc-boxOuter" >
+					<!-- Box repeating -->
+					<table style="width:calc(100% / {{cDetails.CLItemCount}} * {{cDetails.cData.colleges.length}}); margin-left:  {{ cDetails.CLItemMargin }}px ">
+						<tr>
+							<td class="ggsc-boxTd" style="width:calc(100% / {{cDetails.cData.colleges.length}})" ng-repeat="col in cDetails.cData.colleges">
+								<div  class="ggsc-box" >
+									<div class="ggscb-img">
+										<div class="imgBox">
+											<img src="{{col.imgLink}}"/>
+										</div>
+									</div>
+									<div class="ggscb-heading"><span>{{col.heading}}</span></div>
+									<div class="ggscb-location">{{col.place}}</div>
+
+									<div class="ggscb-footer" ng-if="cDetails.slideFooter == 2">
+										<div class="ggscb-f-half">
+											<div class="bgrid">Fees : {{col.fees}}</div>
+											<div class="ggscb-f-btn"><span class="gg-tab_l-hide">Save & </span>Compare</div>
+										</div>
+										<div class="ggscb-f-half">
+											<div class="bgrid">Seats : {{col.seats}}</div>
+											<a ng-href="{{cDetails.cData.link + col.id}}" class="ggscb-f-btn">View<span class="gg-tab_l-hide"> College</span></a>
+										</div> 
+									</div>
+									<div class="ggscb-footer2" ng-if="cDetails.slideFooter == 1">
+										<div class="ggscb-f-full">
+											<div class="bgrid -b-d-100">Fees : {{col.fees}}</div>
+											<div class="bgrid -b-d-100">Seats : {{col.seats}}</div>
+											<div class="ggscb-f-btn">Save & Compare</div>
+											<a ng-href="{{cDetails.cData.link + col.id}}" class="ggscb-f-btn">View College</a>
+										</div>
+									</div> 
+
+								</div>  		
+							</td>
+						</tr>
+					</table>		
+				</div>
+
+				<div class="rightBtn"  ng-click="cDetails.paginate(1)" ng-class="{'rightDeact': cDetails.collListPos + cDetails.CLItemCount >= cDetails.cData.colleges.length }"> <i class="fa fa-chevron-right"></i>  </div>
+			</div>
+		</div>
+	</div>
+	<div class="gg-header" ng-if="cDetails.cData.type == 'parent'"> {{cDetails.cData.mainHeading}} </div>
+	<div class="boxx -bg-m-b-30">
+		<div class="gg-h7 -p-10" ng-if="cDetails.cData.type == 'parent'" >{{cDetails.cData.subHeading}}</div>
+		<!-- Box repeating -->
+		<div ng-repeat="data in cDetails.cData.details" class="gg-box-{{data.boxWidth}}"> 
+			<div class="ggb-imgBox gridHalf" ng-if="data.boxType == 'headBox'"><img src="{{data.imgLink}}"></div>
+			<div class="ggb-box-p" ng-class="{'gridFull':data.boxType == 'box' || data.boxType == 'buttonBox' ,'gridHalf':data.boxType == 'headBox'}">
+				<div class="gg-h6" ng-class="{'gg-h6 ':data.boxType == 'box','gg-h4 -ta-c -p-20':data.boxType == 'buttonBox'}">{{data.title}}</div>
+				<div class="ggb-cont" ng-class="{'-ta-c':data.boxType == 'buttonBox'}">{{data.desc}}</div>  
+	  			
+	  			<div class="ggb-button" ng-if="data.boxType == 'buttonBox'" ng-click="cDetails.moreBtnClick(data.ngClick)">{{data.bname}}</div> 
+			</div>   
+		</div>   
+	</div>
+</div>

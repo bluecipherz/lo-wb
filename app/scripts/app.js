@@ -69,18 +69,18 @@ angular
 
         // ---- COURSES ----
         .state('courseDetails', {
-          url: '/course_details',
+          url: '/course_details/:id',
           templateUrl: 'views/courses/course_details.html',
           controller: 'CourseDetailsCtrl',
-          controllerAs: 'courseDetails'
+          controllerAs: 'cDetails'
         })
 
         // ---- EXAMS ----
         .state('examDetails', {
-          url: '/exam_details',
-          templateUrl: 'views/exams/exam_details.html',
+          url: '/exam_details/:id',
+          templateUrl: 'views/courses/course_details.html',
           controller: 'ExamDetailsCtrl',
-          controllerAs: 'examDetails'
+          controllerAs: 'cDetails'
         })
 
         // ---- GENERAL ----
@@ -147,26 +147,26 @@ angular
           controllerAs: 'sitemap'
         })
 
-        // ---- COLLEGE ----
+        // ---- COLLEGE ----  
+
         .state('collegeList', {
           url: '/college_list',
-          templateUrl: 'views/college/college_list.html',
+          templateUrl: 'views/colleges/college_list.html',
           controller: 'CollegeListCtrl',
           controllerAs: 'collegeList'
         })
         .state('firstFilter', {
           url: '/first_filter',
-          templateUrl: 'views/college/first_filter.html',
+          templateUrl: 'views/colleges/first_filter.html',
           controller: 'FirstFilterCtrl',
           controllerAs: 'firstFilter'
         })
         .state('collegeProfile', {
-          url: '/college_profile',
-          templateUrl: 'views/college/college_profile.html',
+          url: '/college_profile/:id',
+          templateUrl: 'views/colleges/college_profile.html',
           controller: 'CollegeProfileCtrl',
           controllerAs: 'collegeProfile'
         })
-
 
         // This route is not the real site
         .state('funzone', {

@@ -30,7 +30,7 @@
 		}
 	}   
 	a{ 
-	    line-height:60px; 
+	    line-height:$headerHeight; 
 		background:none;
 	    color:#fff;
 	} 
@@ -68,6 +68,9 @@
 
 /* Mobile */
 @media screen and (max-width: $Mobile) { 
+	.ngViewDiv{
+		margin-top:50px!important;
+	}
 	
 	.cust-header{
 		height:50px;

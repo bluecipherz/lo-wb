@@ -81,9 +81,9 @@ angular.module('loWbApp')
                   { title:'Details ',heading:0,desk:1,tab:1,mob:1,func:0,backend:0,testing:0,bugs:0,completed:0},
                   
                   { title:'Footer',heading:1},
-                  { title:'About us',heading:0,desk:2,tab:2,mob:2,func:2,backend:0,testing:0,bugs:0,completed:0},
+                  { title:'About us',heading:0,desk:1,tab:1,mob:1,func:1,backend:0,testing:0,bugs:0,completed:0},
                   { title:'Coming soon ',heading:0,desk:2,tab:2,mob:2,func:2,backend:0,testing:0,bugs:0,completed:0},
-                  { title:'Disclamer ',heading:0,desk:2,tab:2,mob:2,func:2,backend:0,testing:0,bugs:0,completed:0}, 
+                  { title:'Disclamer ',heading:0,desk:1,tab:1,mob:1,func:1,backend:0,testing:0,bugs:0,completed:0}, 
                   { title:'Feedback ',heading:0,desk:0,tab:0,mob:0,func:0,backend:0,testing:0,bugs:0,completed:0},
                   { title:'Join Our Team ',heading:0,desk:0,tab:0,mob:0,func:0,backend:0,testing:0,bugs:0,completed:0},
                   { title:'Login ',heading:0,desk:0,tab:0,mob:0,func:0,backend:0,testing:0,bugs:0,completed:0},

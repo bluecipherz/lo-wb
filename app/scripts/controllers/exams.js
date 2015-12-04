@@ -227,8 +227,8 @@ angular.module('loWbApp')
         var r_Mobile  = 481  ;
         var r_TabletP = 769  ;
         var r_TabletL = 1061 ;
-        var r_Desktop = 1281 ;
-        var r_ExtraLarg = 1282 ;
+        var r_Desktop = 1335 ;
+        var r_ExtraLarg = 1336 ;
 
         responsiveJs();
         $(window).resize(function(){ responsiveJs(); });

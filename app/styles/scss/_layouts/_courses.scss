@@ -216,7 +216,7 @@ $borderCl-sec : #888;
 						}
 					}
 					.top{ 
-						min-height:calc(100% / 3 );
+						min-height:33.3333%;
 					}
 					.mid{
 						font-family:GOTHIC;
@@ -252,8 +252,8 @@ $borderCl-sec : #888;
 					.child{
 						display:table-cell;
 						float:left;
-						width:calc( ( 100% / 3 ) - 20px );
-						margin-left: 32px;
+						width:calc(33.3333% - 18px );
+						margin-left: 18px;
 
 						max-height:0px;
 						opacity:0;
@@ -262,7 +262,7 @@ $borderCl-sec : #888;
 						overflow:hidden;
 						margin-top:-20px;
 					}
-					.child:nth-child(3n + 1){margin-left:0; width:calc( ( 100% / 3) - 25px); } 
+					.child:nth-child(3n + 1){margin-left:0; width:33.3333%; } 
 					.showChild{  
 						max-height:300px;
 						opacity:1;

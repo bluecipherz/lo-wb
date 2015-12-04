@@ -7,8 +7,8 @@
 
 /*
 ____________________________________________________________________________________________________________________________________________
-|																																			|
-|																CSS NORMALIZING																|
+|                                                                                                                                           |
+|                                                               CSS NORMALIZING                                                             |
 |___________________________________________________________________________________________________________________________________________|
 */
 
@@ -73,8 +73,8 @@ a:active{color:#005382; text-decoration:none;}
 a:hover{color:#50aee4; text-decoration:none;}
 /*
 ____________________________________________________________________________________________________________________________________________
-|																																			|
-|																STATIC GRID SYSTEM															|
+|                                                                                                                                           |
+|                                                               STATIC GRID SYSTEM                                                          |
 |___________________________________________________________________________________________________________________________________________|
 */
 
@@ -254,92 +254,92 @@ ________________________________________________________________________________
 .-bg-s-1600{margin-left:1600px;}
 
 
-.-bg-s-5-o{ margin-left:calc( ( 100% - 5px ) / 2 ); }
-.-bg-s-10-o{ margin-left:calc( ( 100% - 10px ) / 2 ); }
-.-bg-s-20-o{ margin-left:calc( ( 100% - 20px ) / 2 ); }
-.-bg-s-30-o{ margin-left:calc( ( 100% - 30px ) / 2 ); }
-.-bg-s-40-o{ margin-left:calc( ( 100% - 40px ) / 2 ); }
-.-bg-s-50-o{ margin-left:calc( ( 100% - 50px ) / 2 ); }
-.-bg-s-60-o{ margin-left:calc( ( 100% - 60px ) / 2 ); }
-.-bg-s-70-o{ margin-left:calc( ( 100% - 70px ) / 2 ); }
-.-bg-s-80-o{ margin-left:calc( ( 100% - 80px ) / 2 ); }
-.-bg-s-90-o{ margin-left:calc( ( 100% - 90px ) / 2 ); }
-.-bg-s-100-o{ margin-left:calc( ( 100% - 100px ) / 2 ); }
-.-bg-s-120-o{ margin-left:calc( ( 100% - 120px ) / 2 ); }
-.-bg-s-140-o{ margin-left:calc( ( 100% - 140px ) / 2 ); }
-.-bg-s-160-o{ margin-left:calc( ( 100% - 160px ) / 2 ); }
-.-bg-s-180-o{ margin-left:calc( ( 100% - 180px ) / 2 ); }
-.-bg-s-200-o{ margin-left:calc( ( 100% - 200px ) / 2 ); }
-.-bg-s-220-o{ margin-left:calc( ( 100% - 220px ) / 2 ); }
-.-bg-s-240-o{ margin-left:calc( ( 100% - 240px ) / 2 ); }
-.-bg-s-260-o{ margin-left:calc( ( 100% - 260px ) / 2 ); }
-.-bg-s-280-o{ margin-left:calc( ( 100% - 280px ) / 2 ); }
-.-bg-s-300-o{ margin-left:calc( ( 100% - 300px ) / 2 ); }
-.-bg-s-320-o{ margin-left:calc( ( 100% - 320px ) / 2 ); }
-.-bg-s-340-o{ margin-left:calc( ( 100% - 340px ) / 2 ); }
-.-bg-s-360-o{ margin-left:calc( ( 100% - 360px ) / 2 ); }
-.-bg-s-380-o{ margin-left:calc( ( 100% - 380px ) / 2 ); }
-.-bg-s-400-o{ margin-left:calc( ( 100% - 400px ) / 2 ); }
-.-bg-s-420-o{ margin-left:calc( ( 100% - 420px ) / 2 ); }
-.-bg-s-440-o{ margin-left:calc( ( 100% - 440px ) / 2 ); }
-.-bg-s-460-o{ margin-left:calc( ( 100% - 460px ) / 2 ); }
-.-bg-s-480-o{ margin-left:calc( ( 100% - 480px ) / 2 ); }
-.-bg-s-500-o{ margin-left:calc( ( 100% - 500px ) / 2 ); }
-.-bg-s-520-o{ margin-left:calc( ( 100% - 520px ) / 2 ); }
-.-bg-s-540-o{ margin-left:calc( ( 100% - 540px ) / 2 ); }
-.-bg-s-560-o{ margin-left:calc( ( 100% - 560px ) / 2 ); }
-.-bg-s-580-o{ margin-left:calc( ( 100% - 580px ) / 2 ); }
-.-bg-s-600-o{ margin-left:calc( ( 100% - 600px ) / 2 ); }
-.-bg-s-620-o{ margin-left:calc( ( 100% - 620px ) / 2 ); }
-.-bg-s-640-o{ margin-left:calc( ( 100% - 640px ) / 2 ); }
-.-bg-s-660-o{ margin-left:calc( ( 100% - 660px ) / 2 ); }
-.-bg-s-680-o{ margin-left:calc( ( 100% - 680px ) / 2 ); }
-.-bg-s-700-o{ margin-left:calc( ( 100% - 700px ) / 2 ); }
-.-bg-s-720-o{ margin-left:calc( ( 100% - 720px ) / 2 ); }
-.-bg-s-740-o{ margin-left:calc( ( 100% - 740px ) / 2 ); }
-.-bg-s-760-o{ margin-left:calc( ( 100% - 760px ) / 2 ); }
-.-bg-s-780-o{ margin-left:calc( ( 100% - 780px ) / 2 ); }
-.-bg-s-800-o{ margin-left:calc( ( 100% - 800px ) / 2 ); }
-.-bg-s-820-o{ margin-left:calc( ( 100% - 820px ) / 2 ); }
-.-bg-s-840-o{ margin-left:calc( ( 100% - 840px ) / 2 ); }
-.-bg-s-860-o{ margin-left:calc( ( 100% - 860px ) / 2 ); }
-.-bg-s-880-o{ margin-left:calc( ( 100% - 880px ) / 2 ); }
-.-bg-s-900-o{ margin-left:calc( ( 100% - 900px ) / 2 ); }
-.-bg-s-920-o{ margin-left:calc( ( 100% - 920px ) / 2 ); }
-.-bg-s-940-o{ margin-left:calc( ( 100% - 940px ) / 2 ); }
-.-bg-s-960-o{ margin-left:calc( ( 100% - 960px ) / 2 ); }
-.-bg-s-980-o{ margin-left:calc( ( 100% - 980px ) / 2 ); }
-.-bg-s-1000-o{ margin-left:calc( ( 100% - 1000px ) / 2 ); }
-.-bg-s-1020-o{ margin-left:calc( ( 100% - 1020px ) / 2 ); }
-.-bg-s-1040-o{ margin-left:calc( ( 100% - 1040px ) / 2 ); }
-.-bg-s-1060-o{ margin-left:calc( ( 100% - 1060px ) / 2 ); }
-.-bg-s-1080-o{ margin-left:calc( ( 100% - 1080px ) / 2 ); }
-.-bg-s-1100-o{ margin-left:calc( ( 100% - 1100px ) / 2 ); }
-.-bg-s-1120-o{ margin-left:calc( ( 100% - 1120px ) / 2 ); }
-.-bg-s-1140-o{ margin-left:calc( ( 100% - 1140px ) / 2 ); }
-.-bg-s-1160-o{ margin-left:calc( ( 100% - 1160px ) / 2 ); }
-.-bg-s-1180-o{ margin-left:calc( ( 100% - 1180px ) / 2 ); }
-.-bg-s-1200-o{ margin-left:calc( ( 100% - 1200px ) / 2 ); }
-.-bg-s-1220-o{ margin-left:calc( ( 100% - 1220px ) / 2 ); }
-.-bg-s-1240-o{ margin-left:calc( ( 100% - 1240px ) / 2 ); }
-.-bg-s-1260-o{ margin-left:calc( ( 100% - 1260px ) / 2 ); }
-.-bg-s-1280-o{ margin-left:calc( ( 100% - 1280px ) / 2 ); }
-.-bg-s-1300-o{ margin-left:calc( ( 100% - 1300px ) / 2 ); }
-.-bg-s-1320-o{ margin-left:calc( ( 100% - 1320px ) / 2 ); }
-.-bg-s-1340-o{ margin-left:calc( ( 100% - 1340px ) / 2 ); }
-.-bg-s-1360-o{ margin-left:calc( ( 100% - 1360px ) / 2 ); }
-.-bg-s-1380-o{ margin-left:calc( ( 100% - 1380px ) / 2 ); }
-.-bg-s-1400-o{ margin-left:calc( ( 100% - 1400px ) / 2 ); }
-.-bg-s-1420-o{ margin-left:calc( ( 100% - 1420px ) / 2 ); }
-.-bg-s-1440-o{ margin-left:calc( ( 100% - 1440px ) / 2 ); }
-.-bg-s-1460-o{ margin-left:calc( ( 100% - 1460px ) / 2 ); }
-.-bg-s-1480-o{ margin-left:calc( ( 100% - 1480px ) / 2 ); }
-.-bg-s-1500-o{ margin-left:calc( ( 100% - 1500px ) / 2 ); }
-.-bg-s-1520-o{ margin-left:calc( ( 100% - 1520px ) / 2 ); }
-.-bg-s-1540-o{ margin-left:calc( ( 100% - 1540px ) / 2 ); }
-.-bg-s-1560-o{ margin-left:calc( ( 100% - 1560px ) / 2 ); }
-.-bg-s-1580-o{ margin-left:calc( ( 100% - 1580px ) / 2 ); }
-.-bg-s-1600-o{ margin-left:calc( ( 100% - 1600px ) / 2 ); }
+.-bg-s-5-o{ margin-left:calc( 50% - 2px ); }
+.-bg-s-10-o{ margin-left:calc( 50% - 5px ); }
+.-bg-s-20-o{ margin-left:calc( 50% - 10px ); }
+.-bg-s-30-o{ margin-left:calc( 50% - 15px ); }
+.-bg-s-40-o{ margin-left:calc( 50% - 20px ); }
+.-bg-s-50-o{ margin-left:calc( 50% - 15px ); }
+.-bg-s-60-o{ margin-left:calc( 50% - 30px ); }
+.-bg-s-70-o{ margin-left:calc( 50% - 35px ); }
+.-bg-s-80-o{ margin-left:calc( 50% - 40px ); }
+.-bg-s-90-o{ margin-left:calc( 50% - 45px ); }
+.-bg-s-100-o{ margin-left:calc( 50% - 50px ); }
+.-bg-s-120-o{ margin-left:calc( 50% - 60px ); }
+.-bg-s-140-o{ margin-left:calc( 50% - 70px ); }
+.-bg-s-160-o{ margin-left:calc( 50% - 80px ); }
+.-bg-s-180-o{ margin-left:calc( 50% - 90px ); }
+.-bg-s-200-o{ margin-left:calc( 50% - 100px ); }
+.-bg-s-220-o{ margin-left:calc( 50% - 110px ); }
+.-bg-s-240-o{ margin-left:calc( 50% - 120px ); }
+.-bg-s-260-o{ margin-left:calc( 50% - 130px ); }
+.-bg-s-280-o{ margin-left:calc( 50% - 140px ); }
+.-bg-s-300-o{ margin-left:calc( 50% - 150px ); }
+.-bg-s-320-o{ margin-left:calc( 50% - 160px ); }
+.-bg-s-340-o{ margin-left:calc( 50% - 170px ); }
+.-bg-s-360-o{ margin-left:calc( 50% - 180px ); }
+.-bg-s-380-o{ margin-left:calc( 50% - 190px ); }
+.-bg-s-400-o{ margin-left:calc( 50% - 200px ); }
+.-bg-s-420-o{ margin-left:calc( 50% - 210px ); }
+.-bg-s-440-o{ margin-left:calc( 50% - 220px ); }
+.-bg-s-460-o{ margin-left:calc( 50% - 230px ); }
+.-bg-s-480-o{ margin-left:calc( 50% - 240px ); }
+.-bg-s-500-o{ margin-left:calc( 50% - 250px ); }
+.-bg-s-520-o{ margin-left:calc( 50% - 260px ); }
+.-bg-s-540-o{ margin-left:calc( 50% - 270px ); }
+.-bg-s-560-o{ margin-left:calc( 50% - 280px ); }
+.-bg-s-580-o{ margin-left:calc( 50% - 290px ); }
+.-bg-s-600-o{ margin-left:calc( 50% - 300px ); }
+.-bg-s-620-o{ margin-left:calc( 50% - 310px ); }
+.-bg-s-640-o{ margin-left:calc( 50% - 320px ); }
+.-bg-s-660-o{ margin-left:calc( 50% - 330px ); }
+.-bg-s-680-o{ margin-left:calc( 50% - 340px ); }
+.-bg-s-700-o{ margin-left:calc( 50% - 350px ); }
+.-bg-s-720-o{ margin-left:calc( 50% - 360px ); }
+.-bg-s-740-o{ margin-left:calc( 50% - 370px ); }
+.-bg-s-760-o{ margin-left:calc( 50% - 380px ); }
+.-bg-s-780-o{ margin-left:calc( 50% - 390px ); }
+.-bg-s-800-o{ margin-left:calc( 50% - 400px ); }
+.-bg-s-820-o{ margin-left:calc( 50% - 410px ); }
+.-bg-s-840-o{ margin-left:calc( 50% - 420px ); }
+.-bg-s-860-o{ margin-left:calc( 50% - 430px ); }
+.-bg-s-880-o{ margin-left:calc( 50% - 440px ); }
+.-bg-s-900-o{ margin-left:calc( 50% - 450px ); }
+.-bg-s-920-o{ margin-left:calc( 50% - 460px ); }
+.-bg-s-940-o{ margin-left:calc( 50% - 470px ); }
+.-bg-s-960-o{ margin-left:calc( 50% - 480px ); }
+.-bg-s-980-o{ margin-left:calc( 50% - 490px ); }
+.-bg-s-1000-o{ margin-left:calc( 50% - 500px ); }
+.-bg-s-1020-o{ margin-left:calc( 50% - 510px ); }
+.-bg-s-1040-o{ margin-left:calc( 50% - 520px ); }
+.-bg-s-1060-o{ margin-left:calc( 50% - 530px ); }
+.-bg-s-1080-o{ margin-left:calc( 50% - 540px ); }
+.-bg-s-1100-o{ margin-left:calc( 50% - 550px ); }
+.-bg-s-1120-o{ margin-left:calc( 50% - 560px ); }
+.-bg-s-1140-o{ margin-left:calc( 50% - 570px ); }
+.-bg-s-1160-o{ margin-left:calc( 50% - 580px ); }
+.-bg-s-1180-o{ margin-left:calc( 50% - 590px ); }
+.-bg-s-1200-o{ margin-left:calc( 50% - 600px ); }
+.-bg-s-1220-o{ margin-left:calc( 50% - 610px ); }
+.-bg-s-1240-o{ margin-left:calc( 50% - 620px ); }
+.-bg-s-1260-o{ margin-left:calc( 50% - 630px ); }
+.-bg-s-1280-o{ margin-left:calc( 50% - 640px ); }
+.-bg-s-1300-o{ margin-left:calc( 50% - 650px ); }
+.-bg-s-1320-o{ margin-left:calc( 50% - 660px ); }
+.-bg-s-1340-o{ margin-left:calc( 50% - 670px ); }
+.-bg-s-1360-o{ margin-left:calc( 50% - 680px ); }
+.-bg-s-1380-o{ margin-left:calc( 50% - 690px ); }
+.-bg-s-1400-o{ margin-left:calc( 50% - 700px ); }
+.-bg-s-1420-o{ margin-left:calc( 50% - 710px ); }
+.-bg-s-1440-o{ margin-left:calc( 50% - 720px ); }
+.-bg-s-1460-o{ margin-left:calc( 50% - 730px ); }
+.-bg-s-1480-o{ margin-left:calc( 50% - 740px ); }
+.-bg-s-1500-o{ margin-left:calc( 50% - 750px ); }
+.-bg-s-1520-o{ margin-left:calc( 50% - 760px ); }
+.-bg-s-1540-o{ margin-left:calc( 50% - 770px ); }
+.-bg-s-1560-o{ margin-left:calc( 50% - 780px ); }
+.-bg-s-1580-o{ margin-left:calc( 50% - 790px ); }
+.-bg-s-1600-o{ margin-left:calc( 50% - 800px ); }
 
 
 
@@ -454,8 +454,8 @@ ________________________________________________________________________________
 
 /*
 ____________________________________________________________________________________________________________________________________________
-|																																			|
-|																NAVIGATION																	|
+|                                                                                                                                           |
+|                                                               NAVIGATION                                                                  |
 |___________________________________________________________________________________________________________________________________________|
 */
 
@@ -520,8 +520,8 @@ ________________________________________________________________________________
 
 /*
 ____________________________________________________________________________________________________________________________________________
-|																																			|
-|												        	BLUE GRID LAYERS																|
+|                                                                                                                                           |
+|                                                           BLUE GRID LAYERS                                                                |
 |___________________________________________________________________________________________________________________________________________|
 */
 .b-p-rel{position:relative;}
@@ -551,8 +551,8 @@ ________________________________________________________________________________
 
 /*
 ____________________________________________________________________________________________________________________________________________
-|																																			|
-|																BOXES																		|
+|                                                                                                                                           |
+|                                                               BOXES                                                                       |
 |___________________________________________________________________________________________________________________________________________|
 */
 
@@ -598,7 +598,7 @@ ________________________________________________________________________________
     }
 }
 
-@media (min-width: 1281px) {
+@media (min-width: 1336px) {
     .boxx {
         width: 1200px;
     }
@@ -623,8 +623,8 @@ ________________________________________________________________________________
 
 /*
 ____________________________________________________________________________________________________________________________________________
-|																																			|
-|																TEXT AND FX																	|
+|                                                                                                                                           |
+|                                                               TEXT AND FX                                                                 |
 |___________________________________________________________________________________________________________________________________________|
 */
 

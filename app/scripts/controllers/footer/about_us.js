@@ -9,9 +9,6 @@
  */
 angular.module('loWbApp')
   .controller('AboutUsCtrl', function () {
-    this.awesomeThings = [
-      'HTML5 Boilerplate',
-      'AngularJS',
-      'Karma'
-    ];
+    var vm = this;
+    vm.description = "Sample text that  will make sure that this page is nt empty . so that  now i can simply write something else to fill this up. Sample text that  will make sure that this page is nt empty . so that  now i can simply write something else to fill this up. Sample text that  will make sure that this page is nt empty . so that  now i can simply write something else to fill this up. Sample text that  will make sure that this page is nt empty . so that  now i can simply write something else to fill this up. ";
   });

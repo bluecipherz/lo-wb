@@ -110,11 +110,11 @@ angular
           controller: 'ComingSoonCtrl',
           controllerAs: 'comingSoon'
         })
-        .state('disclamer', {
-          url: '/disclamer',
+        .state('disclaimer', {
+          url: '/disclaimer',
           templateUrl: 'views/footer/disclamer.html',
           controller: 'DisclamerCtrl',
-          controllerAs: 'disclamer'
+          controllerAs: 'disclaimer'
         })
         .state('donate', {
           url: '/donate',

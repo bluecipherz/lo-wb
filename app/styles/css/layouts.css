@@ -1217,4 +1217,86 @@
   color: #555;
   padding: 30px 5px 40px 5px; }
 
+.lgPage, .lgOuter, .lgHeader, .lgBox, .lgFooter.label {
+  display: block;
+  float: left;
+  width: 100%; }
+
+.lgPage {
+  background: #005389; }
+  .lgPage .lgOuter {
+    width: 300px;
+    margin: 100px calc(50% - 150px);
+    min-height: 100px;
+    padding-bottom: 30px; }
+    .lgPage .lgOuter .lgHeader, .lgPage .lgOuter .lgFooter {
+      color: #fff;
+      font-size: 300%;
+      font-family: GOTHICM;
+      line-height: 200%;
+      text-align: center; }
+    .lgPage .lgOuter .lgFooter {
+      font-size: 110%;
+      line-height: 400%; }
+    .lgPage .lgOuter .lgBox {
+      background: #fff;
+      padding: 15px; }
+      .lgPage .lgOuter .lgBox input[type=text], .lgPage .lgOuter .lgBox input[type=password], .lgPage .lgOuter .lgBox button {
+        margin: 10px 0;
+        border: 1px solid #eee;
+        -moz-border-radius: 5px;
+        -webkit-border-radius: 5px;
+        -ms-border-radius: 5px;
+        border-radius: 5px;
+        -webkit-box-shadow: 0 0 3px rgba(0, 0, 0, 0.1);
+        -moz-box-shadow: 0 0 3px rgba(0, 0, 0, 0.1);
+        box-shadow: 0 0 3px rgba(0, 0, 0, 0.1);
+        padding: 0 15px;
+        height: 32px;
+        line-height: 32px;
+        width: 100%;
+        text-align: left;
+        font-size: 82%; }
+      .lgPage .lgOuter .lgBox input[type=checkbox] {
+        display: block;
+        float: left;
+        height: 12px;
+        width: 12px;
+        margin-top: 0 5px; }
+      .lgPage .lgOuter .lgBox ::-webkit-input-placeholder {
+        /* WebKit, Blink, Edge */
+        color: rgba(0, 0, 0, 0.3);
+        text-align: left; }
+      .lgPage .lgOuter .lgBox :-moz-placeholder {
+        /* Mozilla Firefox 4 to 18 */
+        color: #000;
+        opacity: 0.3;
+        text-align: left; }
+      .lgPage .lgOuter .lgBox ::-moz-placeholder {
+        /* Mozilla Firefox 19+ */
+        color: #000;
+        opacity: 0.3;
+        text-align: left; }
+      .lgPage .lgOuter .lgBox :-ms-input-placeholder {
+        /* Internet Explorer 10-11 */
+        color: rgba(0, 0, 0, 0.3);
+        text-align: left; }
+      .lgPage .lgOuter .lgBox .label, .lgPage .lgOuter .lgBox a {
+        line-height: 15px;
+        font-size: 75%;
+        color: #ccc; }
+      .lgPage .lgOuter .lgBox button {
+        background: #005389;
+        color: #fff;
+        text-align: center; }
+      .lgPage .lgOuter .lgBox a {
+        color: #005389;
+        font-family: GOTHICM; }
+
+/* Mobile */
+@media screen and (max-width: 480px) {
+  .lgOuter {
+    width: 98% !important;
+    margin: 1% !important; } }
+
 /*# sourceMappingURL=layouts.css.map */

@@ -1,1 +1,75 @@
+.studHelpPage
+{
+	display:block;
+	float:left;
+	width:100%;		
+}
+
+.studHelpPage{
+	.studHelpPageOuter{ 
+		padding:20px;
+		.gg-h2-cust,.gg-a-cust{
+			color:#777 ;
+			font-size:200%;
+			line-height:300%;
+			font-family:GOTHICB ;
+		}  
+		.gg-a-cust:hover{
+			cursor:pointer;
+			color:#444 ;
+		}
+	}
+}
+
+
+
+/* ------------------------------------------- RESPONSIVE --------------------------------------- */
+
+
  
+/* Extra large */
+@media screen and (min-width: $ExtraLarg) { 
+	.studHelpPage{
+		.boxx{
+			width:1000px;
+		}
+	}
+}
+  
+/* DeskTop */
+@media screen and (max-width: $Desktop) {   
+	.studHelpPage{
+		.boxx{
+			width:1000px;
+		}
+	}
+}
+  
+/* Tablet Landscape */
+@media screen and (max-width: $TabletL) {  
+
+}
+ 
+/* Tabled Portrait */
+@media screen and (max-width: $TabletP) { 
+	.gg-h2-cust,{
+		font-size:6vw!important;
+	}
+}
+
+/* Mobile */
+@media screen and (max-width: $Mobile) {  
+	.gg-a-cust{
+		font-size:6vw!important;
+	}
+}
+
+/* Mobile - medium */
+@media screen and (max-width: $MobileM) {  
+
+}
+
+/* Mobile - Small */
+@media screen and (max-width: $MobileS) {  
+
+}

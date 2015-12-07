@@ -64,20 +64,19 @@ angular.module('loWbApp')
                   { title:'Home Page',heading:0,desk:1,tab:1,mob:1,func:0,backend:0,testing:0,bugs:0,completed:0},
                   { title:'Course Page',heading:0,desk:1,tab:1,mob:1,func:0,backend:0,testing:0,bugs:0,completed:0},
                   { title:'Exams Page',heading:0,desk:1,tab:1,mob:1,func:0,backend:0,testing:0,bugs:0,completed:0},
-                  { title:'Collage Page',heading:0,desk:2,tab:0,mob:0,func:0,backend:0,testing:0,bugs:0,completed:0},
                   { title:'Footer',heading:0,desk:1,tab:1,mob:1,func:0,backend:0,testing:0,bugs:0,completed:0},
                   
                   { title:'Home',heading:1},
-                  { title:'Contact us',heading:0,desk:2,tab:2,mob:2,func:0,backend:0,testing:0,bugs:0,completed:0},
-                  { title:'Scolarship',heading:0,desk:2,tab:2,mob:2,func:0,backend:0,testing:0,bugs:0,completed:0},
-                  { title:'Student Help',heading:0,desk:0,tab:0,mob:0,func:0,backend:0,testing:0,bugs:0,completed:0},
+                  { title:'Contact us',heading:0,desk:1,tab:1,mob:1,func:0,backend:0,testing:0,bugs:0,completed:0},
+                  { title:'Scolarship',heading:0,desk:1,tab:1,mob:1,func:0,backend:0,testing:0,bugs:0,completed:0},
+                  { title:'Student Help',heading:0,desk:2,tab:2,mob:2,func:0,backend:0,testing:0,bugs:0,completed:0},
                   
                   { title:'Courses',heading:1},
                   { title:'Details with Subcategory',heading:0,desk:1,tab:1,mob:1,func:0,backend:0,testing:0,bugs:0,completed:0},
                   { title:'Details ',heading:0,desk:1,tab:1,mob:1,func:0,backend:0,testing:0,bugs:0,completed:0},
                   
                   { title:'Exams',heading:1},
-                  { title:'Details with Subcategory',heading:0,desk:1,tab:1,mob:1,func:0,backend:0,testing:0,bugs:0,completed:0},
+                  { title:'Details with Subcategor=y',heading:0,desk:1,tab:1,mob:1,func:0,backend:0,testing:0,bugs:0,completed:0},
                   { title:'Details ',heading:0,desk:1,tab:1,mob:1,func:0,backend:0,testing:0,bugs:0,completed:0},
                   
                   { title:'Footer',heading:1},
@@ -87,26 +86,37 @@ angular.module('loWbApp')
                   { title:'Feedback ',heading:0,desk:1,tab:1,mob:1,func:1,backend:1,testing:1,bugs:0,completed:1},
                   { title:'Join Our Team ',heading:0,desk:1,tab:1,mob:1,func:1,backend:1,testing:1,bugs:0,completed:1},
                   { title:'Login ',heading:0,desk:1,tab:1,mob:1,func:0,backend:0,testing:0,bugs:0,completed:0},
-                  { title:'Sitemap ',heading:2,desk:2,tab:2,mob:2,func:0,backend:0,testing:0,bugs:0,completed:0},
+                  { title:'Sitemap ',heading:0,desk:1,tab:1,mob:1,func:0,backend:0,testing:0,bugs:0,completed:0},
                   
                   { title:'College',heading:1},
-                  { title:'College List',heading:0,desk:0,tab:0,mob:0,func:0,backend:0,testing:0,bugs:0,completed:0},
-                  { title:'First Filter',heading:0,desk:0,tab:0,mob:0,func:0,backend:0,testing:0,bugs:0,completed:0},
+                  { title:'College List',heading:0,desk:2,tab:2,mob:2,func:0,backend:0,testing:0,bugs:0,completed:0},
+                  { title:'First Filter',heading:0,desk:2,tab:2,mob:2,func:0,backend:0,testing:0,bugs:0,completed:0},
                   { title:'College Profile',heading:0,desk:0,tab:0,mob:0,func:0,backend:0,testing:0,bugs:0,completed:0},
+                  
+                  { title:'General',heading:1},
+                  { title:'Error page',heading:0,desk:2,tab:2,mob:2,func:0,backend:0,testing:0,bugs:0,completed:0},
+                  { title:'Save and compare',heading:0,desk:0,tab:0,mob:0,func:0,backend:0,testing:0,bugs:0,completed:0},
+                  { title:'Search found',heading:0,desk:0,tab:0,mob:0,func:0,backend:0,testing:0,bugs:0,completed:0},
                   
       ];
       var totalTasks = 0;
       var completedTasks = 0; 
+      var completedTest = 0; 
+      var bugs = 0; 
+      var completedDes = 0; 
+      var completedFront = 0; 
+      var completedBack = 0; 
       var inProgressTasks = 0;
       angular.forEach(vm.tasks, function(value, key){
       if(value.heading == 0)
         totalTasks++;
-        if(value.desk == 1){completedTasks++}else if(value.desk == 2){inProgressTasks++}
-        if(value.tab == 1){completedTasks++}else if(value.tab == 2){inProgressTasks++}
-        if(value.mob == 1){completedTasks++}else if(value.mob == 2){inProgressTasks++}
-        if(value.func == 1){completedTasks++}else if(value.func == 2){inProgressTasks++}
-        if(value.backend == 1){completedTasks++}else if(value.backend == 2){inProgressTasks++}
-        if(value.testing == 1){completedTasks++}else if(value.testing == 2){inProgressTasks++} 
+        if(value.desk == 1){completedTasks++;completedDes++; }else if(value.desk == 2){inProgressTasks++}
+        if(value.tab == 1){completedTasks++;completedDes++; }else if(value.tab == 2){inProgressTasks++}
+        if(value.mob == 1){completedTasks++;completedDes++; }else if(value.mob == 2){inProgressTasks++}
+        if(value.func == 1){completedTasks++;completedFront++;}else if(value.func == 2){inProgressTasks++}
+        if(value.backend == 1){completedTasks++;completedBack++;}else if(value.backend == 2){inProgressTasks++}
+        if(value.bugs == 1){bugs++;completedTasks--;} else if(value.bugs == 2){bugs++;completedTasks--;}
+        if(value.testing == 1){completedTasks++;completedTest++;}else if(value.testing == 2){inProgressTasks++;completedTest++;} 
         if(value.completed == 1){completedTasks++}else if(value.completed == 2){inProgressTasks++}
       });
       totalTasks*=6;
@@ -121,6 +131,19 @@ angular.module('loWbApp')
       vm.totalInPro = ( completedTasks + inProgressTasks ) / totalTasks * 100 ; 
       vm.totalInPro =  vm.totalInPro.toFixed(2);
 
-      vm.totalDes = ( completedTasks ) / ( totalTasks / 6 * 3 ) * 100 ;  
+      vm.totalDes = ( completedDes ) / ( totalTasks / 6 * 3 ) * 100 ;  
+      var Ttemp = vm.totalDes;
       vm.totalDes =  vm.totalDes.toFixed(2); 
+
+      vm.completedFront =  (( completedFront ) / ( totalTasks / 6 * 4 ) * 100 ) + Ttemp ;    
+      vm.completedFront =  vm.completedFront.toFixed(2); 
+
+      vm.completedBack = ( completedBack ) / ( totalTasks / 6) * 100 ;  
+      vm.completedBack =  vm.completedBack.toFixed(2); 
+
+      vm.bugs = ( bugs ) / ( totalTasks / 6) * 100 ;  
+      vm.bugs =  vm.bugs.toFixed(2); 
+
+      vm.completedTest = ( completedTest ) / ( totalTasks / 6 ) * 100 ;  
+      vm.completedTest =  vm.completedTest.toFixed(2); 
   });

@@ -598,7 +598,14 @@ ________________________________________________________________________________
     }
 }
 
-@media (min-width: 1336px) {
+
+@media (min-width: 1280px) {
+    .boxx {
+        width: 1200px;
+    }
+}
+
+@media (min-width: 1370px) { // custom  for linkon [ Extra high resolution ]
     .boxx {
         width: 1200px;
     }

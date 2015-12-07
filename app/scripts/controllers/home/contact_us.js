@@ -8,10 +8,8 @@
  * Controller of the loWbApp
  */
 angular.module('loWbApp')
-  .controller('ContactUsCtrl', function () {
-    this.awesomeThings = [
-      'HTML5 Boilerplate',
-      'AngularJS',
-      'Karma'
-    ];
+  .controller('ContactUsCtrl', function ($rootScope) {
+        $rootScope.showHeader = true;
+        $(window).scrollTop(0);
+        
   });

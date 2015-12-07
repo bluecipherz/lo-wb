@@ -8,7 +8,7 @@
  * Controller of the todoappApp
  */
 angular.module('loWbApp')
-  .controller('CoursesCtrl', function ($scope,$interval,nestedSet, $stateParams,$rootScope, $state,$location) {
+  .controller('CoursesCtrl', function ($scope,$interval,nestedSet, $stateParams,$rootScope, $state,$location,screenResolution) {
         var vm = this;
         var firstLoad = false;
         $rootScope.showHeader = true;
@@ -218,16 +218,17 @@ angular.module('loWbApp')
 
         /* RESPONSIVE JS */
  
-        var Rtest = false;
-        var r_crrt = 17;
+        var Rtest = false; 
+        var r_crrt = screenResolution.r_crrt;
 
-        var r_MobileS = 241  ;
-        var r_MobileM = 321  ;
-        var r_Mobile  = 481  ;
-        var r_TabletP = 769  ;
-        var r_TabletL = 1061 ;
-        var r_Desktop = 1335 ;
-        var r_ExtraLarg = 1336 ;
+        var r_MobileS = screenResolution.r_MobileS  ;
+        var r_MobileM = screenResolution.r_MobileM  ;
+        var r_Mobile  = screenResolution.r_Mobile   ;
+        var r_TabletP_semi = screenResolution.r_TabletP_semi  ;
+        var r_TabletP = screenResolution.r_TabletP  ;
+        var r_TabletL = screenResolution.r_TabletL  ;
+        var r_Desktop = screenResolution.r_Desktop  ;
+        var r_ExtraLarg = screenResolution.r_ExtraLarg ; 
 
         responsiveJs();
         $(window).resize(function(){ responsiveJs(); });

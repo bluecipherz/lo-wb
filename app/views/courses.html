@@ -42,15 +42,16 @@
                             <div class="bottom">{{ data.desc }}</div>
                         </div>
                         <div class="childCart">   
-                            <div class="child" ng-click="courses.childClick(child.parIndex,child.type,$index)" ng-repeat="child in data.children.slice(0,courses.childCartCount)"> 
-                                <div class="head" ng-if="$state.current.name == 'courses' || $state.current.name == 'exams'"> 
+                            <div class="child" ng-click="courses.childClick(child.parIndex,child.type,$index)" ng-repeat="child in data.children.slice(0,courses.childCartCount)">  
+                                <div class="head" ng-if="$state.current.name == 'courses' || $state.current.name == 'exams' || $state.current.name == 'scolarship'"> 
                                     {{ child.title}}
                                 </div>  
 
-                                <div class="mid" ng-if="$state.current.name == 'courses' || $state.current.name == 'exams'">  
-
+                                <div class="mid" ng-if="$state.current.name == 'courses' || $state.current.name == 'exams' || $state.current.name == 'scolarship'">   
+                                
                                     <table ng-if="child.type == 'endNode'" > 
                                         <tr>
+                                            <td ng-if="$state.current.name == 'scolarship'" > <div >Duration :  </div></td> <!-- scolarship -->
                                             <td ng-if="$state.current.name == 'courses'" > <div >Duration :  </div></td> <!-- course -->
                                             <td ng-if="$state.current.name == 'exams'" > <div >ExamThing :  </div></td> <!-- exams -->
                                             <td class="iconSet"> 
@@ -59,6 +60,7 @@
                                             </td>
                                         </tr>
                                         <tr>
+                                            <td ng-if="$state.current.name == 'scolarship'" > Cost(Aprox) :  </td><!-- scolarship -->
                                             <td ng-if="$state.current.name == 'courses'" > Cost(Aprox) :  </td><!-- course -->
                                             <td ng-if="$state.current.name == 'exams'" > Exam :  </td><!-- exams -->
                                             <td class="iconSet"> 
@@ -104,14 +106,15 @@
                     <div class="bottomSection" >
                         <div class="restChildCart" > 
                             <div class="child " ng-click="courses.childClick(child.parIndex,child.type,$index)" ng-repeat="child in data.children.slice(courses.childCartCount,100)" ng-class="{'showChild': data.showRestChild}"> 
-                                <div class="head" ng-if="$state.current.name == 'courses' || $state.current.name == 'exams'"> 
+                                <div class="head" ng-if="$state.current.name == 'courses' || $state.current.name == 'exams' || $state.current.name == 'scolarship'"> 
                                     {{ child.title}}
                                 </div>  
 
-                                <div class="mid" ng-if="$state.current.name == 'courses' || $state.current.name == 'exams'">  
+                                <div class="mid" ng-if="$state.current.name == 'courses' || $state.current.name == 'exams' || $state.current.name == 'scolarship'">  
 
                                     <table ng-if="child.type == 'endNode'" > 
                                         <tr>
+                                            <td ng-if="$state.current.name == 'scolarship'" > <div >Duration :  </div></td> <!-- course -->
                                             <td ng-if="$state.current.name == 'courses'" > <div >Duration :  </div></td> <!-- course -->
                                             <td ng-if="$state.current.name == 'exams'" > <div >ExamThing :  </div></td> <!-- exams -->
                                             <td class="iconSet"> 
@@ -120,6 +123,7 @@
                                             </td>
                                         </tr>
                                         <tr>
+                                            <td ng-if="$state.current.name == 'scolarship'" > Cost(Aprox) :  </td><!-- course -->
                                             <td ng-if="$state.current.name == 'courses'" > Cost(Aprox) :  </td><!-- course -->
                                             <td ng-if="$state.current.name == 'exams'" > Exam :  </td><!-- exams -->
                                             <td class="iconSet"> 

@@ -1,1 +1,12 @@
-<p>This is the sitemap view.</p>
+<div class="sitemapPage"> 
+	<div class="boxx sitemapPageInner"> 
+		<h3>Courses</h3>
+		<div class="bgrid -b-d-100">
+			<a class="linkDef" ng-repeat="course in sitemap.courseName"> {{course.name}} </a>
+		</div>
+		<h3>Exams</h3>
+		<div class="bgrid -b-d-100">
+			<a class="linkBlue" ng-repeat="exam in sitemap.examName"> {{exam.name}} </a>
+		</div> 
+	</div> 
+</div>

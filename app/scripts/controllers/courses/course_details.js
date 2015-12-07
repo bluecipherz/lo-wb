@@ -8,8 +8,8 @@
  * Controller of the loWbApp
  */
 angular.module('loWbApp')
-  .controller('CourseDetailsCtrl', function ($rootScope) {
-        $(window).scrollTop(9);
+  .controller('CourseDetailsCtrl', function ($rootScope,$scope,screenResolution,globeBox) {
+        $(window).scrollTop(0);
     	var vm = this;
         $rootScope.showHeader = true;
    
@@ -27,7 +27,7 @@ angular.module('loWbApp')
                 {boxType:'buttonBox',boxWidth:2,title:'COMPUTER SCIENCE',bname:'MORE',ngClick:2,desc:' All india scholarship, Commerce is a field of adventure. state level scholarship Commerce is a field of adventure. field of adventure.'},
             ],
         }; 
-        vm.moreBtnClick = function(id){ 
+        $scope.buttonClick = function(id){ 
             vm.cData = cData1;
             $(window).scrollTop(9); 
         }
@@ -89,16 +89,17 @@ angular.module('loWbApp')
         /* RESPONSIVE JS */
  
         var Rtest = false;
-        var r_crrt = 17;
+        var r_crrt = screenResolution.r_crrt;
 
-        var r_MobileS = 241  ;
-        var r_MobileM = 321  ;
-        var r_Mobile  = 481  ;
-        var r_TabletP_semi = 580  ;
-        var r_TabletP = 769  ;
-        var r_TabletL = 1061 ;
-        var r_Desktop = 1281 ;
-        var r_ExtraLarg = 1282 ;
+        var r_MobileS = screenResolution.r_MobileS  ;
+        var r_MobileM = screenResolution.r_MobileM  ;
+        var r_Mobile  = screenResolution.r_Mobile   ;
+        var r_TabletP_semi = screenResolution.r_TabletP_semi  ;
+        var r_TabletP = screenResolution.r_TabletP  ;
+        var r_TabletL = screenResolution.r_TabletL  ;
+        var r_Desktop = screenResolution.r_Desktop  ;
+        var r_ExtraLarg = screenResolution.r_ExtraLarg ; 
+
 
         responsiveJs();
         $(window).resize(function(){ responsiveJs(); });
@@ -151,8 +152,6 @@ angular.module('loWbApp')
                 vm.CLItemCount = 3;
                 vm.slideFooter = 2;
             }
-        }
-        
-
+        } 
 
   });

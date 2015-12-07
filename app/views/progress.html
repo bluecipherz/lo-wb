@@ -70,7 +70,19 @@
 			<span>( {{ progress.inProgressTasks}} / {{progress.totalTasks - progress.completedTasks}} )</span>
 		</div>
 		<div class="pro-box pb-blue">
-			{{ progress.totalDes + ' %' }} of the Web design is completed 
+			{{ progress.totalDes + ' %' }}</br><span> of the Web design is completed </span>
+		</div>
+		<div class="pro-box pb-blue">
+			{{ progress.completedFront + ' %' }}</br><span> of the Front End is completed </span>
+		</div>
+		<div class="pro-box pb-red">
+			{{ progress.completedBack + ' %' }}</br><span>of the Back End is completed </span>
+		</div>
+		<div class="pro-box pb-yellow">
+			{{ progress.completedTest + ' %' }}</br><span> of the Website is Tested </span>
+		</div>
+		<div class="pro-box pb-red">
+			<span>There is</span> {{progress.bugs + ' %'}}</br><span> Bugs in this site. </span>
 		</div>
 	</div>
 </div>

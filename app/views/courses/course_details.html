@@ -1,16 +1,16 @@
 <div class="globeGrid grayBG" >
-	<div class="gg-headerSlider gg-mob-hide" ng-if="cDetails.cData.type == 'endNode'"> 
+	<div class="gg-headerSlider pad-bottom-50 " ng-if="cDetails.cData.type == 'endNode'" > 
 		<div class="boxx dis-bl"> 
 			<div class="ggs-head">{{ cDetails.cData.mainHeading }}</div>
 			<div class="ggs-cont">
-				<div class="leftBtn " ng-click="cDetails.paginate(0)" ng-class="{'leftDeact': cDetails.collListPos <=0}"> <i class="fa fa-chevron-left"></i> </div>
+				<div class="leftBtn " ng-click="cDetails.paginate(0,cDetails)" ng-class="{'leftDeact': cDetails.collListPos <=0}"> <i class="fa fa-chevron-left"></i> </div>
 				
 				<div class="ggsc-boxOuter" >
 					<!-- Box repeating -->
 					<table style="width:calc(100% / {{cDetails.CLItemCount}} * {{cDetails.cData.colleges.length}}); margin-left:  {{ cDetails.CLItemMargin }}px ">
 						<tr>
 							<td class="ggsc-boxTd" style="width:calc(100% / {{cDetails.cData.colleges.length}})" ng-repeat="col in cDetails.cData.colleges">
-								<div  class="ggsc-box" >
+								<div ng-class="{'gg-headerSlider-anim':cDetails.popShow}" class="ggsc-box" ng-click="cDetails.boxClick(col,cDetails)">
 									<div class="ggscb-img">
 										<div class="imgBox">
 											<img src="{{col.imgLink}}"/>
@@ -19,7 +19,7 @@
 									<div class="ggscb-heading"><span>{{col.heading}}</span></div>
 									<div class="ggscb-location">{{col.place}}</div>
 
-									<div class="ggscb-footer" ng-if="cDetails.slideFooter == 2">
+									<div class="ggscb-footer gg-mob-hide" ng-if="cDetails.slideFooter == 2">
 										<div class="ggscb-f-half">
 											<div class="bgrid">Fees : {{col.fees}}</div>
 											<div class="ggscb-f-btn"><span class="gg-tab_l-hide">Save & </span>Compare</div>
@@ -29,37 +29,124 @@
 											<a ng-href="{{cDetails.cData.link + col.id}}" class="ggscb-f-btn">View<span class="gg-tab_l-hide"> College</span></a>
 										</div> 
 									</div>
-									<div class="ggscb-footer2" ng-if="cDetails.slideFooter == 1">
+									<div class="ggscb-footer2 gg-mob-hide" ng-if="cDetails.slideFooter == 1">
 										<div class="ggscb-f-full">
 											<div class="bgrid -b-d-100">Fees : {{col.fees}}</div>
 											<div class="bgrid -b-d-100">Seats : {{col.seats}}</div>
 											<div class="ggscb-f-btn">Save & Compare</div>
 											<a ng-href="{{cDetails.cData.link + col.id}}" class="ggscb-f-btn">View College</a>
 										</div>
-									</div> 
-
+									</div>  
 								</div>  		
 							</td>
 						</tr>
 					</table>		
-				</div>
-
-				<div class="rightBtn"  ng-click="cDetails.paginate(1)" ng-class="{'rightDeact': cDetails.collListPos + cDetails.CLItemCount >= cDetails.cData.colleges.length }"> <i class="fa fa-chevron-right"></i>  </div>
+				</div> 
+				<div class="rightBtn"  ng-click="cDetails.paginate(1,cDetails)" ng-class="{'rightDeact': cDetails.collListPos + cDetails.CLItemCount >= cDetails.cData.colleges.length }"> <i class="fa fa-chevron-right"></i>  </div>
 			</div>
 		</div>
-	</div>
-	<div class="gg-header" ng-if="cDetails.cData.type == 'parent'"> {{cDetails.cData.mainHeading}} </div>
-	<div class="boxx -bg-m-b-30">
+	</div>  
+	<div class="gg-header" ng-if="cDetails.cData.hasOwnProperty('details')" ng-if="cDetails.cData.type == 'parent'"> {{cDetails.cData.mainHeading}} </div>
+	<div  ng-if="cDetails.cData.hasOwnProperty('details')" class="boxx -bg-m-b-30">
 		<div class="gg-h7 -p-10" ng-if="cDetails.cData.type == 'parent'" >{{cDetails.cData.subHeading}}</div>
 		<!-- Box repeating -->
 		<div ng-repeat="data in cDetails.cData.details" class="gg-box-{{data.boxWidth}}"> 
 			<div class="ggb-imgBox gridHalf" ng-if="data.boxType == 'headBox'"><img src="{{data.imgLink}}"></div>
 			<div class="ggb-box-p" ng-class="{'gridFull':data.boxType == 'box' || data.boxType == 'buttonBox' ,'gridHalf':data.boxType == 'headBox'}">
 				<div class="gg-h6" ng-class="{'gg-h6 ':data.boxType == 'box','gg-h4 -ta-c -p-20':data.boxType == 'buttonBox'}">{{data.title}}</div>
-				<div class="ggb-cont" ng-class="{'-ta-c':data.boxType == 'buttonBox'}">{{data.desc}}</div>  
-	  			
+				<div class="ggb-cont" ng-class="{'-ta-c':data.boxType == 'buttonBox'}">{{data.desc}}</div>   
 	  			<div class="ggb-button" ng-if="data.boxType == 'buttonBox'" ng-click="cDetails.moreBtnClick(data.ngClick)">{{data.bname}}</div> 
 			</div>   
 		</div>   
+	</div> 
+	<div class="gg-buttonSet whiteBG"> 
+		<div class="boxx gg-selectOuter">
+		
+			<div class="gg-select" ng-click="cDetails.showLocation = ! cDetails.showLocation">
+				<div class="ggsl-main" ng-model="cDetails.selectedLocation">{{cDetails.selectedLTemp}}</div>
+				<i class="fa fa-chevron-down"></i>
+				<div class="ggsl-options" ng-class="{'ggsl-options-active':cDetails.showLocation}" >
+					<span ng-repeat="loc in cDetails.cData.locations" ng-click="cDetails.selectL(loc)" class="ggsl-op">{{loc.name}}</span>
+				</div>
+			</div> 
+
+			<div class="gg-select" ng-click="cDetails.showFR = ! cDetails.showFR">
+				<div class="ggsl-main" ng-model="cDetails.selectedFR">{{cDetails.selectedFRTemp}}</div>
+				<i class="fa fa-chevron-down"></i>
+				<div class="ggsl-options" ng-class="{'ggsl-options-active':cDetails.showFR}">
+					<span ng-click="cDetails.selectedFRF=0;cDetails.selectedFRF=99999999;cDetails.selectedFRTemp='FEE RANGE'" class="ggsl-op">NONE</span>
+					<span ng-repeat="fr in cDetails.cData.feeRange" ng-click="cDetails.selectFR(fr)" class="ggsl-op">{{fr.flim }} - {{fr.llim }}</span>
+				</div>
+			</div>
+
+			<div class="gg-select" ng-class="{'gg-select-active':cDetails.showCol}" ng-click="cDetails.showCol =! cDetails.showCol;"> 
+				<div class="ggsl-main">
+					<span ng-if="!cDetails.showCol">VIEW TOP COLLEGES</span>
+					<span ng-if="cDetails.showCol">VIEW ALL COLLEGES</span>
+				</div>
+			</div>
+		</div>
 	</div>
+	<div class="gg-headerSlider whiteBG " ng-if="cDetails.cData.hasOwnProperty('EColleges')" > 
+		<div class="boxx ">  
+			<div class="ggs-cont ggs-cont2">  
+				<div class="ggsc-boxOuter" >
+					<!-- Box repeating --> 
+					<div  ng-click="cDetails.boxClick(col,cDetails)" ng-repeat="col in cDetails.cData.EColleges | filter:col.place=cDetails.selectedLocation " class="ggsc-box ggsc-box-ext" ng-class="{'gg-headerSlider-anim':cDetails.popShow}" >
+						<div class="ggscb-img"> <!-- col.place=cDetails.selectedLocation &&  -->
+							<div class="imgBox">
+								<img src="{{col.imgLink}}"/>
+							</div>
+						</div>
+						<div class="bgrid ggscb-contBox -b-d-100">
+							<div class="ggscb-heading"><span>{{col.heading}}</span></div>
+							<div class="ggscb-location">{{col.place}}</div>
+
+							<div class="ggscb-footer gg-mob-hide" ng-if="cDetails.slideFooter == 2">
+								<div class="ggscb-f-half">
+									<div class="bgrid">Fees : {{col.fees}}</div>
+									<div class="ggscb-f-btn"><span class="gg-tab_l-hide">Save & </span>Compare</div>
+								</div>
+								<div class="ggscb-f-half">
+									<div class="bgrid">Seats : {{col.seats}}</div>
+									<a ng-href="{{cDetails.cData.link + col.id}}" class="ggscb-f-btn">View<span class="gg-tab_l-hide"> College</span></a>
+								</div> 
+							</div>
+							<div class="ggscb-footer2 gg-mob-hide" ng-if="cDetails.slideFooter == 1">
+								<div class="ggscb-f-full">
+									<div class="bgrid -b-d-100">Fees : {{col.fees}}</div>
+									<div class="bgrid -b-d-100">Seats : {{col.seats}}</div>
+									<div class="ggscb-f-btn">Save & Compare</div>
+									<a ng-href="{{cDetails.cData.link + col.id}}" class="ggscb-f-btn">View College</a>
+								</div>
+							</div> 
+						</div> 
+					</div>   	
+				</div>  
+			</div>
+		</div>
+	</div>  
+</div>
+<div class="ggscb-ful-pop"  ng-class="{'popAnim':cDetails.popShow}" > <!-- popup for mobile --> 
+	<div  class="ggsc-box ggsc-box-ext" >
+		<div class="ggscb-img">
+			<div class="imgBox">
+				<img src="{{cDetails.currColLink}}"/>
+			</div>
+			<div ng-click="cDetails.popShow = false" class="ggscb-clos"><i class="fa fa-chevron-left"></i></div>
+		</div>
+		<div class="bgrid ggscb-contBox -b-d-100">
+			<div class="ggscb-heading"><span>{{cDetails.currColHeading}} </span></div>
+			<div class="ggscb-location">{{cDetails.currColPlace}} </div>
+
+			<div class="ggscb-footer2 " >
+				<div class="ggscb-f-full">
+					<div class="bgrid -b-d-100">Fees : {{cDetails.currColFees}} </div>
+					<div class="bgrid -b-d-100">Seats : {{cDetails.currColSeats}} </div>
+					<div class="ggscb-f-btn">Save & Compare</div>
+					<a ng-href="{{cDetails.cData.link + cDetails.currColId}}" class="ggscb-f-btn">View College</a>
+				</div>
+			</div> 
+		</div> 
+	</div>   
 </div>

@@ -1,0 +1,9 @@
+<div class="gg-box-{{data.boxWidth}}"> 
+	<div class="ggb-imgBox gridHalf" ng-if="data.boxType == 'headBox'"><img src="{{data.imgLink}}"></div>
+	<div class="ggb-box-p" ng-class="{'gridFull':data.boxType == 'box' || data.boxType == 'buttonBox' ,'gridHalf':data.boxType == 'headBox'}">
+		<div class="gg-h6" ng-if="data.hasOwnProperty('title')"ng-class="{'gg-h6 ':data.boxType == 'box','gg-h4 -ta-c -p-20':data.boxType == 'buttonBox'}">{{data.title}}</div>
+		<div class="ggb-cont" ng-if="data.hasOwnProperty('desc')" ng-class="{'-ta-c':data.boxType == 'buttonBox'}">{{data.desc}}</div>  	
+		<div class="ggb-cont2" ng-if="data.hasOwnProperty('desc2')" >{{data.desc2}}</div>  	
+		<div class="ggb-button" ng-if="data.boxType == 'buttonBox'" ng-click="buttonClick(data.ngClick)">{{data.bname}}</div> 
+	</div>   
+</div>  

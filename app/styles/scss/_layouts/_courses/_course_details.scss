@@ -2,9 +2,10 @@
 .globeGrid,.gg-header,
 .gg-box-1,.gg-box-2,.gg-box-3,.gg-box-4,.gg-box-5,.gg-box-6,
 .gg-h1,.gg-h2,.gg-h3,.gg-h4,.gg-h5,.gg-h6,.gg-h7,
-.ggb-cont ,.ggb-button,.ggb-box-p,.ggb-imgBox,
+.ggb-cont,.ggb-cont2 ,.ggb-box-p,.ggb-imgBox,
 .gg-headerSlider,.ggs-head,.ggs-cont,.ggsc-box,.ggscb-img,.imgBox,
-.ggscb-heading,.ggscb-location ,.ggscb-f-half,.ggscb-f-full,.ggscb-f-btn,.ggscb-footer,.ggsc-boxOuter,.ggscb-footer2
+.ggscb-heading,.ggscb-location ,.ggscb-f-half,.ggscb-f-full,.ggscb-f-btn,.ggscb-footer,.ggsc-boxOuter,.ggscb-footer2,
+.gg-buttonSet,.gg-select,.ggsl-main,.ggsl-options,.ggsl-op
 { 
 	display:block;
 	float:left;
@@ -33,10 +34,9 @@
 	// gg - Header Slider --------------->
 
 	.gg-headerSlider{
-		width:100%;
-		background:#eef0ef;
+		width:100%; 
 		min-height:10px;  
-		color:#858585; 
+		color:#858585;  
 		.ggs-head{
 			width:100%;
 			line-height:400%;
@@ -147,84 +147,9 @@
 					@include transition(margin-left 1s);
 				}
 			}
-			.ggsc-box{
-				width:100%;
-				min-height:100px;
-				background:#fff;
-				.ggscb-img{
-					width:100%; 
-					background:#e1e1e1;
-					.imgBox{
-						width:100px;
-						height:100px;
-						max-width:90px;
-						max-height:90px;
-						position:relative;
-						overflow:hidden;
-						background:#858585;
-					}
-				} 
-				.ggscb-heading{
-					padding:20px 30px;
-					line-height:120%;
-					height:80px;
-					max-height:80px;
-					color:$themeCDark; 
-					font-family:GOTHICSM;
-				}
-				.ggscb-location {
-					width:100%;
-					padding:0 30px;
-					height:20px;
-					line-height:20px;
-					color:#858585;
-					background:#e1e1e1;
-					font-size:75%; 
-				}
-				.ggscb-footer{
-					height:120px;
-				}
-				.ggscb-footer ,.ggscb-footer2{
-					width:100%;
-					padding:0 10px; 
-					.ggscb-f-half{
-						width:calc( 50% - 20px );
-						margin:10px; 
-						line-height:200%;
-						font-size:85%;
-						font-family:GOTHICM;
-					}
-					.ggscb-f-btn{ 
-						width:100%;
-						border:1px solid #d0d7dc;
-						text-align:center; 
-						line-height:45px;
-						margin-top:5px;
-						color:#858585;
-					}
-					.ggscb-f-btn:hover{
-						cursor:pointer;
-						color:#858585;
-					}
-					.ggscb-f-btn:active{
-						font-size:98%; 
-						color:#858585;
-					}
-				}
-				.ggscb-footer2{ 
-					.ggscb-f-full{ 
-						width:calc( 100% - 20px );
-						margin:10px; 
-						font-size:90%;
-						line-height:150%;
-						font-family:GOTHICM;
-						.ggscb-f-btn{ 
-						}
-					}
-				}
-			}
 		}
 	} 
+
 
 	// gg - heading ----------------->
 
@@ -253,15 +178,20 @@
 		background:#fff;
 		@include border-radius(2px);
 		margin:10px;
-		.ggb-cont{ 
+		.ggb-cont,.ggb-cont2{ 
 			width:100%;
 			color:#858585; 
 			line-height:120%;
+			margin-bottom:10px;
 		} 
+		.ggb-cont2{
+			font-family:GOTHICB;
+			font-size:165%; 
+			min-height:95px;
+		}
 		.ggb-button{  
-			width:140px;
-			margin:10px calc(50% - 70px);
-			margin-bottom:0px;
+			display:table; 
+			margin:10px auto 0 auto; 
 			padding:0 20px;
 			color:$themeCDark;
 			height:42px;
@@ -293,14 +223,242 @@
 	.gg-box-4{ width:calc(25% - 20px); }
 	.gg-box-5{ width:calc(20% - 20px); }
 	.gg-box-6{ width:calc(#{100/6}% - 20px); }
-
+ 
 	.gridHalf{ width:50%; }
 	.gridFull{ width:100%; }
 
 } 
- 
+.pad-bot-50{ padding-bottom:50px; }
+.pad-top-50{ padding-top:50px; }
 
+// GLOBE BOX -------------------------------------------------------->
 
+.ggsc-box{
+	width:100%;
+	min-height:100px;
+	background:#fff;
+	@include transition(0.5s);
+	.ggscb-img{
+		width:100%; 
+		background:#e1e1e1;
+		.imgBox{
+			width:100px;
+			height:100px;
+			max-width:90px;
+			max-height:90px;
+			position:relative;
+			overflow:hidden;
+			background:#858585;
+		}
+	} 
+	.ggscb-heading{
+		padding:20px 30px;
+		line-height:120%;
+		height:80px;
+		max-height:80px;
+		color:$themeCDark; 
+		font-family:GOTHICSM;
+	}
+	.ggscb-location {
+		width:100%;
+		padding:0 30px;
+		height:20px;
+		line-height:20px;
+		color:#858585;
+		background:#e1e1e1;
+		font-size:75%; 
+	}
+	.ggscb-footer{
+		height:120px;
+	}
+	.ggscb-footer ,.ggscb-footer2{
+		width:100%;
+		padding:0 10px; 
+		.ggscb-f-half{
+			width:calc( 50% - 20px );
+			margin:10px; 
+			line-height:200%;
+			font-size:85%;
+			font-family:GOTHICM;
+		}
+		.ggscb-f-btn{ 
+			width:100%;
+			border:1px solid #d0d7dc;
+			text-align:center; 
+			line-height:45px;
+			margin-top:5px;
+			color:#858585;
+		}
+		.ggscb-f-btn:hover{
+			cursor:pointer;
+			color:#858585;
+		}
+		.ggscb-f-btn:active{
+			font-size:98%; 
+			color:#858585;
+		}
+	}
+	.ggscb-footer2{ 
+		.ggscb-f-full{ 
+			width:calc( 100% - 20px );
+			margin:10px; 
+			font-size:90%;
+			line-height:150%;
+			font-family:GOTHICM;
+			.ggscb-f-btn{ 
+			}
+		}
+	}	
+}
+.ggsc-box-ext{
+	width:calc(33.3333% - 20px);
+	margin:10px;
+	.ggscb-contBox{
+		border:1px solid #aaa;
+	}
+}
+
+// GLOBE BOX ENDS ---------------------------------------------------->
+
+.ggscb-ful-pop{
+	display:block;
+	float:left;
+	position:fixed;
+	top:50px;
+	left:-110%;
+	width:100%;
+	height:100%;
+	bottom:0;
+	right:0;
+	z-index:3;
+	@include transition(0.7s);
+	.ggscb-img{
+		background:$themeColor!important;
+	}
+	.imgBox{ 
+		width:130px!important;
+		height:130px!important; 
+		max-width:130px!important;
+		max-height:130px!important; 
+	}
+	.ggsc-box-ext{
+		width:100%!important;
+		height:100%;
+		margin:0!important; 
+		border:1px solid rgba(0,0,0,0.6);
+		@include shadow(0,0,20px,rgba(0,0,0,0.6));
+		position:relative;
+		z-index:4;
+	}
+	.ggscb-contBox{
+		border:none;
+	}
+	.ggscb-heading{
+		padding:15px!important;
+		line-height:110%!important;
+		height:auto!important; 
+		max-height:500px!important; 
+		font-size:7.5vw!important;
+	}
+	.ggscb-location { 
+		height:auto!important;
+		font-size:120%;
+		padding:10px;
+	}
+	.ggscb-clos{
+		display:block;
+		float:right;
+		width:100px;
+		height:130px; 
+		text-align:center;
+		line-height:130px; 
+		font-size:40px;
+		color:#fff; 
+		border-left:1px solid rgba(255,255,255,0.05);
+	} 
+} 
+.popAnim{
+	left:0;
+} 
+.gg-headerSlider-anim{
+	@include transform(scale(0.9));
+	opacity:0;
+}
+
+/* ------------------------------------------- GG - SELECT --------------------------------------- */
+
+.gg-buttonSet{
+	width:100%;
+	.gg-selectOuter{
+		padding:20px 60px;
+		.gg-select{
+			width:28%;
+			margin:0 2.6666%; 
+			height:40px;
+			max-height:40px;
+			background:#fff;
+			color:#858585;
+			font-family:GOTHICM;
+			position:relative;
+			.ggsl-main{
+				width:100%;
+				height:40px;
+				line-height:40px;
+				text-align:center;
+				border:1px solid #ddd;
+			}
+			i:hover{
+				cursor:pointer; 
+				color:#999;
+			}
+			.ggsl-main:hover {
+				cursor:pointer; 
+			}
+			i{
+				position:absolute;
+				right:0px;
+				top:0px;
+				height:40px;
+				width:40px;
+				text-align:center;
+				line-height:40px;
+				color:#ddd;
+			}
+			.ggsl-options{
+				width:100%;
+				max-height:0;
+				position:absolute;
+				top:100%;
+				background:#fff;
+				border:1px solid #ddd;
+				border-top:0;
+				z-index:4;
+				overflow-y:scroll;
+				@include transition(0.7s); 
+				.ggsl-op{
+					width:inherit;
+					height:35px;
+					line-height:35px;  
+					padding:0 10px;
+					position:relative;
+					overflow:hidden;
+				}
+				.ggsl-op:hover{
+					cursor:pointer;
+					background:rgba(0,0,0,0.05);
+				}
+			}
+			.ggsl-options-active{
+				max-height:175px; 
+				z-index:8;
+			}
+		}
+		.gg-select-active{
+			background:$themeColor;
+			color:#fff;
+		}
+	}
+}
 
 /* ------------------------------------------- RESPONSIVE --------------------------------------- */
 
@@ -318,6 +476,12 @@
   
 /* Tablet Landscape */
 @media screen and (max-width: $TabletL) { 
+	.gg-select{
+		width:40%!important;
+		font-size:90%;
+		margin:0 5%!important; 
+		margin-bottom:15px!important;
+	}
 	@media screen and (min-width: $MobileM) { 
 		.globeGrid{
 			.boxx{
@@ -325,6 +489,9 @@
 				margin:0 3%;
 			} 
 			.gg-tab_l-hide{ display:none!important; }
+		}
+		.ggsc-box-ext{
+			width:calc(50% - 20px)!important; 
 		}
 	}
 }
@@ -339,11 +506,28 @@
 	}
 }
 
+
+/* Tabled Portrait SEMI [ only for this page ]*/
+@media screen and (max-width: 580px) { 
+	.globeGrid{
+		.gg-box-2,.gg-box-3,.gg-box-4,.gg-box-5,.gg-box-6{
+			width:calc(100% - 20px);
+		}
+		.gridHalf{ width:100%; }   
+		.ggsc-box-ext{ width:100%!important; margin: 10px 0!important;  }
+	} 
+	.gg-select{
+		width:80%!important; 
+		margin:0 10%!important;  
+	}
+}
+
 /* Mobile */
 @media screen and (max-width: $Mobile) { 
 	.gg-mob-hide{ display:none!important; }
 	.globeGrid{
 		.boxx{
+			display:block;
 			width:100%!important;
 			margin:0!important;
 		} 
@@ -351,6 +535,28 @@
 			margin:5px 10px!important;
 			width:calc(100% - 20px)!important;
 		}
+		.ggscb-heading{
+			padding:7px!important;
+			line-height:110%!important;
+			height:auto!important; 
+			font-size:90%!important;
+		}
+		.ggscb-location { 
+			height:auto!important;
+		}
+	} 
+	.gg-select{
+		width:100%!important; 
+		margin:5px 0!important;  
+	}
+	.ggs-cont2{
+		margin-left:20px!important;
+		margin-right:20px!important;
+		width:calc(100% - 40px)!important;
+		max-width:calc(100% - 40px)!important;
+	}
+	.gg-selectOuter{
+		padding:10px 20px!important;
 	}
 }
 

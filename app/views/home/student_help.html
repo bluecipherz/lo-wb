@@ -1,1 +1,17 @@
-<p>This is the student_help view.</p>
+<div class="globeGrid studHelpPage grayBG">
+	<div class="boxx studHelpPageOuter" ng-if="studentHelp.stateName.current.name == 'studentHelp'">
+		<div class="gg-box-1"> 
+			<div class="gg-h2-cust bg-text-c">STUDENTS HELP</div>
+		</div>
+		<div class="boxx -bg-m-b-30"> 
+		<!-- Box repeating -->
+		<globe-box ng-repeat="data in studentHelp.Data.details.slice(0,studentHelp.arrayLimit )" ></globe-box>  
+		</div>
+		<div ng-if="studentHelp.Data.details.length > studentHelp.arrayLimit" class="gg-box-1  bg-text-c"> 
+			<a class="gg-a-cust bg-text-c" ng-click="studentHelp.arrayLimit = studentHelp.arrayLimit + studentHelp.incremLimit">LOAD MORE</a>
+		</div>
+	</div>
+	<div class="boxx studHelpPageOuter" ng-if="studentHelp.stateName.current.name == 'studentHelpShow'">
+		this is show
+	</div>
+</div>

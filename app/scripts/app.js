@@ -56,12 +56,18 @@ angular
         })
         .state('scolarship', {
           url: '/scolarship',
-          templateUrl: 'views/home/scolarship.html',
+          templateUrl: 'views/courses.html',
           controller: 'ScolarshipCtrl',
-          controllerAs: 'scolarship'
+          controllerAs: 'courses'
         }) 
         .state('studentHelp', {
           url: '/student_help',
+          templateUrl: 'views/home/student_help.html',
+          controller: 'StudentHelpCtrl',
+          controllerAs: 'studentHelp'
+        })
+        .state('studentHelpShow', {
+          url: '/student_help/:id',
           templateUrl: 'views/home/student_help.html',
           controller: 'StudentHelpCtrl',
           controllerAs: 'studentHelp'
@@ -84,6 +90,12 @@ angular
         })
 
         // ---- GENERAL ----
+        .state('error', {
+          url:'/error', 
+          templateUrl: 'views/general/error_page.html',
+          controller: 'ErrorCtrl',
+          controllerAs: 'error'
+        })
         .state('saveAndCompare', {
           url:'/save_and_compare', 
           templateUrl: 'views/general/save_and_compare.html',
@@ -151,9 +163,9 @@ angular
 
         .state('collegeList', {
           url: '/college_list',
-          templateUrl: 'views/colleges/college_list.html',
+          templateUrl: 'views/courses/course_details.html',
           controller: 'CollegeListCtrl',
-          controllerAs: 'collegeList'
+          controllerAs: 'cDetails'
         })
         .state('firstFilter', {
           url: '/first_filter',

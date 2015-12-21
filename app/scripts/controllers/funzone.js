@@ -8,7 +8,8 @@
  * Controller of the todoappApp
  */
 angular.module('loWbApp')
-  .controller('FunzoneCtrl', function ($scope,$interval,nestedSet, $stateParams,$rootScope, $state,$timeout) {
+  .controller('FunzoneCtrl', function ($scope,$interval,nestedSet, $stateParams,$rootScope, $state,$timeout,landingLoader) {
+    landingLoader.firstLoad();
         var vm = this;
         $rootScope.$state = $state;
         $rootScope.$stateParams = $stateParams; 

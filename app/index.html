@@ -7,6 +7,10 @@
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width">
 
+    <!--[if lt IE 9]>
+    Insert your IE code, like possible redirection or alteration of your page
+    <![endif]-->
+
     <!-- The Pinch masters | responsive shrek generators -->
     <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
@@ -30,12 +34,133 @@
     <!-- endbuild -->
 
 	</head>
-	<body ng-app="loWbApp" scroll >
+    <style type="text/css">
+        .landingLoader{
+            display: block;
+            float: left;
+            position: fixed;
+            top:0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: #66cbff;
+            z-index: 10000;
+        }
+
+        .ll_head,.loaderWrapper{
+            display: block;
+            position: absolute;
+            top: calc( 50% + 120px );
+            left:calc( 50% - 80px );
+            width: 160px; 
+            color:rgba(255,255,255,0.4); 
+            font-size: 150%;
+            font-family:tahoma; 
+         }
+         .ll_headPro,.ll_headProReal{
+            display: block;
+            position: absolute;
+            top:0;
+            left: 0;
+            overflow: hidden;
+            color:rgba(255,255,255,1); 
+            width: 0%;
+            transition:18s;
+         }
+         .ll_headProReal{
+            transition:0.8s;
+         }
+        .loaderWhite {
+          font-size: 20px;
+          top: calc( 50% - 0.5em );
+          left:calc( 50% - 0.5em );
+          width: 1em;
+          height: 1em;
+          border-radius: 50%;
+          position: fixed;
+          text-indent: -9999em;
+          -webkit-animation: load4 1.3s infinite linear;
+          animation: load4 1.3s infinite linear;
+          -webkit-transform: translateZ(0);
+          -ms-transform: translateZ(0);
+          transform: translateZ(0); 
+        }
+        @-webkit-keyframes load4 {
+          0%,
+          100% {
+            box-shadow: 0 -3em 0 0.2em #fff, 2em -2em 0 0em #fff, 3em 0 0 -1em #fff, 2em 2em 0 -1em #fff, 0 3em 0 -1em #fff, -2em 2em 0 -1em #fff, -3em 0 0 -1em #fff, -2em -2em 0 0 #fff;
+          }
+          12.5% {
+            box-shadow: 0 -3em 0 0 #fff, 2em -2em 0 0.2em #fff, 3em 0 0 0 #fff, 2em 2em 0 -1em #fff, 0 3em 0 -1em #fff, -2em 2em 0 -1em #fff, -3em 0 0 -1em #fff, -2em -2em 0 -1em #fff;
+          }
+          25% {
+            box-shadow: 0 -3em 0 -0.5em #fff, 2em -2em 0 0 #fff, 3em 0 0 0.2em #fff, 2em 2em 0 0 #fff, 0 3em 0 -1em #fff, -2em 2em 0 -1em #fff, -3em 0 0 -1em #fff, -2em -2em 0 -1em #fff;
+          }
+          37.5% {
+            box-shadow: 0 -3em 0 -1em #fff, 2em -2em 0 -1em #fff, 3em 0em 0 0 #fff, 2em 2em 0 0.2em #fff, 0 3em 0 0em #fff, -2em 2em 0 -1em #fff, -3em 0em 0 -1em #fff, -2em -2em 0 -1em #fff;
+          }
+          50% {
+            box-shadow: 0 -3em 0 -1em #fff, 2em -2em 0 -1em #fff, 3em 0 0 -1em #fff, 2em 2em 0 0em #fff, 0 3em 0 0.2em #fff, -2em 2em 0 0 #fff, -3em 0em 0 -1em #fff, -2em -2em 0 -1em #fff;
+          }
+          62.5% {
+            box-shadow: 0 -3em 0 -1em #fff, 2em -2em 0 -1em #fff, 3em 0 0 -1em #fff, 2em 2em 0 -1em #fff, 0 3em 0 0 #fff, -2em 2em 0 0.2em #fff, -3em 0 0 0 #fff, -2em -2em 0 -1em #fff;
+          }
+          75% {
+            box-shadow: 0em -3em 0 -1em #fff, 2em -2em 0 -1em #fff, 3em 0em 0 -1em #fff, 2em 2em 0 -1em #fff, 0 3em 0 -1em #fff, -2em 2em 0 0 #fff, -3em 0em 0 0.2em #fff, -2em -2em 0 0 #fff;
+          }
+          87.5% {
+            box-shadow: 0em -3em 0 0 #fff, 2em -2em 0 -1em #fff, 3em 0 0 -1em #fff, 2em 2em 0 -1em #fff, 0 3em 0 -1em #fff, -2em 2em 0 0 #fff, -3em 0em 0 0 #fff, -2em -2em 0 0.2em #fff;
+          }
+        }
+        @keyframes load4 {
+          0%,
+          100% {
+            box-shadow: 0 -3em 0 0.2em #fff, 2em -2em 0 0em #fff, 3em 0 0 -1em #fff, 2em 2em 0 -1em #fff, 0 3em 0 -1em #fff, -2em 2em 0 -1em #fff, -3em 0 0 -1em #fff, -2em -2em 0 0 #fff;
+          }
+          12.5% {
+            box-shadow: 0 -3em 0 0 #fff, 2em -2em 0 0.2em #fff, 3em 0 0 0 #fff, 2em 2em 0 -1em #fff, 0 3em 0 -1em #fff, -2em 2em 0 -1em #fff, -3em 0 0 -1em #fff, -2em -2em 0 -1em #fff;
+          }
+          25% {
+            box-shadow: 0 -3em 0 -0.5em #fff, 2em -2em 0 0 #fff, 3em 0 0 0.2em #fff, 2em 2em 0 0 #fff, 0 3em 0 -1em #fff, -2em 2em 0 -1em #fff, -3em 0 0 -1em #fff, -2em -2em 0 -1em #fff;
+          }
+          37.5% {
+            box-shadow: 0 -3em 0 -1em #fff, 2em -2em 0 -1em #fff, 3em 0em 0 0 #fff, 2em 2em 0 0.2em #fff, 0 3em 0 0em #fff, -2em 2em 0 -1em #fff, -3em 0em 0 -1em #fff, -2em -2em 0 -1em #fff;
+          }
+          50% {
+            box-shadow: 0 -3em 0 -1em #fff, 2em -2em 0 -1em #fff, 3em 0 0 -1em #fff, 2em 2em 0 0em #fff, 0 3em 0 0.2em #fff, -2em 2em 0 0 #fff, -3em 0em 0 -1em #fff, -2em -2em 0 -1em #fff;
+          }
+          62.5% {
+            box-shadow: 0 -3em 0 -1em #fff, 2em -2em 0 -1em #fff, 3em 0 0 -1em #fff, 2em 2em 0 -1em #fff, 0 3em 0 0 #fff, -2em 2em 0 0.2em #fff, -3em 0 0 0 #fff, -2em -2em 0 -1em #fff;
+          }
+          75% {
+            box-shadow: 0em -3em 0 -1em #fff, 2em -2em 0 -1em #fff, 3em 0em 0 -1em #fff, 2em 2em 0 -1em #fff, 0 3em 0 -1em #fff, -2em 2em 0 0 #fff, -3em 0em 0 0.2em #fff, -2em -2em 0 0 #fff;
+          }
+          87.5% {
+            box-shadow: 0em -3em 0 0 #fff, 2em -2em 0 -1em #fff, 3em 0 0 -1em #fff, 2em 2em 0 -1em #fff, 0 3em 0 -1em #fff, -2em 2em 0 0 #fff, -3em 0em 0 0 #fff, -2em -2em 0 0.2em #fff;
+          }
+        }
+         
+    </style>
+    <body ng-app="loWbApp" scroll >
     <!--[if lte IE 8]>
       <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
 
     <!-- Add your site or application content here -->
+
+
+    <div class="landingLoader">
+        <div class="ll_head">
+            LinkonEdu.com
+            <span class="ll_headPro" id="ll_headPro">LinkonEdu.com</span>
+            <span class="ll_headProReal">LinkonEdu.com</span>
+        </div>
+        <div class="loaderWrapper"><div class="loaderWhite"></div> </div>
+    </div>
+    <script type="text/javascript">
+        setTimeout(function(){document.getElementById("ll_headPro").style.width = "100%"; },10); 
+    </script>
+ 
     <div class="blueNav b-p-fix cust-header " ng-controller="headerController" ng-class="{ hShow: addHeader ,hShowX: showHeader}"> 
 		<div class="bl-ul bg-text-c">
             <span ng-click="checkHeader()" class="nav-HomeIcon"ng-class="{'active':$state.current.name == 'home'}"><a href="#/"><i class="fa fa-home"></i></a></span>
@@ -63,7 +188,7 @@
 
     <div class="cust-footer b-p-rel b-layer-2"  ng-include src="'views/partials/structures/footer.html'" ></div>
  
-    <div class="respDoctor" >
+   <!--  <div class="respDoctor" >
         <div class="rd-M-S veiwP">M-S</div>
         <div class="rd-M-M veiwP">M-M</div>
         <div class="rd-M veiwP">M</div>
@@ -72,7 +197,7 @@
         <div class="rd-D veiwP">D</div>
         <div class="rd-EL veiwP">EL</div>
         <div class="screenS">{{ scrX }} X {{ scrY }}</div>
-    </div> 
+    </div>  -->
     <!-- Google Analytics: change UA-XXXXX-X to be your site's ID -->
      <script>
        !function(A,n,g,u,l,a,r){A.GoogleAnalyticsObject=l,A[l]=A[l]||function(){
@@ -86,16 +211,16 @@
 
     <!-- build:js(.) scripts/vendor.js -->
     <!-- bower:js -->
-    <script src="bower_components/jquery/dist/jquery.js"></script>
-    <script src="bower_components/angular/angular.js"></script>
-    <script src="bower_components/angular-animate/angular-animate.js"></script>
-    <script src="bower_components/angular-cookies/angular-cookies.js"></script>
-    <script src="bower_components/angular-resource/angular-resource.js"></script>
-    <script src="bower_components/angular-route/angular-route.js"></script>
-    <script src="bower_components/angular-sanitize/angular-sanitize.js"></script>
-    <script src="bower_components/angular-touch/angular-touch.js"></script>
-    <script src="bower_components/angular-ui-router/release/angular-ui-router.js"></script>
-    <script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
+    <script src="bower_components/jquery/dist/jquery.min.js"></script>
+    <script src="bower_components/angular/angular.min.js"></script>
+    <script src="bower_components/angular-animate/angular-animate.min.js"></script>
+    <script src="bower_components/angular-cookies/angular-cookies.min.js"></script>
+    <script src="bower_components/angular-resource/angular-resource.min.js"></script>
+    <script src="bower_components/angular-route/angular-route.min.js"></script>
+    <script src="bower_components/angular-sanitize/angular-sanitize.min.js"></script>
+    <script src="bower_components/angular-touch/angular-touch.min.js"></script>
+    <script src="bower_components/angular-ui-router/release/angular-ui-router.min.js"></script>
+    <script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
     <!-- endbower -->
     <!-- endbuild -->
  
@@ -110,6 +235,7 @@
         <script src="scripts/controllers/courses.js"></script>
         <script src="scripts/controllers/funzone.js"></script>
         <script src="scripts/directives/nestedmenu.js"></script>
+        <script src="scripts/services/landingLoader.js"></script>
         <script src="scripts/directives/globeBox.js"></script>
         <script src="scripts/services/nestedset.js"></script> 
         <script src="scripts/controllers/general/error.js"></script>

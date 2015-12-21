@@ -8,7 +8,8 @@
  * Controller of the loWbApp
  */
 angular.module('loWbApp')
-  .controller('CourseDetailsCtrl', function ($rootScope,$scope,screenResolution,globeBox) {
+  .controller('CourseDetailsCtrl', function ($rootScope,$scope,responsive,globeBox,landingLoader) {
+    landingLoader.firstLoad();
         $(window).scrollTop(0);
     	var vm = this;
         $rootScope.showHeader = true;
@@ -29,7 +30,8 @@ angular.module('loWbApp')
         }; 
         $scope.buttonClick = function(id){ 
             vm.cData = cData1;
-            $(window).scrollTop(9); 
+            console.log('Helo this isme');
+            $(window).scrollTop(0); 
         }
 
         var cData1 = {
@@ -53,105 +55,59 @@ angular.module('loWbApp')
                 {boxType:'box',boxWidth:1,title:'SCHOLARSHIP AVAILABLE',desc:' All india scholarship, state level scholarship'},
  
             ],
-        };
+        };  
+
+        // Header slider config
+
         vm.collListPos = 0;
         vm.CLItemCount = 3; 
-        var CLItemCountTemp = vm.CLItemCount;
         vm.CLItemWidth = 0; 
+        vm.slideFooter = 2;   
 
+        vm.paginate = globeBox.paginate; 
+        vm.boxClick = globeBox.boxClick; 
 
-        vm.paginate = function(side){  
-            vm.CLItemWidth = $('.ggsc-boxOuter table tr').width() / vm.cData.colleges.length; 
+        /* RESPONSIVE JS */ 
 
-            if(side==0){  
-                CLItemCountTemp = vm.CLItemCount;
-                for(CLItemCountTemp;CLItemCountTemp > 0 ;CLItemCountTemp--){ 
-                    if( vm.collListPos - CLItemCountTemp >= 0){  
-                        vm.collListPos -= CLItemCountTemp;   
-                        vm.CLItemMargin =  vm.CLItemWidth * vm.collListPos * -1;  
-                        break;
-                    } 
-                } 
-            }else{  
-                CLItemCountTemp = vm.CLItemCount;
-                for(CLItemCountTemp;CLItemCountTemp > 0 ;CLItemCountTemp--){ 
-                    if( vm.collListPos + vm.CLItemCount + CLItemCountTemp <= vm.cData.colleges.length){  
-                        vm.collListPos += CLItemCountTemp;   
-                        vm.CLItemMargin =  vm.CLItemWidth * vm.collListPos * -1;  
-                        break;
-                    } 
-                } 
-            }
-        } 
-
-        vm.slideFooter = 2;
-
-        /* RESPONSIVE JS */
- 
-        var Rtest = false;
-        var r_crrt = screenResolution.r_crrt;
-
-        var r_MobileS = screenResolution.r_MobileS  ;
-        var r_MobileM = screenResolution.r_MobileM  ;
-        var r_Mobile  = screenResolution.r_Mobile   ;
-        var r_TabletP_semi = screenResolution.r_TabletP_semi  ;
-        var r_TabletP = screenResolution.r_TabletP  ;
-        var r_TabletL = screenResolution.r_TabletL  ;
-        var r_Desktop = screenResolution.r_Desktop  ;
-        var r_ExtraLarg = screenResolution.r_ExtraLarg ; 
-
-
-        responsiveJs();
-        $(window).resize(function(){ responsiveJs(); });
-
-        function responsiveJs(){
-            if($(window).innerWidth() + r_crrt < r_MobileS ){ 
-                if(Rtest){console.log('Mobile small');}
+        responsive.makeResponsive({
+            mobile_s:function(){
                 vm.childCartCount = 2;
                 vm.CLItemCount = 1;
                 vm.slideFooter = 1;
-
-            }else
-            if($(window).innerWidth() + r_crrt < r_MobileM ){ 
-                if(Rtest){console.log('Mobile medium');}
+            },
+            mobile_m:function(){
                 vm.childCartCount = 2;
                 vm.CLItemCount = 1;
                 vm.slideFooter = 1;
-            }else
-            if($(window).innerWidth() + r_crrt < r_Mobile ){ 
-                if(Rtest){console.log('Mobile');}
+            },
+            mobile:function(){ 
                 vm.childCartCount = 2; 
                 vm.CLItemCount = 1;
                 vm.slideFooter = 3;
-            }else
-            if($(window).innerWidth() + r_crrt < r_TabletP ){ 
-                if(Rtest){console.log('Tablet potrate');}
+            },
+            tablet_p:function(){  
                 vm.childCartCount = 2;
                 vm.CLItemCount = 2;
                 vm.slideFooter = 1;
-                if($(window).innerWidth() + r_crrt < r_TabletP_semi){ 
-                    vm.CLItemCount = 1;
-                    vm.slideFooter = 2;
-                }
-            }else
-            if($(window).innerWidth() + r_crrt < r_TabletL ){ 
-                if(Rtest){console.log('Tablet landscape');}
+            },
+            tablet_p_semi:function(){ 
+                vm.CLItemCount = 1;
+                vm.slideFooter = 2;
+            },
+            tablet_l:function(){ 
                 vm.childCartCount = 5;
                 vm.CLItemCount = 2;
                 vm.slideFooter = 2;
-            }else
-            if($(window).innerWidth() + r_crrt < r_Desktop ){ 
-                if(Rtest){console.log('Desktop');}
+            },
+            desktop:function(){ 
                 vm.childCartCount = 5; 
                 vm.CLItemCount = 3;
                 vm.slideFooter = 1;
-            }else
-            if($(window).innerWidth() + r_crrt > r_ExtraLarg ){ 
-                if(Rtest){console.log('Extra large');}
+            },
+            extraLarge:function(){ 
                 vm.childCartCount = 5;
                 vm.CLItemCount = 3;
                 vm.slideFooter = 2;
-            }
-        } 
-
+            },
+        }); 
   });

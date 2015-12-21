@@ -8,7 +8,8 @@
  * Controller of the loWbApp
  */
 angular.module('loWbApp')
-  .controller('AboutUsCtrl', function ($rootScope) {
+  .controller('AboutUsCtrl', function ($rootScope,landingLoader) {
+    landingLoader.firstLoad();
 
         $rootScope.showHeader = true;
         $(window).scrollTop(0);

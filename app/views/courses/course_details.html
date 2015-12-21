@@ -46,7 +46,7 @@
 			</div>
 		</div>
 	</div>  
-	<div class="gg-header" ng-if="cDetails.cData.hasOwnProperty('details')" ng-if="cDetails.cData.type == 'parent'"> {{cDetails.cData.mainHeading}} </div>
+	<div class="gg-header" ng-if="cDetails.cData.hasOwnProperty('details') && cDetails.cData.type=='parent' " ng-if="cDetails.cData.type == 'parent'"> {{cDetails.cData.mainHeading}} </div>
 	<div  ng-if="cDetails.cData.hasOwnProperty('details')" class="boxx -bg-m-b-30">
 		<div class="gg-h7 -p-10" ng-if="cDetails.cData.type == 'parent'" >{{cDetails.cData.subHeading}}</div>
 		<!-- Box repeating -->
@@ -55,11 +55,11 @@
 			<div class="ggb-box-p" ng-class="{'gridFull':data.boxType == 'box' || data.boxType == 'buttonBox' ,'gridHalf':data.boxType == 'headBox'}">
 				<div class="gg-h6" ng-class="{'gg-h6 ':data.boxType == 'box','gg-h4 -ta-c -p-20':data.boxType == 'buttonBox'}">{{data.title}}</div>
 				<div class="ggb-cont" ng-class="{'-ta-c':data.boxType == 'buttonBox'}">{{data.desc}}</div>   
-	  			<div class="ggb-button" ng-if="data.boxType == 'buttonBox'" ng-click="cDetails.moreBtnClick(data.ngClick)">{{data.bname}}</div> 
+	  			<div class="ggb-button" ng-if="data.boxType == 'buttonBox'" ng-click="buttonClick(data.ngClick)">{{data.bname}}</div> 
 			</div>   
 		</div>   
 	</div> 
-	<div class="gg-buttonSet whiteBG"> 
+	<div  ng-if="cDetails.cData.hasOwnProperty('EColleges')" class="gg-buttonSet whiteBG"> 
 		<div class="boxx gg-selectOuter">
 		
 			<div class="gg-select" ng-click="cDetails.showLocation = ! cDetails.showLocation">

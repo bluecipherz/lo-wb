@@ -224,22 +224,23 @@ angular
 
 	  $rootScope.$on('$routeChangeStart', function() {
 		  powerProgress.loadProgress();
-	  }); 
-	  $rootScope.$on('$routeChangeSuccess', function() {
-	  
 	  });
+    $rootScope.$on('$routeChangeSuccess', function() {
+    
+    });
+
   }).directive("scroll", ['$location','$window', function(location,$window){
     return function($scope, element, attrs) {
       angular.element($window).bind("scroll", function() {
         var sreenHeight = $(window).height()  ;
         if (location.path() =='/' ) {
-          if (this.pageYOffset >= sreenHeight) {
+          if (this.pageYOffset >=  200 ) {
             $scope.addHeader = true;
           } else {
             $scope.addHeader = false;
-            var op = 1 - ((this.pageYOffset)/sreenHeight );
-            var zoom = 1 - (((this.pageYOffset)/sreenHeight ) / 5);
-            $('.home-top-inner').css({'opacity' : op , '-webkit-transform': 'scale('+zoom+')' ,'-moz-transform': 'scale('+zoom+')'});
+            // var op = 1 - ((this.pageYOffset)/sreenHeight );
+            // var zoom = 1 - (((this.pageYOffset)/sreenHeight ) / 5);
+            // $('.home-top-inner').css({'opacity' : op , '-webkit-transform': 'scale('+zoom+')' ,'-moz-transform': 'scale('+zoom+')'});
           }
         }else{
           $scope.addHeader = true;

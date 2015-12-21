@@ -330,7 +330,7 @@
 	height:100%;
 	bottom:0;
 	right:0;
-	z-index:3;
+	z-index:10;
 	@include transition(0.7s);
 	.ggscb-img{
 		background:$themeColor!important;

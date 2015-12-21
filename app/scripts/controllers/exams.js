@@ -8,7 +8,8 @@
  * Controller of the todoappApp
  */
 angular.module('loWbApp')
-  .controller('ExamsCtrl', function ($scope,$interval,nestedSet, $stateParams,$rootScope, $state,$location,screenResolution) { 
+  .controller('ExamsCtrl', function ($scope,$interval,nestedSet, $stateParams,$rootScope, $state,$location,responsive,landingLoader) {
+    landingLoader.firstLoad();
         var vm = this;
         var firstLoad = false;
         $rootScope.$state = $state;
@@ -201,6 +202,7 @@ angular.module('loWbApp')
         $interval(function(){ vm.pageAct = true; },200);
 
 
+
         /* JAVA SCRIPT RESPONSIVE FUNCTIONS  */ 
 
         var lh_def = 150;
@@ -216,60 +218,34 @@ angular.module('loWbApp')
         levelHeight();
 
         vm.childCartCount = 5;
-
-        /* RESPONSIVE JS */
  
-        var Rtest = false;
-        var r_crrt = screenResolution.r_crrt;
 
-        var r_MobileS = screenResolution.r_MobileS  ;
-        var r_MobileM = screenResolution.r_MobileM  ;
-        var r_Mobile  = screenResolution.r_Mobile   ;
-        var r_TabletP_semi = screenResolution.r_TabletP_semi  ;
-        var r_TabletP = screenResolution.r_TabletP  ;
-        var r_TabletL = screenResolution.r_TabletL  ;
-        var r_Desktop = screenResolution.r_Desktop  ;
-        var r_ExtraLarg = screenResolution.r_ExtraLarg ; 
+        /* RESPONSIVE JS */ 
 
-        responsiveJs();
-        $(window).resize(function(){ responsiveJs(); });
-
-        function responsiveJs(){
-            if($(window).innerWidth() + r_crrt < r_MobileS ){ 
-                if(Rtest){console.log('Mobile small');}
+        responsive.makeResponsive({
+            mobile_s:function(){
                 vm.childCartCount = 2;
-
-            }else
-            if($(window).innerWidth() + r_crrt < r_MobileM ){ 
-                if(Rtest){console.log('Mobile medium');}
+            },
+            mobile_m:function(){
                 vm.childCartCount = 2;
-
-            }else
-            if($(window).innerWidth() + r_crrt < r_Mobile ){ 
-                if(Rtest){console.log('Mobile');}
+            },
+            mobile:function(){ 
                 vm.childCartCount = 2;
-
-            }else
-            if($(window).innerWidth() + r_crrt < r_TabletP ){ 
-                if(Rtest){console.log('Tablet potrate');}
+            },
+            tablet_p:function(){  
                 vm.childCartCount = 2;
-
-            }else
-            if($(window).innerWidth() + r_crrt < r_TabletL ){ 
-                if(Rtest){console.log('Tablet landscape');}
+            },
+            tablet_p_semi:function(){ 
                 vm.childCartCount = 5;
-
-            }else
-            if($(window).innerWidth() + r_crrt < r_Desktop ){ 
-                if(Rtest){console.log('Desktop');}
+            },
+            tablet_l:function(){ 
                 vm.childCartCount = 5;
-
-            }else
-            if($(window).innerWidth() + r_crrt > r_ExtraLarg ){ 
-                if(Rtest){console.log('Extra large');}
+            },
+            desktop:function(){ 
                 vm.childCartCount = 5;
-
-            }
-        }
-        
+            },
+            extraLarge:function(){ 
+                vm.childCartCount = 5;
+            },
+        }); 
   });

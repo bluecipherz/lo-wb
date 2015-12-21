@@ -8,15 +8,16 @@
  * Controller of the loWbApp
  */
 angular.module('loWbApp')
-  .controller('ExamDetailsCtrl', function ($rootScope) {
-        $(window).scrollTop(9);
-    	var vm = this;
+  .controller('ExamDetailsCtrl',  function ($rootScope,$scope,responsive,globeBox,landingLoader) {
+    landingLoader.firstLoad();
+        $(window).scrollTop(0);
+        var vm = this;
         $rootScope.showHeader = true;
    
         vm.cData = {
             type:'parent',
             mainHeading:'COOL EXAMS',
-            subHeading:'WHAT TO DO AFTER 12TH',  
+            subHeading:'WHAT TO DO AFTER EXAMS',  
             details:[ 
                 {boxType:'box',boxWidth:1,title:'ABOUT',desc:'Engineering is kind of course that can even kill within a second without thinking about your future. Doesnt matter whatever you are, Where ever you go, it Will keep following you.Engineering is kind of course that can even kill within a second without thinking about your future. Doesnt matter whatever you are, Where ever you go, it Will keep following you.Engineering is kind of course that can even kill within a second without thinking about your future. Doesnt matter whatever you are, Where ever you go, it Will keep following you. '},
                 {boxType:'box',boxWidth:1,title:'MINIMUM QUALIFICATIONS',desc:' 1 Complete 10+2 with 45% Marks '},
@@ -24,17 +25,18 @@ angular.module('loWbApp')
                 {boxType:'box',boxWidth:1,title:'SCHOLARSHIP AVAILABLE',desc:' All india scholarship, state level scholarship'},
 
                 {boxType:'buttonBox',boxWidth:2,title:'MECHANICAL EXAM',bname:'MORE',ngClick:1,desc:'Commerce is a field of adventure. Commerce state level scholarship is a field of adventure. Commerce is a field of adventure. '},
-                {boxType:'buttonBox',boxWidth:2,title:'COMPUTER EXAM',bname:'MORE',ngClick:2,desc:' All india scholarship, Commerce is a field of adventure. state level scholarship Commerce is a field of adventure. field of adventure.'},
+                {boxType:'buttonBox',boxWidth:2,title:'COMPUTER MEDICAL',bname:'MORE',ngClick:2,desc:' All india scholarship, Commerce is a field of adventure. state level scholarship Commerce is a field of adventure. field of adventure.'},
             ],
         }; 
-        vm.moreBtnClick = function(id){ 
+        $scope.buttonClick = function(id){ 
             vm.cData = cData1;
-            $(window).scrollTop(9); 
+            console.log('Helo this isme');
+            $(window).scrollTop(0); 
         }
 
         var cData1 = {
             type:'endNode',
-            mainHeading:'FEATURED INSTITUTE',   
+            mainHeading:'FEATURED COLLEGE',   
             link:'#/college_profile/',
             colleges:[
                 {id:1,imgLink:'',heading:'Catholic Syriyan Medical College',place:'Vellore, Tamil Nadu',fees:540000,seats:1209},
@@ -53,106 +55,59 @@ angular.module('loWbApp')
                 {boxType:'box',boxWidth:1,title:'SCHOLARSHIP AVAILABLE',desc:' All india scholarship, state level scholarship'},
  
             ],
-        };
+        };  
+
+        // Header slider config
+
         vm.collListPos = 0;
         vm.CLItemCount = 3; 
-        var CLItemCountTemp = vm.CLItemCount;
         vm.CLItemWidth = 0; 
+        vm.slideFooter = 2;   
 
+        vm.paginate = globeBox.paginate; 
+        vm.boxClick = globeBox.boxClick; 
 
-        vm.paginate = function(side){  
-            vm.CLItemWidth = $('.ggsc-boxOuter table tr').width() / vm.cData.colleges.length; 
+        /* RESPONSIVE JS */ 
 
-            if(side==0){  
-                CLItemCountTemp = vm.CLItemCount;
-                for(CLItemCountTemp;CLItemCountTemp > 0 ;CLItemCountTemp--){ 
-                    if( vm.collListPos - CLItemCountTemp >= 0){  
-                        vm.collListPos -= CLItemCountTemp;   
-                        vm.CLItemMargin =  vm.CLItemWidth * vm.collListPos * -1;  
-                        break;
-                    } 
-                } 
-            }else{  
-                CLItemCountTemp = vm.CLItemCount;
-                for(CLItemCountTemp;CLItemCountTemp > 0 ;CLItemCountTemp--){ 
-                    if( vm.collListPos + vm.CLItemCount + CLItemCountTemp <= vm.cData.colleges.length){  
-                        vm.collListPos += CLItemCountTemp;   
-                        vm.CLItemMargin =  vm.CLItemWidth * vm.collListPos * -1;  
-                        break;
-                    } 
-                } 
-            }
-        } 
-
-        vm.slideFooter = 2;
-
-        /* RESPONSIVE JS */
- 
-        var Rtest = false;
-        var r_crrt = 17;
-
-        var r_MobileS = 241  ;
-        var r_MobileM = 321  ;
-        var r_Mobile  = 481  ;
-        var r_TabletP_semi = 580  ;
-        var r_TabletP = 769  ;
-        var r_TabletL = 1061 ;
-        var r_Desktop = 1281 ;
-        var r_ExtraLarg = 1282 ;
-
-        responsiveJs();
-        $(window).resize(function(){ responsiveJs(); });
-
-        function responsiveJs(){
-            if($(window).innerWidth() + r_crrt < r_MobileS ){ 
-                if(Rtest){console.log('Mobile small');}
+        responsive.makeResponsive({
+            mobile_s:function(){
                 vm.childCartCount = 2;
                 vm.CLItemCount = 1;
                 vm.slideFooter = 1;
-
-            }else
-            if($(window).innerWidth() + r_crrt < r_MobileM ){ 
-                if(Rtest){console.log('Mobile medium');}
+            },
+            mobile_m:function(){
                 vm.childCartCount = 2;
                 vm.CLItemCount = 1;
                 vm.slideFooter = 1;
-            }else
-            if($(window).innerWidth() + r_crrt < r_Mobile ){ 
-                if(Rtest){console.log('Mobile');}
+            },
+            mobile:function(){ 
                 vm.childCartCount = 2; 
                 vm.CLItemCount = 1;
                 vm.slideFooter = 3;
-            }else
-            if($(window).innerWidth() + r_crrt < r_TabletP ){ 
-                if(Rtest){console.log('Tablet potrate');}
+            },
+            tablet_p:function(){  
                 vm.childCartCount = 2;
                 vm.CLItemCount = 2;
                 vm.slideFooter = 1;
-                if($(window).innerWidth() + r_crrt < r_TabletP_semi){ 
-                    vm.CLItemCount = 1;
-                    vm.slideFooter = 2;
-                }
-            }else
-            if($(window).innerWidth() + r_crrt < r_TabletL ){ 
-                if(Rtest){console.log('Tablet landscape');}
+            },
+            tablet_p_semi:function(){ 
+                vm.CLItemCount = 1;
+                vm.slideFooter = 2;
+            },
+            tablet_l:function(){ 
                 vm.childCartCount = 5;
                 vm.CLItemCount = 2;
                 vm.slideFooter = 2;
-            }else
-            if($(window).innerWidth() + r_crrt < r_Desktop ){ 
-                if(Rtest){console.log('Desktop');}
+            },
+            desktop:function(){ 
                 vm.childCartCount = 5; 
                 vm.CLItemCount = 3;
                 vm.slideFooter = 1;
-            }else
-            if($(window).innerWidth() + r_crrt > r_ExtraLarg ){ 
-                if(Rtest){console.log('Extra large');}
+            },
+            extraLarge:function(){ 
                 vm.childCartCount = 5;
                 vm.CLItemCount = 3;
                 vm.slideFooter = 2;
-            }
-        }
-        
-
-
+            },
+        }); 
   });

@@ -8,10 +8,6 @@
  * Controller of the loWbApp
  */
 angular.module('loWbApp')
-  .controller('SaveAndCompareCtrl', function () {
-    this.awesomeThings = [
-      'HTML5 Boilerplate',
-      'AngularJS',
-      'Karma'
-    ];
+  .controller('SaveAndCompareCtrl', function ($rootScope,landingLoader) {
+    landingLoader.firstLoad();
   });

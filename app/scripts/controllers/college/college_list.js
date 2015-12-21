@@ -8,7 +8,9 @@
  * Controller of the loWbApp
  */
 angular.module('loWbApp')
-  .controller('CollegeListCtrl', function ($rootScope,$scope,responsive,globeBox) {
+  .controller('CollegeListCtrl', function ($rootScope,$scope,responsive,globeBox,landingLoader) {
+    landingLoader.firstLoad();
+    
     $(window).scrollTop(0);
 	var vm = this;
     $rootScope.showHeader = true;

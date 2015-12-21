@@ -8,7 +8,8 @@
  * Controller of the loWbApp
  */
 angular.module('loWbApp')
-  .controller('StudentHelpCtrl', function ($rootScope,$state,$scope) {
+  .controller('StudentHelpCtrl', function ($rootScope,$state,$scope,landingLoader) {
+    landingLoader.firstLoad();
         var vm = this;
         vm.stateName = $state;
         $rootScope.showHeader = true;

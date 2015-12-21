@@ -8,7 +8,8 @@
  * Controller of the loWbApp
  */
 angular.module('loWbApp')
-  .controller('SitemapCtrl', function ($rootScope) {
+  .controller('SitemapCtrl', function ($rootScope,landingLoader) {
+    landingLoader.firstLoad();
         $rootScope.showHeader = true;
         $(window).scrollTop(0);
         var vm = this;

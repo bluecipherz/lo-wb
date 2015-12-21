@@ -8,10 +8,6 @@
  * Controller of the loWbApp
  */
 angular.module('loWbApp')
-  .controller('SearchFoundCtrl', function () {
-    this.awesomeThings = [
-      'HTML5 Boilerplate',
-      'AngularJS',
-      'Karma'
-    ];
+  .controller('SearchFoundCtrl', function ($rootScope,landingLoader) {
+    landingLoader.firstLoad();
   });

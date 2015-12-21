@@ -8,10 +8,6 @@
  * Controller of the loWbApp
  */
 angular.module('loWbApp')
-  .controller('CollegeProfileCtrl', function () {
-    this.awesomeThings = [
-      'HTML5 Boilerplate',
-      'AngularJS',
-      'Karma'
-    ];
+  .controller('CollegeProfileCtrl', function ($rootScope,landingLoader) {
+    landingLoader.firstLoad();
   });

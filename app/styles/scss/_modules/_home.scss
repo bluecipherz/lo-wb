@@ -2,6 +2,10 @@
 .home-top-inner{
     transition: 0.5s;
 }
+.home-top-innerFade{
+    opacity:0;
+    @include transform(scale(0.9));
+}
 .home-top{ 
     background:$themeColor; 
     color:#fff;

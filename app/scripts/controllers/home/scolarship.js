@@ -8,7 +8,8 @@
  * Controller of the loWbApp
  */
 angular.module('loWbApp')
-  .controller('ScolarshipCtrl',  function ($scope,$interval,nestedSet, $stateParams,$rootScope, $state,$location) {
+  .controller('ScolarshipCtrl',  function ($scope,$interval,nestedSet, $stateParams,$rootScope, $state,$location,landingLoader) {
+    landingLoader.firstLoad();
         var vm = this;
         var firstLoad = false;
         $rootScope.showHeader = true;

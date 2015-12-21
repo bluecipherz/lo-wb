@@ -1335,7 +1335,7 @@
   height: 100%;
   bottom: 0;
   right: 0;
-  z-index: 3;
+  z-index: 10;
   -webkit-transition: 0.7s;
   -moz-transition: 0.7s;
   -o-transition: 0.7s;

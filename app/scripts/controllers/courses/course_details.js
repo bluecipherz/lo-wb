@@ -29,8 +29,7 @@ angular.module('loWbApp')
             ],
         }; 
         $scope.buttonClick = function(id){ 
-            vm.cData = cData1;
-            console.log('Helo this isme');
+            vm.cData = cData1; 
             $(window).scrollTop(0); 
         }
 

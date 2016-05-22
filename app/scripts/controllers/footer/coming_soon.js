@@ -12,4 +12,13 @@ angular.module('loWbApp')
     landingLoader.firstLoad();
         $rootScope.showHeader = true;
         $(window).scrollTop(0);
+
+        setTimeout(function(){
+        	var wh = $(window).height();
+        	var ww = $(window).width();
+        	console.log(wh + ' ---');
+
+        	$('.comingSoon > .cs_img_1').css({opacity:1});
+        	$('.comingSoon > .cs_img_2').css({opacity:1});
+        },10);
   });

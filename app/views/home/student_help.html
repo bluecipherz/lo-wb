@@ -1,17 +1,46 @@
-<div class="globeGrid studHelpPage grayBG">
-	<div class="boxx studHelpPageOuter" ng-if="studentHelp.stateName.current.name == 'studentHelp'">
-		<div class="gg-box-1"> 
-			<div class="gg-h2-cust bg-text-c">STUDENTS HELP</div>
+<div class="globeGrid studHelpPage grayBG"> 
+	<div class="boxx">
+		<div class="sh_mainBox" >
+			<div class="sh_box shb-2_3 shb-top">
+				<div class="shb_head">
+					<div class="shbh_img"> </div>
+					<div class="shbh_name">{{studentHelp.userData.name}}</div>
+					<div class="shbh_number">{{studentHelp.userData.number}}</div>
+					<input type="text" class="shbh_inp" placeholder="{{studentHelp.inp_postHead}}">
+				</div>
+				<div class="shb_body" style="font-size:150%">
+					<textarea class="bbText"></textarea>
+				</div>
+				<div class="shb_btnOuter">
+					<div class="shbb_btn grayBG">POST</div>
+					<div class="shbb_btn">SAVE</div>
+					<div class="shbb_btn">CANCEL</div>
+				</div>
+				<div class="shb_footer">
+					<div>Add Tags : </div>
+					<input type="text" placeholder="{{studentHelp.inp_postTags}}">
+				</div>
+			</div>	
+			<div class="sh_box shb-1_3 shb-top-left">
+				<div class="shbl_artHead">TOP TRENDING ARTICLES </div>
+				<div class="shbl_article " ng-repeat="article in studentHelp.pageData.top_articles  | limitTo: 5 ">
+					<h5>{{article.title}}</h5>
+					<p class="breakWord ">{{article.description }}</p>
+					<a ng-href="#/student_help/{{article.id}}" ></a>
+				</div> 
+			</div>
+			<div class="sm_outer">
+				<div class="sh_box shb-1_3 sm_box" ng-repeat="article in studentHelp.pageData.articles">
+					<div class="smb_head">
+						<div class="smbh_type">#{{article.type}}</div>
+						<div class="smbh_title">{{article.title}}</div>
+						<div class="smbh_date">{{article.date  | date: 'MMMM dd, yyyy' }}</div>
+					</div>
+					<div class="smb_cont wordWrap">{{article.description | limitTo : 526}}{{ article.description.length > 526 ? '...' : ''}}</div>
+					<a class="smb_readMore" ng-href="#/student_help/{{article.id}}">Read More...</a>
+				</div>
+			</div>
 		</div>
-		<div class="boxx -bg-m-b-30"> 
-		<!-- Box repeating -->
-		<globe-box ng-repeat="data in studentHelp.Data.details.slice(0,studentHelp.arrayLimit )" ></globe-box>  
-		</div>
-		<div ng-if="studentHelp.Data.details.length > studentHelp.arrayLimit" class="gg-box-1  bg-text-c"> 
-			<a class="gg-a-cust bg-text-c" ng-click="studentHelp.arrayLimit = studentHelp.arrayLimit + studentHelp.incremLimit">LOAD MORE</a>
-		</div>
-	</div>
-	<div class="boxx studHelpPageOuter" ng-if="studentHelp.stateName.current.name == 'studentHelpShow'">
-		this is show
-	</div>
+	</div> 
 </div>
+

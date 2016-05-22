@@ -1,1 +1,36 @@
-<p>This is the search_found view.</p>
+<div class="searchFound">
+	<div class="globe_nav">
+		<div class="boxx"> <a ng-href="#/">Home</a>  Search</span> </div>
+	</div>
+	<div class="sf_head1">
+		<div class="boxx"> <span>SHOWING YOUR SEARCH RESULTS</span> </div>
+	</div>
+	<div class="sf_head2">
+		<div class="boxx">
+			<div class="ht-sec-3 sfh_mid">
+				<div class="sfhm_text">SEARCH AGAIN</div>
+
+				<div class="bgrid hm-searchOuter b-p-rel">
+	                <input type="text" ng-model="hsInput" name="search" placeholder="{{searchFound.searchPlaceHolder}}" class="bg-reset bgrid -bg-s-240-w " />
+	                <button name="searchBtn" class="bg-reset-m -bg-s-40 angleDown" ng-click="searchFound.hs =! searchFound.hs"> <i class="fa fa-angle-down"></i> </button>
+	                <button name="searchBtn" class="bg-reset-m hide-tabPort -bg-s-200"> Search </button>
+	                <div class="homeSearchDrop -bg-s-200-w " ng-show="searchFound.hs">
+	                    <div class="hs-drop-item" ng-click="searchFound.searchPlaceHolder = 'Enter Course';searchFound.hs = false;hsInput =''">Enter Course</div>
+	                    <div class="hs-drop-item" ng-click="searchFound.searchPlaceHolder = 'Enter Exams';searchFound.hs = false;hsInput =''">Enter Exams</div>
+	                    <div class="hs-drop-item" ng-click="searchFound.searchPlaceHolder = 'Enter Collage';searchFound.hs = false;hsInput =''">Enter Collage</div> 
+	                </div>
+	                <button name="searchBtn" class="bg-reset-m Sbtn-tabPort show-tabPort"> Search </button> 
+	            </div>
+
+			</div>
+			<div class="sfh_right">
+				<div class="sfhr_text">DO YOU FIND WHAT YOU ARE LOOKING FOR?</div>
+				<div class="sfhr_btn">YES</div>
+				<div class="sfhr_btn">NO</div>
+			</div>
+		</div>
+	</div>
+	<div class="sf_resultCont">
+		
+	</div>
+</div>

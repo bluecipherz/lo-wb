@@ -1,1 +1,133 @@
-<p>This is the college_profile view.</p>
+<div class="globeGrid grayBG">
+	<div class="boxx">
+		<div class="gg_photoHead">
+			<div class="ggph_cover">
+				<img src="{{collegeProfile.pageData.college_cover}}">
+				<div class="ggph_dp">
+					<img src="{{collegeProfile.pageData.college_dp}}">
+				</div>
+				<div class="ggph_name">{{collegeProfile.pageData.collegeName}}</div>
+			</div>
+		</div>
+		<div class="gg_mid"> 
+			<div class="gg_nav" ng-class="{'ggn_active':collegeProfile.navViewOpen}" ng-click="collegeProfile.navViewOpen = !collegeProfile.navViewOpen">
+			<div class="ggn_moreBtn">V</div>
+				<div class="ggn_btn" ng-click="collegeProfile.pageClick(pg.state)" ng-repeat="pg in collegeProfile.pages" ng-class="{'ggnb_active':collegeProfile.state.params.page == pg.state}">{{pg.name}}</div>
+			</div>  
+			<div class="gg_re_post" ng-if="collegeProfile.state.params.page == 'review'">
+				<div class="ggrp_name">Your Name</div>
+				<input type="text" class="ggrp_nameInp">
+				<textarea ng-if="collegeProfile.re_post == 1" class="ggrp_desc" placeholder="Share Anything that's interesting"></textarea>
+				<div class="ggrp_up_btn" ng-if="collegeProfile.re_post == 2 || collegeProfile.re_post == 3" >Upload File</div>
+				<div class="ggrp_t_btn" ng-click="collegeProfile.re_post = 1" ng-class="{'active':collegeProfile.re_post == 1}" >Post</div>
+				<div class="ggrp_t_btn" ng-click="collegeProfile.re_post = 2"ng-class="{'active':collegeProfile.re_post == 2}"  >Photo</div>
+				<div class="ggrp_t_btn" ng-click="collegeProfile.re_post = 3"ng-class="{'active':collegeProfile.re_post == 3}">Video</div>
+				<div class="gg_post_btn">Post</div>
+			</div>
+			<div ng-repeat="data in collegeProfile.cData.details" ng-if="collegeProfile.state.params.page == 'about' || collegeProfile.state.params.page == 'courses' || collegeProfile.state.params.page == 'contact'" class="gg-box-{{data.boxWidth}}"> 
+				<div class="ggb-imgBox gridHalf" ng-if="data.boxType == 'headBox'"><img src="{{data.imgLink}}"></div>
+				<div class="ggb-box-p" ng-class="{'gridFull':data.boxType == 'box' || data.boxType == 'buttonBox' ,'gridHalf':data.boxType == 'headBox'}">
+					<div class="gg-h6" ng-class="{'gg-h6 ':data.boxType == 'box','gg-h4 -ta-c -p-20':data.boxType == 'buttonBox'}">{{data.title}}</div>
+					<div class="ggb-cont" ng-class="{'-ta-c':data.boxType == 'buttonBox'}" >{{data.desc}}</div>   
+		  			<div class="ggb-button" ng-if="data.boxType == 'buttonBox'" ng-click="buttonClick(data.ngClick)">{{data.bname}}</div> 
+		  			<div class="ggb_crs" ng-if="collegeProfile.state.params.page=='courses'">
+		  				<div class="ggbc_half">Fees : {{data.fees}} Rs</div>
+		  				<div class="ggbc_half">Last date : {{data.lastDate}}</div>
+		  			</div>
+				</div>   
+			</div>
+			<div class="gg_reBox"  ng-repeat="data in collegeProfile.cData.details" ng-if="collegeProfile.state.params.page == 'review'">
+				<div class="ggrb_top">
+					<div class="ggrbt_head">
+						<div class="ggrbth_img"><img src=""></div>
+						<div class="ggrbth_name"> 
+							<span class="gg_nam_n">{{data.name}}<span>{{data.event}}</span></span>
+							<span class="gg_nam_t">{{data.time}}</span>
+						</div>
+					</div>
+					<div class="ggrbt_cont">{{data.cont}}</div>
+				</div>
+				<div class="ggrb_bottom">
+					<div class="ggrbb_cont">Was this review helpful? </div>
+					<div class="ggrbb_y"><div ng-click="collegeProfile.rateIt(data,1)">YES</div><span class="span"><span></span>{{data.ycount}}</span></div>
+					<div class="ggrbb_n"><div ng-click="collegeProfile.rateIt(data,2)">NO</div><span class="span"><span></span>{{data.ncount}}</span></div>
+				</div>
+			</div>
+
+			<div class="gg_contBox" ng-if="collegeProfile.state.params.page == 'apply_now'">
+				<input type="text" placeholder="Email ID"><div class="label">Email ID</div>
+				<input type="text" class="gg_inp_ph2"placeholder="Mobile Number"><input type="text" class="gg_inp_ph1" value="+91"><div class="label">Mobile number</div>
+				<input type="text" placeholder="First name"><div class="label">First name</div>
+				<input type="text" placeholder="Last name"><div class="label">Last name</div>
+
+				<select class="gg_se_dob-last">
+					<option>Year</option>
+					<option ng-repeat="year in collegeProfile.applyData.date.year">{{year.year}}</option>
+				</select>
+				<select class="gg_se_dob">
+					<option>Month</option>
+					<option ng-repeat="month in collegeProfile.applyData.date.month">{{month.month}}</option>
+				</select>
+				<select class="gg_se_dob">
+					<option>Day</option>
+					<option ng-repeat="day in collegeProfile.applyData.date.day">{{day.day}}</option>
+				</select>
+				<div class="label">Date of birth</div>
+				
+				<select>
+					<option ><span class="op-zero">Current State</span></option>
+					<option ng-repeat="state in collegeProfile.applyData.state">{{state.state}}</option>
+				</select>
+				<div class="label">Current State</div>
+
+				<select>
+					<option><span class="op-zero">Current City</span></option>
+					<option ng-repeat="city in collegeProfile.applyData.city">{{city.city}}</option>
+				</select>
+				<div class="label">Current City</div>
+
+				<select>
+					<option ><span class="op-zero">XII Year Completion</span></option>
+					<option ng-repeat="year in collegeProfile.applyData.date.year">{{year.year}}</option>
+				</select>
+				<div class="label">XII Year Completion</div>
+
+				<select>
+					<option ><span class="op-zero">Gender</span></option>
+					<option>Male</option>
+					<option>Female</option>
+				</select>
+				<div class="label">Gender</div>
+
+				<select>
+					<option>Any</option>
+					<option ng-repeat="course in collegeProfile.applyData.course">{{course.course}}</option>
+				</select>
+				<div class="label">Select a Course</div>
+
+				<select>
+					<option ng-repeat="year in collegeProfile.applyData.date.year">{{year.year}}</option>
+				</select>
+				<div class="label">Year of planned admission</div>
+
+				<select>
+					<option>Not yet</option>
+					<option ng-repeat="course in collegeProfile.applyData.course">{{course.course}}</option>
+				</select>
+				<div class="label">Exams Taken</div>
+
+				<input type="text" placeholder="Rank" class="gg_int_half">
+				<input type="text" placeholder="Score" class="gg_int_half  gg_int_half-f">
+				<button type="submit">SUBMIT APPLICATION</button>
+			</div>
+		</div>
+		<div class="gg_right">
+			<div class="photoSet" ng-if="collegeProfile.pageData.photo.length > 0" >
+				<div class="ps_photo" ng-repeat="data in collegeProfile.pageData.photo" ><img src="{{ data.url }}"></div>
+			</div>
+			<div class="photoSet" ng-if="collegeProfile.pageData.video.length > 0" >
+				<div class="ps_photo" ng-repeat="data in collegeProfile.pageData.video" ><img src="{{ data.url }}"></div>
+			</div>
+		</div>
+	</div>
+</div>

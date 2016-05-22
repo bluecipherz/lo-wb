@@ -1,0 +1,92 @@
+<div class="s_help_show">
+	<div class="boxx">
+		<div class="shs_cont">
+			<div class="shsc_head">
+				<div class="shsch_type">{{studentHelp.pageData.type}}</div>	
+				<div class="shsch_title">{{studentHelp.pageData.title}}</div>	
+				<div class="shsch_share"></div>	
+				<div class="shsch_footer"><span>Published by </span><span>{{studentHelp.pageData.author}}</span><div class="shschf_btn">FOLLOW</div><a class="shschf_right">Like linkonedu on facebook</a></div>	
+			</div>
+			<div class="shsc_img">	
+			</div>
+			<div class="shsc_body">
+				<div class="shscb_sector" ng-repeat="desc in studentHelp.pageData.description ">	
+					<div class="shscbs_head">{{desc.title}}</div>	
+					<div class="shscbs_cont">{{desc.description}}</div>	
+				</div>
+			</div>
+			<div class="shsc_footer">	
+				<div class="shscf_like">
+					<span class="shscfl_left">Like Linkonedu on facebook</span>
+					<span class="shscfl_right">Stay connected, Click like!</span>
+				</div>
+				<div class="shscf_head">You may like</div>
+				<div class="shscf_next">NEXT ></div>
+				<div class="shscf_relStory">
+					<div class="peakHeading"><span>RELATED STORIES</span></div>
+					<div class="shscfr_block" ng-repeat="temp in studentHelp.relArtDummy"> 
+						<div class="shscfr_sector" ng-repeat="article in studentHelp.pageData.related.slice(temp.l,temp.r)">
+							<div class="shscfrs_img"></div>
+							<div class="shscfrs_title">{{article.title}}</div>
+							<div class="shscfrs_date">{{article.date | date:'MMMM dd, y' }}</div>
+						</div> 
+						{{studentHelp.relArtInit}} 
+						{{studentHelp.relArtCount}}  
+					</div>
+				</div>
+				<div class="shscf_foot">
+					<div class="shscff_head">
+						<div class="shscffh_title">Community Comments</div>
+						<div class="shscffh_subTitle">Join the conversation</div>
+						<div class="shscffh_icon"></div>
+					</div>
+					<div class="shscff_commentBox">
+						<div class="shscffc_icon"></div>
+						<textarea class="shscffc_input" placeholder="Add comment..."></textarea>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="shs_right">
+			<div class="shsr_header">
+				<div class="shsr_h1">Join the</div>
+				<div class="shsr_h2">Community</div>
+				<div class="shsr_cont">Write for Linkonedu, Follow other authors, and get the stories you care about most.</div>
+				<div class="shsr_foot1">SIGN IN WITH:</div>
+				<div class="shsr_foot2">
+					<span></span>
+					<span></span>
+					<span></span>
+					<span></span>
+				</div>
+			</div>
+			<div class="shsr_follow">
+				<div class="shsrf_head">Follow Linkonedu</div>
+				<div class="shsrf_like">Like Us</div>
+				<div class="shsrf_follow">Follow Us</div>
+			</div>
+			<div class="shsr_sBlock">
+				<div class="peakHeading"><span>POPULAR STORIES</span></div>
+				<div class="shsrs_box1" ng-repeat="article in studentHelp.pageData.popular">
+					<div class="shsrsb_img"></div>
+					<div class="shsrsb_title">{{article.title}}</div>
+				</div>
+				<a class="moreLink">More stories ></a>
+
+				<div class="peakHeading"><span>FEATURED</span></div>
+				<div class="shsrs_box2" ng-repeat="article in studentHelp.pageData.featured">
+					<div class="shsrsb_title">{{article.title}}</div>
+				</div>
+				<a class="moreLink">More stories ></a>
+
+				<div class="peakHeading"><span>RECOMMENDED</span></div>
+				<div class="shsrs_box3" ng-repeat="article in studentHelp.pageData.recommended">
+					<div class="shsrsb_img"></div>
+					<div class="shsrsb_title">{{article.title}}</div>
+					<div class="shsrsb_date">{{article.date | date:'MMMM dd, y'}}</div>
+				</div>
+				<a class="moreLink">More stories ></a>
+			</div>
+		</div>
+	</div>
+</div>

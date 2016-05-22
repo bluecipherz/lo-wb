@@ -32,11 +32,12 @@
     <link rel="stylesheet" href="styles/css/states.css"> 
     <link rel="stylesheet" href="styles/css/themes/default-theme.css">
     <!-- endbuild -->
+    <link rel="stylesheet" href="scripts/plugins/wysibb/theme/default/wbbtheme.css">
 
 	</head>
     <style type="text/css">
         .landingLoader{
-            display: block;
+            display: none;
             float: left;
             position: fixed;
             top:0;
@@ -188,7 +189,7 @@
 
     <div class="cust-footer b-p-rel b-layer-2"  ng-include src="'views/partials/structures/footer.html'" ></div>
  
-   <!--  <div class="respDoctor" >
+    <div class="respDoctor" >
         <div class="rd-M-S veiwP">M-S</div>
         <div class="rd-M-M veiwP">M-M</div>
         <div class="rd-M veiwP">M</div>
@@ -197,30 +198,30 @@
         <div class="rd-D veiwP">D</div>
         <div class="rd-EL veiwP">EL</div>
         <div class="screenS">{{ scrX }} X {{ scrY }}</div>
-    </div>  -->
+    </div> 
     <!-- Google Analytics: change UA-XXXXX-X to be your site's ID -->
      <script>
-       !function(A,n,g,u,l,a,r){A.GoogleAnalyticsObject=l,A[l]=A[l]||function(){
-       (A[l].q=A[l].q||[]).push(arguments)},A[l].l=+new Date,a=n.createElement(g),
-       r=n.getElementsByTagName(g)[0],a.src=u,r.parentNode.insertBefore(a,r)
-       }(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+       // !function(A,n,g,u,l,a,r){A.GoogleAnalyticsObject=l,A[l]=A[l]||function(){
+       // (A[l].q=A[l].q||[]).push(arguments)},A[l].l=+new Date,a=n.createElement(g),
+       // r=n.getElementsByTagName(g)[0],a.src=u,r.parentNode.insertBefore(a,r)
+       // }(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
 
-       ga('create', 'UA-XXXXX-X');
-       ga('send', 'pageview');
+       // ga('create', 'UA-XXXXX-X');
+       // ga('send', 'pageview');
     </script>
 
     <!-- build:js(.) scripts/vendor.js -->
     <!-- bower:js -->
-    <script src="bower_components/jquery/dist/jquery.min.js"></script>
-    <script src="bower_components/angular/angular.min.js"></script>
-    <script src="bower_components/angular-animate/angular-animate.min.js"></script>
-    <script src="bower_components/angular-cookies/angular-cookies.min.js"></script>
-    <script src="bower_components/angular-resource/angular-resource.min.js"></script>
-    <script src="bower_components/angular-route/angular-route.min.js"></script>
-    <script src="bower_components/angular-sanitize/angular-sanitize.min.js"></script>
-    <script src="bower_components/angular-touch/angular-touch.min.js"></script>
-    <script src="bower_components/angular-ui-router/release/angular-ui-router.min.js"></script>
-    <script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="bower_components/jquery/dist/jquery.js"></script>
+    <script src="bower_components/angular/angular.js"></script>
+    <script src="bower_components/angular-animate/angular-animate.js"></script>
+    <script src="bower_components/angular-cookies/angular-cookies.js"></script>
+    <script src="bower_components/angular-resource/angular-resource.js"></script>
+    <script src="bower_components/angular-route/angular-route.js"></script>
+    <script src="bower_components/angular-sanitize/angular-sanitize.js"></script>
+    <script src="bower_components/angular-touch/angular-touch.js"></script>
+    <script src="bower_components/angular-ui-router/release/angular-ui-router.js"></script>
+    <script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
     <!-- endbower -->
     <!-- endbuild -->
  
@@ -258,5 +259,7 @@
         <script src="scripts/controllers/college/first_filter.js"></script>
         <script src="scripts/controllers/college/college_profile.js"></script>
         <!-- endbuild -->
+
+    <script src="scripts/plugins/wysibb/jquery.wysibb.min.js"></script>
 </body>
 </html>

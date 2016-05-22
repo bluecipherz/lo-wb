@@ -74,7 +74,8 @@ angular.module('loWbApp')
                   { title:'Home',heading:1},
                   { title:'Contact us',heading:0,desk:1,tab:1,mob:1,func:0,backend:0,testing:0,bugs:0,completed:0},
                   { title:'Scolarship',heading:0,desk:1,tab:1,mob:1,func:0,backend:0,testing:0,bugs:0,completed:0},
-                  { title:'Student Help',heading:0,desk:2,tab:2,mob:2,func:0,backend:0,testing:0,bugs:0,completed:0},
+                  { title:'Student Help',heading:0,desk:1,tab:1,mob:1,func:0,backend:0,testing:0,bugs:0,completed:0},
+                  { title:'Student Help Details',heading:0,desk:1,tab:1,mob:1,func:0,backend:0,testing:0,bugs:0,completed:0},
                   
                   { title:'Courses',heading:1},
                   { title:'Details with Subcategory',heading:0,desk:1,tab:1,mob:1,func:0,backend:0,testing:0,bugs:0,completed:0},
@@ -86,7 +87,7 @@ angular.module('loWbApp')
                   
                   { title:'Footer',heading:1},
                   { title:'About us',heading:0,desk:1,tab:1,mob:1,func:1,backend:0,testing:0,bugs:0,completed:0},
-                  { title:'Coming soon ',heading:0,desk:2,tab:2,mob:2,func:2,backend:0,testing:0,bugs:0,completed:0},
+                  { title:'Coming soon ',heading:0,desk:1,tab:1,mob:1,func:1,backend:1,testing:0,bugs:0,completed:0},
                   { title:'Disclamer ',heading:0,desk:1,tab:1,mob:1,func:1,backend:0,testing:0,bugs:0,completed:0}, 
                   { title:'Feedback ',heading:0,desk:1,tab:1,mob:1,func:1,backend:1,testing:1,bugs:0,completed:1},
                   { title:'Join Our Team ',heading:0,desk:1,tab:1,mob:1,func:1,backend:1,testing:1,bugs:0,completed:1},
@@ -96,7 +97,7 @@ angular.module('loWbApp')
                   { title:'College',heading:1},
                   { title:'College List',heading:0,desk:1,tab:1,mob:1,func:0,backend:0,testing:0,bugs:0,completed:0},
                   { title:'First Filter',heading:0,desk:2,tab:2,mob:2,func:0,backend:0,testing:0,bugs:0,completed:0},
-                  { title:'College Profile',heading:0,desk:0,tab:0,mob:0,func:0,backend:0,testing:0,bugs:0,completed:0},
+                  { title:'College Profile',heading:0,desk:1,tab:1,mob:1,func:0,backend:0,testing:0,bugs:0,completed:0},
                   
                   { title:'General',heading:1},
                   { title:'Error page',heading:0,desk:2,tab:2,mob:2,func:0,backend:0,testing:0,bugs:0,completed:0},

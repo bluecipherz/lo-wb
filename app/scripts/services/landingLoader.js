@@ -12,7 +12,6 @@ angular.module('loWbApp')
     this.firstLoad = function() {  
 	    $rootScope.$on('$viewContentLoaded', function(event) {
 	      $('.ll_headProReal').css({width:'100%'}); 
-	 
 	      setTimeout(function(){$('.ll_head').fadeOut();},600);
 	      setTimeout(function(){$('.loaderWrapper').fadeOut();},600);
 	      setTimeout(function(){$('.landingLoader').fadeOut();},1000);

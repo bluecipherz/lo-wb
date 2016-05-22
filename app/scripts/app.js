@@ -44,9 +44,7 @@ angular
           controllerAs: 'college'
         }) 
 
-
-
-
+ 
         // ---- HOME ----
         .state('contactUs', {
           url: '/contact_us',
@@ -68,7 +66,7 @@ angular
         })
         .state('studentHelpShow', {
           url: '/student_help/:id',
-          templateUrl: 'views/home/student_help.html',
+          templateUrl: 'views/home/student_help_show.html',
           controller: 'StudentHelpCtrl',
           controllerAs: 'studentHelp'
         })
@@ -103,7 +101,7 @@ angular
           controllerAs: 'saveAndCompare'
         })
         .state('searchFound', {
-          url: '/search_found',
+          url: '/search/:keyword',
           templateUrl: 'views/general/search_found.html',
           controller: 'SearchFoundCtrl',
           controllerAs: 'searchFound'
@@ -174,7 +172,7 @@ angular
           controllerAs: 'firstFilter'
         })
         .state('collegeProfile', {
-          url: '/college_profile/:id',
+          url: '/college_profile/:id/:page',
           templateUrl: 'views/colleges/college_profile.html',
           controller: 'CollegeProfileCtrl',
           controllerAs: 'collegeProfile'
